@@ -1,0 +1,131 @@
+//
+//  LittleCool.pch
+//  LittleCool
+//
+//  Created by 周博 on 17/3/12.
+//  Copyright © 2017年 BogoZhou. All rights reserved.
+//
+
+#ifndef LittleCool_pch
+#define LittleCool_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* LittleCool_pch */
+
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#import <AFNetworking.h>
+#import <MBProgressHUD.h>
+#import "AFClient.h"
+#import <MJRefresh.h>
+#import "BGSDK.h"
+#import "UIView+CountSize.h"
+#import "DLUDID.h"
+#import <WechatAuthSDK.h>
+#import <WXApi.h>
+#import <WXApiObject.h>
+#import <QuartzCore/QuartzCore.h>
+
+#define kPageSize @"20"
+
+#define kMainStroyboard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
+#define kSignStroyboard [UIStoryboard storyboardWithName:@"Sign" bundle:nil]
+
+
+#define kInWindow [UIApplication sharedApplication].windows.lastObject
+
+#define kButtonCornerRadius 3.f
+#define kFontName @"PingFangTC-Light"
+
+#define kCreatSQL @"userInfo.sqlite"
+
+#define kUserTable @"userINFO"
+#define kImageTable @"imageINFO"
+#define kOthreUserTable @"otherUserINFO"
+#define kMoneyTable @"moneyList"
+#define kChatListTable @"chatList"
+#define kChatDetailTable @"chatDetail"
+#define kFriendsTable @"friendsTable"
+#define kZanTable @"zanTable"
+#define kCommentTable @"commentTable"
+#define kFriendsImagesTable @"friendsImagesTable"
+#define kBankTable @"bankTable"
+#define kRedPacketTable @"redPacketTable"
+#define kGetRedPacketUserTable @"getRedPacketTable"
+#define kWechatPayTable @"wechatPayTable"
+
+#pragma mark - 图片
+
+#define kGreenSingle [UIImage imageNamed:@"lvsanjiao.png"]
+#define kYellowSingle [UIImage imageNamed:@"huangsanjiao.png"]
+#define kWhiteSingle [UIImage imageNamed:@"baisanjiao.png"]
+
+#define kUnselect [UIImage imageNamed:@""]
+#define kSelect [UIImage imageNamed:@"selecte.png"]
+#define kDefaultHeadImage [UIImage imageNamed:@"180.png"]
+#define kAddImage [UIImage imageNamed:@"actionbar_add_icon.png"]
+
+
+
+#pragma mark - 设置颜色
+#define kChatWhiteBorder kColorFrom0x(0xcdcdcd)
+#define kChatGreenBorder kColorFrom0x(0x82ad5b)
+#define kChatGreen kColorFrom0x(0xA2E65B)
+#define kChatYellow kColorFrom0x(0xfa9d3b)
+#define kFriendsColor kColorFrom0x(0x5c6b8c)
+#define kUrlLinkColor kColorFrom0x(0x0e7df0)
+#define kWechatBlack kColorFrom0x(0x4A5054)
+#define kWechatTabBarColor [UIColor colorWithRed:31.0/255 green:185.0/255 blue:34.0/255 alpha:1]
+#define kEAEAEA [UIColor colorWithRed:234.0/255 green:234.0/255 blue:234.0/255 alpha:1]
+#define kGreenColor [UIColor colorWithRed:101.0/255 green:181.0/255 blue:12.0/255 alpha:1]
+#define kDateBlackColor [UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1]
+#define kDateColor [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:1]
+#define kTextColor [UIColor colorWithRed:212.0/255 green:212.0/255 blue:212.0/255 alpha:1]
+#define kBlueColor [UIColor colorWithRed:28.0/255 green:120.0/255 blue:246.0/255 alpha:1]
+#define kRedColor [UIColor colorWithRed:205.0/255 green:55.0/255 blue:0.0/255 alpha:1]
+#define kOrangeColor [UIColor colorWithRed:255.0/255 green:121.0/255 blue:0.0/255 alpha:1]//ff7900
+#define kfafafa [UIColor colorWithRed:250.0/255 green:250.0/255 blue:250.0/255 alpha:1]
+#define ke6e6e6 [UIColor colorWithRed:230.0/255 green:230.0/255 blue:230.0/255 alpha:0.5]
+
+#define kTextFieldUnSelected [UIColor colorWithRed:183.0/255 green:183.0/255 blue:183.0/255 alpha:1]
+
+#define kf2f2f2 [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]//f2f2f2
+
+#define kShadowColor [UIColor colorWithRed:87.0/255 green:87.0/255 blue:87.0/255 alpha:1]
+
+//#define kc0c0c0 [UIColor colorWithRed:192.0/255 green:192.0/255 blue:192.0/255 alpha:1]
+#define kc0c0c0 [UIColor colorWithRed:152.0/255 green:152.0/255 blue:152.0/255 alpha:1] //989898
+#define kWhiteColor [UIColor whiteColor]
+#define kClearColor [UIColor clearColor]
+//#define kBlackColor [UIColor blackColor]
+#define kBlackColor [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1]//404040
+#define kd0d0d0 [UIColor colorWithRed:208.0/255 green:208.0/255 blue:208.0/255 alpha:1]//d0d0d0
+
+
+
+
+
+
+
+#define kbg @"bg"
+#define kCloseEye @"closeEye"
+#define kOpenEye @"openEye"
+#define kRight @"rignht"
+#define kShake @"shake"
+#define kNoti   @"noti"
+#define kFontColor [[NSUserDefaults standardUserDefaults] valueForKey:@"fontColor"]
+#define kColorVerson [[NSUserDefaults standardUserDefaults] valueForKey:@"colorVerson"]
+
+
+
+#define kUserId [[NSUserDefaults standardUserDefaults] valueForKey:@"Id"]
+#define kMobile [[NSUserDefaults standardUserDefaults] valueForKey:@"mobile"]
+#define kIsVip [[NSUserDefaults standardUserDefaults] valueForKey:@"isVip"]
+
+#define UDID [[NSUserDefaults standardUserDefaults] valueForKey:@"UDID"]
+#endif
