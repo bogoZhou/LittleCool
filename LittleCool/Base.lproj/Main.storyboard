@@ -170,7 +170,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-d9-ayT">
-                                <rect key="frame" x="142" y="500" width="90" height="90"/>
+                                <rect key="frame" x="142" y="545" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="99" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS6-gz-Tdp">
@@ -192,7 +192,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mp1-dU-Gmp">
-                                <rect key="frame" x="138" y="495" width="100" height="100"/>
+                                <rect key="frame" x="138" y="540" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="我要配音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKF-4N-Vsl">
@@ -213,7 +213,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btc-Lp-eeD">
-                                <rect key="frame" x="65" y="525" width="40" height="40"/>
+                                <rect key="frame" x="65" y="570" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="headset"/>
                                 <connections>
@@ -221,39 +221,39 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLQ-Ij-7TI">
-                                <rect key="frame" x="270" y="525" width="40" height="40"/>
+                                <rect key="frame" x="270" y="570" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <state key="normal" image="delete"/>
                                 <connections>
                                     <action selector="deleteButtonClick:" destination="IDB-Hp-O59" eventType="touchUpInside" id="yce-az-8h4"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJl-xs-rJj">
-                                <rect key="frame" x="0.0" y="410" width="375" height="82"/>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJl-xs-rJj">
+                                <rect key="frame" x="0.0" y="455" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sog-g4-x8E">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sog-g4-x8E">
                                         <rect key="frame" x="112" y="7" width="150" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="sliderOneChangedFun:" destination="IDB-Hp-O59" eventType="touchUpInside" id="qvk-S2-D6Y"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-rn-zFw">
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GBY-rn-zFw">
                                         <rect key="frame" x="112" y="45" width="150" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="sliderTwoChangedFun:" destination="IDB-Hp-O59" eventType="valueChanged" id="msj-Il-gD8"/>
+                                            <action selector="sliderTwoChangedFun:" destination="IDB-Hp-O59" eventType="touchUpInside" id="spK-te-2ay"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="混音比例" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-tx-Cuo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="原视频音" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-tx-Cuo">
                                         <rect key="frame" x="50" y="12" width="56" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="配音声调" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-6g-Dlr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="配音声音" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4Z-6g-Dlr">
                                         <rect key="frame" x="50" y="50" width="56" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -261,9 +261,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j03-5G-nc6">
-                                        <rect key="frame" x="276" y="28" width="30" height="30"/>
+                                        <rect key="frame" x="276" y="21" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="watermark"/>
+                                        <state key="normal" image="shuiyin"/>
                                         <connections>
                                             <action selector="waterMarkButtonClick:" destination="IDB-Hp-O59" eventType="touchUpInside" id="eQp-yP-5rL"/>
                                         </connections>
@@ -271,6 +271,20 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="试听" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZh-TD-p8X">
+                                <rect key="frame" x="64" y="614" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="删除" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-In-fVw">
+                                <rect key="frame" x="269" y="614" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -281,6 +295,8 @@
                         <outlet property="labelAudioContent" destination="VpL-Ci-4kg" id="EUD-OQ-1lG"/>
                         <outlet property="labelAudioName" destination="e7h-bW-5KQ" id="BSK-Hd-vUM"/>
                         <outlet property="labelPeiyin" destination="NtY-sg-oCU" id="UYY-Sj-6fc"/>
+                        <outlet property="labelShanchu" destination="U7v-In-fVw" id="Jzb-Cr-Lmh"/>
+                        <outlet property="labelShiting" destination="yZh-TD-p8X" id="smj-BB-8zp"/>
                         <outlet property="listenButton" destination="btc-Lp-eeD" id="CPb-Bq-qWh"/>
                         <outlet property="sliderOne" destination="sog-g4-x8E" id="Nwe-Zd-aFX"/>
                         <outlet property="sliderTwo" destination="GBY-rn-zFw" id="Veh-9n-hf8"/>
@@ -377,6 +393,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcX-a5-oKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4264.8000000000002" y="138.98050974512745"/>
+        </scene>
+        <!--Play View Controller-->
+        <scene sceneID="bVP-cl-eDt">
+            <objects>
+                <viewController storyboardIdentifier="PlayViewController" id="NjI-tw-ZPE" customClass="PlayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5B0-gg-1kn"/>
+                        <viewControllerLayoutGuide type="bottom" id="iNh-si-b4m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GrY-Ma-caN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66d-Mf-6Ru">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="playView" destination="66d-Mf-6Ru" id="17f-kW-izt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnv-ml-eB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5004" y="138.98050974512745"/>
         </scene>
         <!--Mine View Controller-->
         <scene sceneID="lah-Y1-KaG">
@@ -1381,8 +1425,8 @@
         <image name="return02" width="18" height="33"/>
         <image name="scan" width="290" height="291"/>
         <image name="selecte" width="20" height="20"/>
+        <image name="shuiyin" width="84" height="84"/>
         <image name="voice" width="130" height="130"/>
-        <image name="watermark" width="40" height="40"/>
         <image name="扫一扫框" width="360" height="360"/>
     </resources>
 </document>

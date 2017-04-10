@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - ImagePlayerView (2.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
   - WeChatSDK-iOS (1.7.3)
@@ -24,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - FMDB (~> 2.6.2)
+  - ImagePlayerView (~> 2.0.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
   - WeChatSDK-iOS (~> 1.7.3)
@@ -31,10 +33,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  ImagePlayerView: e162d73d3a1d427a43dc6a52d2c0baf4c7e226f8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   WeChatSDK-iOS: 5ab1275da6f245c41232870f8215998c59cbb539
 
-PODFILE CHECKSUM: 38705068ebca6a56d203bfd81cf5ac2dc69a0b5f
+PODFILE CHECKSUM: a457bf8a39a26e0d03ed3e5d9f1dfce61208e03a
 
 COCOAPODS: 1.1.1

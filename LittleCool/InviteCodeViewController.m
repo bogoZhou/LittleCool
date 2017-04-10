@@ -98,12 +98,12 @@
         if ([responseBody[@"code"] integerValue] == 200) {
             kAlert(@"绑定成功");
             [self checkIsBind];
-            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"绑定成功" message:@"请重新打开App以获得VIP功能" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *newZanList = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-
-            }];
-            [alert addAction:newZanList];
-            [self presentViewController:alert animated:YES completion:nil];
+//            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"绑定成功" message:@"请重新打开App以获得VIP功能" preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction *newZanList = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//            }];
+//            [alert addAction:newZanList];
+//            [self presentViewController:alert animated:YES completion:nil];
         }else{
             kAlert(responseBody[@"message"]);
         }

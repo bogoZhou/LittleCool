@@ -39,5 +39,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonWaterMark;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelShiting;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelShanchu;
 @end

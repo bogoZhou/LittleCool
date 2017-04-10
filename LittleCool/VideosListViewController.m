@@ -12,7 +12,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "AssetModel.h"
 #import <Photos/Photos.h>
-
+#import "PlayViewController.h"
 #define kCellName   @"VideosListTableViewCell"
 
 @interface VideosListViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -282,6 +282,12 @@
         AssetModel *model = _dataArray[indexPath.row];
         model.type = model.type.integerValue == 0 ? @"1" : @"0";
         [_tableView reloadData];
+    }else{
+        AssetModel *model = _dataArray[indexPath.row];
+        UIStoryboard *storyboard = kMainStroyboard;
+        PlayViewController *playVC = [storyboard instantiateViewControllerWithIdentifier:@"PlayViewController"];
+        playVC.url = model.url;
+        [self.navigationController pushViewController:playVC animated:YES];
     }
 }
 

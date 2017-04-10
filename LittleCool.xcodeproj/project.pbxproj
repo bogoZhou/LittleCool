@@ -18,6 +18,8 @@
 		DF0F47101E77D7A100413F3B /* VideosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0F470F1E77D7A100413F3B /* VideosModel.m */; };
 		DF0F47131E77F03900413F3B /* ChooseLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0F47121E77F03900413F3B /* ChooseLabelViewController.m */; };
 		DF19101F1E8279150063E018 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF19101E1E8279150063E018 /* SettingTableViewCell.m */; };
+		DF4B28C01E9B2E990073B073 /* BGShareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4B28BF1E9B2E990073B073 /* BGShareHelper.m */; };
+		DF4B28C21E9B38B70073B073 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4B28C11E9B38B70073B073 /* Social.framework */; };
 		DF4BE3901E76451700661D58 /* Recourses.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4BE38F1E76451700661D58 /* Recourses.xcassets */; };
 		DF4BE3B91E765E7F00661D58 /* BGCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4BE3B81E765E7F00661D58 /* BGCollectionView.m */; };
 		DF4BE3BD1E76620600661D58 /* BGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4BE3BB1E76620600661D58 /* BGCollectionViewCell.m */; };
@@ -89,6 +91,34 @@
 		DF8D1AC91E7E449F00E1E289 /* AssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1AC81E7E449F00E1E289 /* AssetModel.m */; };
 		DF8D1ACC1E7E692500E1E289 /* WechatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1ACB1E7E692500E1E289 /* WechatLoginViewController.m */; };
 		DF8D1AD01E7EA5A000E1E289 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1ACE1E7EA5A000E1E289 /* UncaughtExceptionHandler.m */; };
+		DFAF01C71E8D4393005B7296 /* AudioDecodeOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFAF018D1E8D4393005B7296 /* AudioDecodeOperation.mm */; };
+		DFAF01C81E8D4393005B7296 /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01901E8D4393005B7296 /* CAStreamBasicDescription.cpp */; };
+		DFAF01C91E8D4393005B7296 /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01921E8D4393005B7296 /* CAXException.cpp */; };
+		DFAF01CA1E8D4393005B7296 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01981E8D4393005B7296 /* amrFileCodec.mm */; };
+		DFAF01CB1E8D4393005B7296 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFAF019A1E8D4393005B7296 /* wav.mm */; };
+		DFAF01CC1E8D4393005B7296 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF019C1E8D4393005B7296 /* libopencore-amrnb.a */; };
+		DFAF01CD1E8D4393005B7296 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF019D1E8D4393005B7296 /* libopencore-amrwb.a */; };
+		DFAF01CE1E8D4393005B7296 /* AudioEncodeOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01A61E8D4393005B7296 /* AudioEncodeOperation.m */; };
+		DFAF01CF1E8D4393005B7296 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF01A91E8D4393005B7296 /* libmp3lame.a */; };
+		DFAF01D01E8D4393005B7296 /* AudioSoundTouchOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01AC1E8D4393005B7296 /* AudioSoundTouchOperation.mm */; };
+		DFAF01D11E8D4393005B7296 /* WaveHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01AD1E8D4393005B7296 /* WaveHeader.cpp */; };
+		DFAF01D21E8D4393005B7296 /* AAFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01B01E8D4393005B7296 /* AAFilter.cpp */; };
+		DFAF01D31E8D4393005B7296 /* BPMDetect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01B21E8D4393005B7296 /* BPMDetect.cpp */; };
+		DFAF01D41E8D4393005B7296 /* cpu_detect_x86.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01B51E8D4393005B7296 /* cpu_detect_x86.cpp */; };
+		DFAF01D51E8D4393005B7296 /* FIFOSampleBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01B61E8D4393005B7296 /* FIFOSampleBuffer.cpp */; };
+		DFAF01D61E8D4393005B7296 /* FIRFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01B91E8D4393005B7296 /* FIRFilter.cpp */; };
+		DFAF01D71E8D4393005B7296 /* mmx_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01BB1E8D4393005B7296 /* mmx_optimized.cpp */; };
+		DFAF01D81E8D4393005B7296 /* PeakFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01BC1E8D4393005B7296 /* PeakFinder.cpp */; };
+		DFAF01D91E8D4393005B7296 /* RateTransposer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01BE1E8D4393005B7296 /* RateTransposer.cpp */; };
+		DFAF01DA1E8D4393005B7296 /* SoundTouch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01C01E8D4393005B7296 /* SoundTouch.cpp */; };
+		DFAF01DB1E8D4393005B7296 /* sse_optimized.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01C31E8D4393005B7296 /* sse_optimized.cpp */; };
+		DFAF01DC1E8D4393005B7296 /* TDStretch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01C51E8D4393005B7296 /* TDStretch.cpp */; };
+		DFAF01DE1E8D4414005B7296 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF01DD1E8D4414005B7296 /* QuartzCore.framework */; };
+		DFAF01E01E8D4424005B7296 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF01DF1E8D4424005B7296 /* AudioToolbox.framework */; };
+		DFAF01E21E8D4433005B7296 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF01E11E8D4433005B7296 /* CoreGraphics.framework */; };
+		DFAF01E61E8D445C005B7296 /* AudioConvert.mm in Sources */ = {isa = PBXBuildFile; fileRef = DFAF01E41E8D445C005B7296 /* AudioConvert.mm */; };
+		DFC0678F1E8DFF06003065B0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0678E1E8DFF06003065B0 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		DFC067921E8E0F41003065B0 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC067911E8E0F41003065B0 /* PlayViewController.m */; };
 		DFCD29E61E75361D00B23CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD29E51E75361D00B23CA6 /* main.m */; };
 		DFCD29E91E75361D00B23CA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD29E81E75361D00B23CA6 /* AppDelegate.m */; };
 		DFCD29EF1E75361D00B23CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD29ED1E75361D00B23CA6 /* Main.storyboard */; };
@@ -131,6 +161,7 @@
 		DFCD2A841E75489700B23CA6 /* BorderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A7F1E75489700B23CA6 /* BorderHelper.m */; };
 		DFCD2A851E75489700B23CA6 /* TakePicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A811E75489700B23CA6 /* TakePicDelegate.m */; };
 		DFCD2A891E75490D00B23CA6 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A881E75490D00B23CA6 /* BaseNavigationViewController.m */; };
+		DFEEF7971E8BE0FF00AA6913 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEEF7961E8BE0FF00AA6913 /* AssetsLibrary.framework */; };
 		EBF2925A62A7B5A0D6F24DA8 /* libPods-LittleCool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC095317616E3B31EDC976B9 /* libPods-LittleCool.a */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +189,9 @@
 		DF0F47121E77F03900413F3B /* ChooseLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLabelViewController.m; sourceTree = "<group>"; };
 		DF19101D1E8279150063E018 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		DF19101E1E8279150063E018 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
+		DF4B28BE1E9B2E990073B073 /* BGShareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGShareHelper.h; sourceTree = "<group>"; };
+		DF4B28BF1E9B2E990073B073 /* BGShareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGShareHelper.m; sourceTree = "<group>"; };
+		DF4B28C11E9B38B70073B073 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DF4BE38F1E76451700661D58 /* Recourses.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Recourses.xcassets; sourceTree = "<group>"; };
 		DF4BE3B71E765E7F00661D58 /* BGCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGCollectionView.h; sourceTree = "<group>"; };
 		DF4BE3B81E765E7F00661D58 /* BGCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGCollectionView.m; sourceTree = "<group>"; };
@@ -294,6 +328,65 @@
 		DF8D1ACB1E7E692500E1E289 /* WechatLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatLoginViewController.m; sourceTree = "<group>"; };
 		DF8D1ACD1E7EA5A000E1E289 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		DF8D1ACE1E7EA5A000E1E289 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		DFAF018C1E8D4393005B7296 /* AudioDecodeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDecodeOperation.h; sourceTree = "<group>"; };
+		DFAF018D1E8D4393005B7296 /* AudioDecodeOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioDecodeOperation.mm; sourceTree = "<group>"; };
+		DFAF018E1E8D4393005B7296 /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		DFAF018F1E8D4393005B7296 /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		DFAF01901E8D4393005B7296 /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		DFAF01911E8D4393005B7296 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		DFAF01921E8D4393005B7296 /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		DFAF01931E8D4393005B7296 /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		DFAF01971E8D4393005B7296 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		DFAF01981E8D4393005B7296 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		DFAF01991E8D4393005B7296 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		DFAF019A1E8D4393005B7296 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		DFAF019C1E8D4393005B7296 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		DFAF019D1E8D4393005B7296 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		DFAF019F1E8D4393005B7296 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		DFAF01A01E8D4393005B7296 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		DFAF01A21E8D4393005B7296 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		DFAF01A31E8D4393005B7296 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
+		DFAF01A51E8D4393005B7296 /* AudioEncodeOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioEncodeOperation.h; sourceTree = "<group>"; };
+		DFAF01A61E8D4393005B7296 /* AudioEncodeOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioEncodeOperation.m; sourceTree = "<group>"; };
+		DFAF01A81E8D4393005B7296 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		DFAF01A91E8D4393005B7296 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		DFAF01AB1E8D4393005B7296 /* AudioSoundTouchOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioSoundTouchOperation.h; sourceTree = "<group>"; };
+		DFAF01AC1E8D4393005B7296 /* AudioSoundTouchOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioSoundTouchOperation.mm; sourceTree = "<group>"; };
+		DFAF01AD1E8D4393005B7296 /* WaveHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaveHeader.cpp; sourceTree = "<group>"; };
+		DFAF01AE1E8D4393005B7296 /* WaveHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveHeader.h; sourceTree = "<group>"; };
+		DFAF01B01E8D4393005B7296 /* AAFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AAFilter.cpp; sourceTree = "<group>"; };
+		DFAF01B11E8D4393005B7296 /* AAFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAFilter.h; sourceTree = "<group>"; };
+		DFAF01B21E8D4393005B7296 /* BPMDetect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BPMDetect.cpp; sourceTree = "<group>"; };
+		DFAF01B31E8D4393005B7296 /* BPMDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPMDetect.h; sourceTree = "<group>"; };
+		DFAF01B41E8D4393005B7296 /* cpu_detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_detect.h; sourceTree = "<group>"; };
+		DFAF01B51E8D4393005B7296 /* cpu_detect_x86.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu_detect_x86.cpp; sourceTree = "<group>"; };
+		DFAF01B61E8D4393005B7296 /* FIFOSampleBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIFOSampleBuffer.cpp; sourceTree = "<group>"; };
+		DFAF01B71E8D4393005B7296 /* FIFOSampleBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSampleBuffer.h; sourceTree = "<group>"; };
+		DFAF01B81E8D4393005B7296 /* FIFOSamplePipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIFOSamplePipe.h; sourceTree = "<group>"; };
+		DFAF01B91E8D4393005B7296 /* FIRFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FIRFilter.cpp; sourceTree = "<group>"; };
+		DFAF01BA1E8D4393005B7296 /* FIRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIRFilter.h; sourceTree = "<group>"; };
+		DFAF01BB1E8D4393005B7296 /* mmx_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mmx_optimized.cpp; sourceTree = "<group>"; };
+		DFAF01BC1E8D4393005B7296 /* PeakFinder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeakFinder.cpp; sourceTree = "<group>"; };
+		DFAF01BD1E8D4393005B7296 /* PeakFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeakFinder.h; sourceTree = "<group>"; };
+		DFAF01BE1E8D4393005B7296 /* RateTransposer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RateTransposer.cpp; sourceTree = "<group>"; };
+		DFAF01BF1E8D4393005B7296 /* RateTransposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateTransposer.h; sourceTree = "<group>"; };
+		DFAF01C01E8D4393005B7296 /* SoundTouch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTouch.cpp; sourceTree = "<group>"; };
+		DFAF01C11E8D4393005B7296 /* SoundTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTouch.h; sourceTree = "<group>"; };
+		DFAF01C21E8D4393005B7296 /* soundtouch_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = soundtouch_config.h; sourceTree = "<group>"; };
+		DFAF01C31E8D4393005B7296 /* sse_optimized.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sse_optimized.cpp; sourceTree = "<group>"; };
+		DFAF01C41E8D4393005B7296 /* STTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTypes.h; sourceTree = "<group>"; };
+		DFAF01C51E8D4393005B7296 /* TDStretch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TDStretch.cpp; sourceTree = "<group>"; };
+		DFAF01C61E8D4393005B7296 /* TDStretch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDStretch.h; sourceTree = "<group>"; };
+		DFAF01DD1E8D4414005B7296 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DFAF01DF1E8D4424005B7296 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DFAF01E11E8D4433005B7296 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DFAF01E31E8D445C005B7296 /* AudioConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioConvert.h; sourceTree = "<group>"; };
+		DFAF01E41E8D445C005B7296 /* AudioConvert.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioConvert.mm; sourceTree = "<group>"; };
+		DFAF01E51E8D445C005B7296 /* AudioDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDefine.h; sourceTree = "<group>"; };
+		DFC0678D1E8DFF06003065B0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DFC0678E1E8DFF06003065B0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DFC067901E8E0F41003065B0 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		DFC067911E8E0F41003065B0 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		DFCD29E11E75361D00B23CA6 /* LittleCool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleCool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCD29E51E75361D00B23CA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFCD29E71E75361D00B23CA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -383,6 +476,7 @@
 		DFCD2A811E75489700B23CA6 /* TakePicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePicDelegate.m; sourceTree = "<group>"; };
 		DFCD2A871E75490D00B23CA6 /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		DFCD2A881E75490D00B23CA6 /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
+		DFEEF7961E8BE0FF00AA6913 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		EC095317616E3B31EDC976B9 /* libPods-LittleCool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LittleCool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -391,8 +485,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF4B28C21E9B38B70073B073 /* Social.framework in Frameworks */,
+				DFAF01E21E8D4433005B7296 /* CoreGraphics.framework in Frameworks */,
+				DFAF01E01E8D4424005B7296 /* AudioToolbox.framework in Frameworks */,
+				DFAF01DE1E8D4414005B7296 /* QuartzCore.framework in Frameworks */,
+				DFEEF7971E8BE0FF00AA6913 /* AssetsLibrary.framework in Frameworks */,
+				DFAF01CC1E8D4393005B7296 /* libopencore-amrnb.a in Frameworks */,
 				DF8D1A531E7A3D1F00E1E289 /* Photos.framework in Frameworks */,
 				DF8D1A541E7A3D1F00E1E289 /* PhotosUI.framework in Frameworks */,
+				DFAF01CD1E8D4393005B7296 /* libopencore-amrwb.a in Frameworks */,
+				DFAF01CF1E8D4393005B7296 /* libmp3lame.a in Frameworks */,
 				DF8D1A0A1E79035C00E1E289 /* AVFoundation.framework in Frameworks */,
 				DF8D1A321E792FA500E1E289 /* libmp3lame.a in Frameworks */,
 				DF8D1A0B1E79035C00E1E289 /* AVKit.framework in Frameworks */,
@@ -415,6 +517,11 @@
 		6E7FCDC77D8F3F19977BC1F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF4B28C11E9B38B70073B073 /* Social.framework */,
+				DFAF01E11E8D4433005B7296 /* CoreGraphics.framework */,
+				DFAF01DF1E8D4424005B7296 /* AudioToolbox.framework */,
+				DFAF01DD1E8D4414005B7296 /* QuartzCore.framework */,
+				DFEEF7961E8BE0FF00AA6913 /* AssetsLibrary.framework */,
 				DF8D1A511E7A3D1F00E1E289 /* Photos.framework */,
 				DF8D1A521E7A3D1F00E1E289 /* PhotosUI.framework */,
 				DF8D1A081E79035C00E1E289 /* AVFoundation.framework */,
@@ -536,6 +643,8 @@
 				DF0F46F51E77965C00413F3B /* VideosListViewController.m */,
 				DF0F46F71E77967D00413F3B /* VideosListTableViewCell.h */,
 				DF0F46F81E77967D00413F3B /* VideosListTableViewCell.m */,
+				DFC067901E8E0F41003065B0 /* PlayViewController.h */,
+				DFC067911E8E0F41003065B0 /* PlayViewController.m */,
 			);
 			name = "视频列表";
 			sourceTree = "<group>";
@@ -758,6 +867,139 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
+		DFAF018B1E8D4393005B7296 /* AudioDecode */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF018C1E8D4393005B7296 /* AudioDecodeOperation.h */,
+				DFAF018D1E8D4393005B7296 /* AudioDecodeOperation.mm */,
+				DFAF018E1E8D4393005B7296 /* CADebugMacros.h */,
+				DFAF018F1E8D4393005B7296 /* CAMath.h */,
+				DFAF01901E8D4393005B7296 /* CAStreamBasicDescription.cpp */,
+				DFAF01911E8D4393005B7296 /* CAStreamBasicDescription.h */,
+				DFAF01921E8D4393005B7296 /* CAXException.cpp */,
+				DFAF01931E8D4393005B7296 /* CAXException.h */,
+			);
+			path = AudioDecode;
+			sourceTree = "<group>";
+		};
+		DFAF01941E8D4393005B7296 /* AudioEncode */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01951E8D4393005B7296 /* AudioToAmr */,
+				DFAF01A41E8D4393005B7296 /* AudioToMp3 */,
+			);
+			path = AudioEncode;
+			sourceTree = "<group>";
+		};
+		DFAF01951E8D4393005B7296 /* AudioToAmr */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01961E8D4393005B7296 /* amrwapper */,
+				DFAF019B1E8D4393005B7296 /* lib */,
+				DFAF019E1E8D4393005B7296 /* opencore-amrnb */,
+				DFAF01A11E8D4393005B7296 /* opencore-amrwb */,
+			);
+			path = AudioToAmr;
+			sourceTree = "<group>";
+		};
+		DFAF01961E8D4393005B7296 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01971E8D4393005B7296 /* amrFileCodec.h */,
+				DFAF01981E8D4393005B7296 /* amrFileCodec.mm */,
+				DFAF01991E8D4393005B7296 /* wav.h */,
+				DFAF019A1E8D4393005B7296 /* wav.mm */,
+			);
+			path = amrwapper;
+			sourceTree = "<group>";
+		};
+		DFAF019B1E8D4393005B7296 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF019C1E8D4393005B7296 /* libopencore-amrnb.a */,
+				DFAF019D1E8D4393005B7296 /* libopencore-amrwb.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		DFAF019E1E8D4393005B7296 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF019F1E8D4393005B7296 /* interf_dec.h */,
+				DFAF01A01E8D4393005B7296 /* interf_enc.h */,
+			);
+			path = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		DFAF01A11E8D4393005B7296 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01A21E8D4393005B7296 /* dec_if.h */,
+				DFAF01A31E8D4393005B7296 /* if_rom.h */,
+			);
+			path = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		DFAF01A41E8D4393005B7296 /* AudioToMp3 */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01A51E8D4393005B7296 /* AudioEncodeOperation.h */,
+				DFAF01A61E8D4393005B7296 /* AudioEncodeOperation.m */,
+				DFAF01A71E8D4393005B7296 /* lame */,
+			);
+			path = AudioToMp3;
+			sourceTree = "<group>";
+		};
+		DFAF01A71E8D4393005B7296 /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01A81E8D4393005B7296 /* lame.h */,
+				DFAF01A91E8D4393005B7296 /* libmp3lame.a */,
+			);
+			path = lame;
+			sourceTree = "<group>";
+		};
+		DFAF01AA1E8D4393005B7296 /* AudioSoundTouch */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01AB1E8D4393005B7296 /* AudioSoundTouchOperation.h */,
+				DFAF01AC1E8D4393005B7296 /* AudioSoundTouchOperation.mm */,
+				DFAF01AD1E8D4393005B7296 /* WaveHeader.cpp */,
+				DFAF01AE1E8D4393005B7296 /* WaveHeader.h */,
+			);
+			path = AudioSoundTouch;
+			sourceTree = "<group>";
+		};
+		DFAF01AF1E8D4393005B7296 /* SoundTouch */ = {
+			isa = PBXGroup;
+			children = (
+				DFAF01B01E8D4393005B7296 /* AAFilter.cpp */,
+				DFAF01B11E8D4393005B7296 /* AAFilter.h */,
+				DFAF01B21E8D4393005B7296 /* BPMDetect.cpp */,
+				DFAF01B31E8D4393005B7296 /* BPMDetect.h */,
+				DFAF01B41E8D4393005B7296 /* cpu_detect.h */,
+				DFAF01B51E8D4393005B7296 /* cpu_detect_x86.cpp */,
+				DFAF01B61E8D4393005B7296 /* FIFOSampleBuffer.cpp */,
+				DFAF01B71E8D4393005B7296 /* FIFOSampleBuffer.h */,
+				DFAF01B81E8D4393005B7296 /* FIFOSamplePipe.h */,
+				DFAF01B91E8D4393005B7296 /* FIRFilter.cpp */,
+				DFAF01BA1E8D4393005B7296 /* FIRFilter.h */,
+				DFAF01BB1E8D4393005B7296 /* mmx_optimized.cpp */,
+				DFAF01BC1E8D4393005B7296 /* PeakFinder.cpp */,
+				DFAF01BD1E8D4393005B7296 /* PeakFinder.h */,
+				DFAF01BE1E8D4393005B7296 /* RateTransposer.cpp */,
+				DFAF01BF1E8D4393005B7296 /* RateTransposer.h */,
+				DFAF01C01E8D4393005B7296 /* SoundTouch.cpp */,
+				DFAF01C11E8D4393005B7296 /* SoundTouch.h */,
+				DFAF01C21E8D4393005B7296 /* soundtouch_config.h */,
+				DFAF01C31E8D4393005B7296 /* sse_optimized.cpp */,
+				DFAF01C41E8D4393005B7296 /* STTypes.h */,
+				DFAF01C51E8D4393005B7296 /* TDStretch.cpp */,
+				DFAF01C61E8D4393005B7296 /* TDStretch.h */,
+			);
+			path = SoundTouch;
+			sourceTree = "<group>";
+		};
 		DFCD29D81E75361D00B23CA6 = {
 			isa = PBXGroup;
 			children = (
@@ -949,6 +1191,15 @@
 		DFCD2A791E75485F00B23CA6 /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				DFC0678D1E8DFF06003065B0 /* Reachability.h */,
+				DFC0678E1E8DFF06003065B0 /* Reachability.m */,
+				DFAF01E31E8D445C005B7296 /* AudioConvert.h */,
+				DFAF01E41E8D445C005B7296 /* AudioConvert.mm */,
+				DFAF01E51E8D445C005B7296 /* AudioDefine.h */,
+				DFAF018B1E8D4393005B7296 /* AudioDecode */,
+				DFAF01941E8D4393005B7296 /* AudioEncode */,
+				DFAF01AA1E8D4393005B7296 /* AudioSoundTouch */,
+				DFAF01AF1E8D4393005B7296 /* SoundTouch */,
 				DF4DD4E41E8516FF00C4343C /* VideoService.h */,
 				DF4DD4E51E8516FF00C4343C /* VideoService.m */,
 				DF8D1ACD1E7EA5A000E1E289 /* UncaughtExceptionHandler.h */,
@@ -982,6 +1233,8 @@
 				DFCD2A811E75489700B23CA6 /* TakePicDelegate.m */,
 				DF8D1A421E7A1FF600E1E289 /* BGScanQRCodeHelper.h */,
 				DF8D1A431E7A1FF600E1E289 /* BGScanQRCodeHelper.m */,
+				DF4B28BE1E9B2E990073B073 /* BGShareHelper.h */,
+				DF4B28BF1E9B2E990073B073 /* BGShareHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -1116,6 +1369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFCD2A781E75485B00B23CA6 /* UIView+WebCacheOperation.m in Sources */,
+				DFAF01DB1E8D4393005B7296 /* sse_optimized.cpp in Sources */,
 				DFCD2A651E75485B00B23CA6 /* JumpAnimation.m in Sources */,
 				DFCD29E91E75361D00B23CA6 /* AppDelegate.m in Sources */,
 				DF8D1A281E790B1300E1E289 /* TYVideoPlayerTrack.m in Sources */,
@@ -1128,6 +1382,9 @@
 				DFCD2A141E75439A00B23CA6 /* MineViewController.m in Sources */,
 				DFCD2A701E75485B00B23CA6 /* SDWebImageManager.m in Sources */,
 				DF0F47101E77D7A100413F3B /* VideosModel.m in Sources */,
+				DFC0678F1E8DFF06003065B0 /* Reachability.m in Sources */,
+				DFAF01D81E8D4393005B7296 /* PeakFinder.cpp in Sources */,
+				DFC067921E8E0F41003065B0 /* PlayViewController.m in Sources */,
 				DF7510221E769028009AB14A /* MoreViewController.m in Sources */,
 				DF8D1AB01E7A567600E1E289 /* ZLPhotoPickerCollectionView.m in Sources */,
 				DF19101F1E8279150063E018 /* SettingTableViewCell.m in Sources */,
@@ -1137,16 +1394,19 @@
 				DF75102A1E769CBD009AB14A /* SignViewController.m in Sources */,
 				DF8D1ABC1E7A568400E1E289 /* DALabeledCircularProgressView.m in Sources */,
 				DF8D1A221E790B1300E1E289 /* TYVideoBottomView.m in Sources */,
+				DFAF01C71E8D4393005B7296 /* AudioDecodeOperation.mm in Sources */,
 				DF8D1A9F1E7A567600E1E289 /* ZLCameraView.m in Sources */,
 				DF8D1AAA1E7A567600E1E289 /* ZLPhotoPickerDatas.m in Sources */,
 				DFCD2A6D1E75485B00B23CA6 /* SDWebImageDecoder.m in Sources */,
 				DF8D1AC91E7E449F00E1E289 /* AssetModel.m in Sources */,
+				DFAF01DC1E8D4393005B7296 /* TDStretch.cpp in Sources */,
 				DF0F46F91E77967D00413F3B /* VideosListTableViewCell.m in Sources */,
 				DF8D1A411E7A1D8100E1E289 /* MyPartViewController.m in Sources */,
 				DF4BE3BD1E76620600661D58 /* BGCollectionViewCell.m in Sources */,
 				DFCD2A891E75490D00B23CA6 /* BaseNavigationViewController.m in Sources */,
 				DF8D1A441E7A1FF600E1E289 /* BGScanQRCodeHelper.m in Sources */,
 				DF8D1AA91E7A567600E1E289 /* ZLPhotoAssets.m in Sources */,
+				DFAF01D51E8D4393005B7296 /* FIFOSampleBuffer.cpp in Sources */,
 				DF8D1AD01E7EA5A000E1E289 /* UncaughtExceptionHandler.m in Sources */,
 				DF8D1AA41E7A567600E1E289 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				DF0F47021E77CD6100413F3B /* SSKeychainQuery.m in Sources */,
@@ -1168,9 +1428,15 @@
 				DF8D1A4D1E7A309E00E1E289 /* UserAccountViewController.m in Sources */,
 				DF8D1A241E790B1300E1E289 /* TYVideoErrorView.m in Sources */,
 				DF8D1A211E790B1300E1E289 /* TYLoadingView.m in Sources */,
+				DFAF01E61E8D445C005B7296 /* AudioConvert.mm in Sources */,
+				DF4B28C01E9B2E990073B073 /* BGShareHelper.m in Sources */,
+				DFAF01D31E8D4393005B7296 /* BPMDetect.cpp in Sources */,
+				DFAF01D71E8D4393005B7296 /* mmx_optimized.cpp in Sources */,
 				DFCD2A751E75485B00B23CA6 /* UIImage+WebP.m in Sources */,
 				DFCD2A6A1E75485B00B23CA6 /* NSData+ImageContentType.m in Sources */,
 				DFCD2A6C1E75485B00B23CA6 /* SDWebImageCompat.m in Sources */,
+				DFAF01C91E8D4393005B7296 /* CAXException.cpp in Sources */,
+				DFAF01CE1E8D4393005B7296 /* AudioEncodeOperation.m in Sources */,
 				DFCD2A5F1E75485B00B23CA6 /* BGDateHelper.m in Sources */,
 				DF8D1A271E790B1300E1E289 /* TYVideoPlayerController.m in Sources */,
 				DFCD2A191E75455900B23CA6 /* BaseTabBarViewController.m in Sources */,
@@ -1193,10 +1459,14 @@
 				DFCD2A851E75489700B23CA6 /* TakePicDelegate.m in Sources */,
 				DF8D1AA21E7A567600E1E289 /* ZLPhotoRect.m in Sources */,
 				DF8D1A4C1E7A309E00E1E289 /* WithDrawViewController.m in Sources */,
+				DFAF01DA1E8D4393005B7296 /* SoundTouch.cpp in Sources */,
+				DFAF01D01E8D4393005B7296 /* AudioSoundTouchOperation.mm in Sources */,
+				DFAF01D61E8D4393005B7296 /* FIRFilter.cpp in Sources */,
 				DF0F47011E77CD6100413F3B /* SSKeychain.m in Sources */,
 				DF8D1A3F1E7A1D8100E1E289 /* VerifyPartViewController.m in Sources */,
 				DFCD2A741E75485B00B23CA6 /* UIImage+MultiFormat.m in Sources */,
 				DF8D1A9E1E7A567600E1E289 /* ZLCameraImageView.m in Sources */,
+				DFAF01C81E8D4393005B7296 /* CAStreamBasicDescription.cpp in Sources */,
 				DFCD2A721E75485B00B23CA6 /* UIButton+WebCache.m in Sources */,
 				DF8D1A401E7A1D8100E1E289 /* ScanfQRCodeViewController.m in Sources */,
 				DFCD29E61E75361D00B23CA6 /* main.m in Sources */,
@@ -1205,8 +1475,11 @@
 				DFCD2A691E75485B00B23CA6 /* MKAnnotationView+WebCache.m in Sources */,
 				DF0F47051E77CD6B00413F3B /* DLUDID.m in Sources */,
 				DFCD2A6F1E75485B00B23CA6 /* SDWebImageDownloaderOperation.m in Sources */,
+				DFAF01CA1E8D4393005B7296 /* amrFileCodec.mm in Sources */,
 				DF8D1AA71E7A567600E1E289 /* ZLPhotoPickerBrowserPhotoView.m in Sources */,
+				DFAF01CB1E8D4393005B7296 /* wav.mm in Sources */,
 				DF75101F1E7689C7009AB14A /* InviteCodeViewController.m in Sources */,
+				DFAF01D41E8D4393005B7296 /* cpu_detect_x86.cpp in Sources */,
 				DF0F470A1E77CF8600413F3B /* BaseModel.m in Sources */,
 				DFCD2A5E1E75485B00B23CA6 /* BGControlHelper.m in Sources */,
 				DF8D1A2D1E7920EC00E1E289 /* MBProgressHUD+MJ.m in Sources */,
@@ -1220,10 +1493,13 @@
 				DF8D1AAE1E7A567600E1E289 /* ZLPhotoPickerGroupViewController.m in Sources */,
 				DF8D1AAD1E7A567600E1E289 /* ZLPhotoPickerAssetsViewController.m in Sources */,
 				DF0F46F61E77965C00413F3B /* VideosListViewController.m in Sources */,
+				DFAF01D21E8D4393005B7296 /* AAFilter.cpp in Sources */,
 				DF8D1AA81E7A567600E1E289 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
+				DFAF01D11E8D4393005B7296 /* WaveHeader.cpp in Sources */,
 				DF8D1A471E7A201800E1E289 /* IBeaconModel.m in Sources */,
 				DFCD2A671E75485B00B23CA6 /* LYMessageToast.m in Sources */,
 				DFCD2A111E75438900B23CA6 /* MainViewController.m in Sources */,
+				DFAF01D91E8D4393005B7296 /* RateTransposer.cpp in Sources */,
 				DF8D1AB21E7A567600E1E289 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1346,12 +1622,15 @@
 				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = LittleCool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AudioEncode/AudioToAmr/lib",
+					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1366,12 +1645,15 @@
 				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = LittleCool/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AudioEncode/AudioToAmr/lib",
+					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";

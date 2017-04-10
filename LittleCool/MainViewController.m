@@ -33,6 +33,7 @@
 @property (nonatomic,strong) BGCollectionView *collectionView;
 @property (nonatomic , strong) NSMutableArray *assets;
 @property (nonatomic,strong) MBProgressHUD *hud;
+@property (nonatomic,strong) UIView *allCityView;
 
 
 @end
@@ -51,7 +52,10 @@
     [self getNoti];
     [self creatCollectionView];
     [self creatGestureRight];
-    [self loadCityList];
+    if ([kIsVip integerValue] != 200) {
+        [self loadCityList];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -60,6 +64,9 @@
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
     [self.view bringSubviewToFront:_tabBarView];
+    if ([kIsVip integerValue] == 200) {
+        [self loadCityList];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -89,7 +96,7 @@
         
     } success:^(id responseBody) {
         if ([responseBody[@"code"] integerValue] == 200) {
-            
+            [_cityArray removeAllObjects];
             for (NSDictionary *dic in responseBody[@"data"]) {
                 CitysModel *cityModel = [[CitysModel alloc] init];
                 [cityModel setValuesForKeysWithDictionary:dic];
@@ -106,10 +113,10 @@
 }
 
 - (void)loadVideosListData{
-        _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    
-        // Set the label text.
-        _hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
+//        _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    
+//        // Set the label text.
+//        _hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
     NSString *pageIndex = [NSString stringWithFormat:@"%ld",_pageIndex];
     NSLog(@"%@",UDID);
     [[AFClient shareInstance] getVideosByUserId:kUserId udid:UDID label_id:_labelTag title:@"" page_index:pageIndex page_size:kPageSize progressBlock:^(NSProgress *progress) {
@@ -136,6 +143,10 @@
 - (void)creatCityListView{
     CGFloat allWidth = 0;
     for (int i = 0; i < _cityArray.count; i ++) {
+        UIView *view = [self.view viewWithTag:3000 + i];
+        if (view) {
+            [view removeFromSuperview];
+        }
         UIView *cityView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, _scrollView.sizeHeight)];
         cityView.backgroundColor = kWhiteColor;
         
@@ -146,8 +157,7 @@
         cityView.frame = CGRectMake(allWidth, 0, titleSize.width + 30, _scrollView.sizeHeight);
         cityView.tag = 3000 +i;
         allWidth += cityView.sizeWidth;
-        
-        [_scrollView addSubview:cityView];
+
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cityView.sizeWidth, cityView.sizeHeight)];
         titleLabel.text = model.name;
@@ -160,13 +170,17 @@
         titleButton.tag = 2000 + i;
         [titleButton addTarget:self action:@selector(chooseCityItemsButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [cityView addSubview:titleButton];
+        [_scrollView addSubview:cityView];
     }
     _scrollView.contentSize = CGSizeMake(allWidth, _scrollView.sizeHeight);
-    UIButton *button = (UIButton *)[self.view viewWithTag:2000];
+//    _allCityView.frame = CGRectMake(0, 0, _scrollView.sizeWidth, _scrollView.sizeHeight);
+    [_scrollView addSubview:_allCityView];
+    UIButton *button = (UIButton *)[self.view viewWithTag:_buttonTag.integerValue > 0 ? _buttonTag.integerValue+2000 : 2000];
     [self chooseCityItemsButtonClick:button];
 }
 
 - (void)chooseCityItemsButtonClick:(UIButton *)button{
+    NSLog(@"buttontag%ld",button.tag);
     _buttonTag = [NSString stringWithFormat:@"%ld",button.tag-2000];
     for (int i = 0 ; i < _cityArray.count; i ++) {
         UILabel *label = (UILabel *)[self.view viewWithTag:1000 + i];
@@ -183,6 +197,11 @@
     [_scrollView setContentOffset:CGPointMake(cityView.orginX - (_scrollView.center.x - cityView.sizeWidth/2), label.orginY) animated:YES];
     
 //    [_scrollView setContentOffset:CGPointMake((_scrollView.contentSize.width / _cityArray.count)* (button.tag - 2000), label.orginY) animated:YES];
+    [_hud hideAnimated:YES];
+    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Set the label text.
+    _hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
     [self loadVideosListData];
     if (button.tag < 2003) {
         [_scrollView setContentOffset:CGPointMake(0, label.orginY) animated:YES];
@@ -218,13 +237,13 @@
         [self presentViewController:alert animated:YES completion:nil];
     }else{
 //        只有授权用户才可以使用哦
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"只有授权用户才可以使用哦" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        [alert addAction:cancelAction];
-        [self presentViewController:alert animated:YES completion:nil];
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"只有授权用户才可以使用哦" message:nil preferredStyle:UIAlertControllerStyleAlert];
+//        
+//        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//            
+//        }];
+//        [alert addAction:cancelAction];
+//        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
@@ -293,6 +312,10 @@
 - (void)getItemNoti:(NSNotification *)noti{
     NSString *buttonTag = noti.object;
     UIButton *button = [self.view viewWithTag:buttonTag.integerValue + 2000];
+    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    // Set the label text.
+    _hud.label.text = NSLocalizedString(@"加载中...", @"HUD loading title");
     [self chooseCityItemsButtonClick:button];
 }
 

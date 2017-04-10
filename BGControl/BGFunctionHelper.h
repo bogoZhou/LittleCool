@@ -224,4 +224,6 @@
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert;
 
 +(UIImage *) loadImage:(NSString *)fileName ofType:(NSString *)extension inDirectory:(NSString *)directoryPath;
+
++ (UIImage*) imageWithUIView:(UIView*) view;
 @end

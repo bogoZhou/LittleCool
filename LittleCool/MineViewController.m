@@ -23,6 +23,8 @@
 #import "WechatLoginViewController.h"
 #import "ZLPhoto.h"
 
+#import "BGShareHelper.h"
+
 #define kCellName @"MineTableViewCell"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource,ZLPhotoPickerViewControllerDelegate>
@@ -163,6 +165,8 @@
         //设置
         SettingViewController *settingVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
         [self.navigationController pushViewController:settingVC animated:YES];
+//        [BGShareHelper shareWeChatByController:self imageArray:array_photo];
+        
     }else if (indexPath.row == 4){//账户余额
         UserAccountViewController *userAccountVC = [storyboard instantiateViewControllerWithIdentifier:@"UserAccountViewController"];
         userAccountVC.moneyStr = _balanceModel.balance;

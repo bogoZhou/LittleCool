@@ -14,6 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     _imageViewImg.layer.masksToBounds = YES;
+//    _imageViewImg.contentMode = UIViewContentModeScaleAspectFill;
     _imageViewImg.layer.cornerRadius = kButtonCornerRadius * 2;
 }
 

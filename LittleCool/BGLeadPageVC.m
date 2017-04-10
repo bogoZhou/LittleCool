@@ -73,16 +73,19 @@
 
 - (void)hiddenView{
 //    [self isFirstLogin:_hiddenValue];
-    [[AFClient shareInstance] hiddenViewProgressBlock:^(NSProgress *progress) {
-        
-    } success:^(id responseBody) {
-        if ([responseBody[@"code"] integerValue]== 200) {
-            _hiddenValue = [responseBody[@"data"] integerValue];
-            [self isFirstLogin:_hiddenValue];
-        }
-    } failure:^(NSError *error) {
-        
-    }];
+//    [[AFClient shareInstance] hiddenViewProgressBlock:^(NSProgress *progress) {
+//        
+//    } success:^(id responseBody) {
+//        if ([responseBody[@"code"] integerValue]== 200) {
+//            _hiddenValue = [responseBody[@"data"] integerValue];
+//            [self isFirstLogin:_hiddenValue];
+//        }
+//    } failure:^(NSError *error) {
+//        
+//    }];
+    _hiddenValue = 1;
+    [self isFirstLogin:_hiddenValue];
+
 }
 
 /**

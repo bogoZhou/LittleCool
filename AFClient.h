@@ -15,7 +15,7 @@
 #else
 //线上
 //https:// 139.196.18.81/truelies_video
-#define kHttpHeader @"https://139.196.18.81/truelies_video/app"
+#define kHttpHeader @"http://www.sprxt.com/truelies_video/app"
 #endif
 @interface AFClient : NSObject
 

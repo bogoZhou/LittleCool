@@ -9,8 +9,10 @@
 #import "AppDelegate.h"
 #import "UncaughtExceptionHandler.h"
 #import "BGLeadPageVC.h"
+#import "Reachability.h"
 
 @interface AppDelegate ()<WXApiDelegate>
+@property (nonatomic)Reachability *hostReach;
 
 @end
 
@@ -71,7 +73,7 @@
     [self weChatInfo];
     
     [self launchScreenPage:nil];
-    
+//    [self doNotFindNet];
     return YES;
 }
 
@@ -262,5 +264,79 @@
         abort();
     }
 }
+
+#pragma mark - 监听网络链接
+
+-(void)doNotFindNet{
+//    self.isReachable = YES;
+    //开启网络状况的监听
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    self.hostReach = [Reachability reachabilityWithHostName:@"www.baidu.com"] ;
+    [self.hostReach startNotifier];  //开始监听,会启动一个run loop
+}
+//网络链接改变时会调用的方法
+
+-(void)reachabilityChanged:(NSNotification *)note{
+    //     [self creatTopView];
+    Reachability *currReach = [note object];
+    NSParameterAssert([currReach isKindOfClass:[Reachability class]]);
+    //对连接改变做出响应处理动作
+    NetworkStatus status = [currReach currentReachabilityStatus];
+    //如果没有连接到网络就弹出提醒实况
+    NSString *titleString;
+    if(status == NotReachable){
+//        self.isReachable = NO;
+        titleString = @"网络状态改变\n暂无网络";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:titleString message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"查看网络" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            //在这里打开设置
+            NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+
+            if ([[UIApplication sharedApplication] canOpenURL:url])
+            {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }];
+        
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //无动作
+        }];
+        
+        [alert addAction:cancelAction];
+        [alert addAction:sureAction];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    }else if (status == kReachableViaWiFi){
+        titleString = @"网络状态改变\nWiFi模式";
+    }
+    else{
+        titleString = @"网络状态改变\n蜂窝移动网络模式";
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:titleString message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"查看网络" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            //在这里打开设置
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"]];
+            NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            
+            if ([[UIApplication sharedApplication] canOpenURL:url])
+            {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        }];
+        
+        UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //无动作
+        }];
+        
+        [alert addAction:cancelAction];
+        [alert addAction:sureAction];
+        [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
+    }
+
+    
+    //    _times ++;
+}
+
 
 @end

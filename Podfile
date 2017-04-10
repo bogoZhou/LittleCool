@@ -5,4 +5,5 @@ target 'LittleCool' do
   pod 'MJRefresh', '~> 3.1.12'
   pod 'FMDB', '~> 2.6.2'
   pod 'WeChatSDK-iOS', '~> 1.7.3' 
+  pod 'ImagePlayerView', '~> 2.0.2'
 end
