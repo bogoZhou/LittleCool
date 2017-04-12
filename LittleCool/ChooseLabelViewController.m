@@ -22,13 +22,14 @@
 }
 
 - (void)creatContentView{
-    CGFloat width = (kScreenSize.width - 50)/4;
+    CGFloat width = (kScreenSize.width)/4;
     for (int i = 0 ; i < _dataArray.count; i ++) {
         CitysModel *model = _dataArray[i];
         
-        UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(10 +(10 + width) * (i%4), 40 * (i/4), width, 30)];
+        UIView *labelView = [[UIView alloc] initWithFrame:CGRectMake(width * (i%4), 40 * (i/4), width, 30)];
         labelView.tag = 10000+i;
 //        labelView.backgroundColor = kColorFrom0x(0xf6f6f6);
+        labelView.backgroundColor = kClearColor;
         labelView.layer.masksToBounds = YES;
 //        labelView.layer.cornerRadius = kButtonCornerRadius * 5;
         
@@ -49,6 +50,20 @@
         [button addTarget:self action:@selector(chooseAnyLabel:) forControlEvents:UIControlEventTouchUpInside];
         [labelView addSubview:button];
         [_viewContent addSubview:labelView];
+        
+        CGSize titleSize = [name.text boundingRectWithSize:CGSizeMake(kScreenSize.width - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size;
+        
+        UILabel *redLabel = [[UILabel alloc] initWithFrame:CGRectMake((labelView.sizeWidth - titleSize.width)/2 + titleSize.width - 4, 4, 10, 10)];
+        redLabel.text = model.countNew;
+        redLabel.textColor = kWhiteColor;
+        redLabel.font = [UIFont systemFontOfSize:8];
+        redLabel.backgroundColor = kRedColor;
+        redLabel.textAlignment = NSTextAlignmentCenter;
+        redLabel.layer.masksToBounds = YES;
+        redLabel.layer.cornerRadius = 5;
+        redLabel.hidden = model.countNew.integerValue > 0 ? NO :YES;
+        [labelView addSubview:redLabel];
+        
     }
 }
 

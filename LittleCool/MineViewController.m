@@ -56,8 +56,16 @@
 }
 
 - (void)firstStept{
-    _nameArray = @[@"邀请码",@"配音视频列表",@"设置"];
-    _imageArray = @[@"authorization",@"video",@"management"];
+    _imageHeader.layer.masksToBounds = YES;
+    _imageHeader.layer.cornerRadius = _imageHeader.sizeWidth/2;
+    NSString * ishiddenValue = kIsHiddenValue;
+    if (ishiddenValue.integerValue > 0) {
+        _nameArray = @[@"邀请码",@"配音视频列表",@"设置"];
+        _imageArray = @[@"authorization",@"video",@"management"];
+    }else{
+        _nameArray = @[@"配音视频列表",@"设置"];
+        _imageArray = @[@"video",@"management"];
+    }
     _tableView.frame = CGRectMake(_tableView.orginX, _tableView.orginY, _tableView.sizeWidth, _nameArray.count *50 + 60);
     [_tableView reloadData];
 }
@@ -139,48 +147,32 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *storyboard = kMainStroyboard;
-//    if (indexPath.row == 0) {//我的设备
-//        //如果model 中存在 ibeacon 信息,则直接进入更改ibeacon名称页面
-//        if (_iBeaconModel.id) {
-//            MyPartViewController *mypartVC = [storyboard instantiateViewControllerWithIdentifier:@"MyPartViewController"];
-//            mypartVC.ibeaconModel = _iBeaconModel;
-//            mypartVC.beaconId = _iBeaconModel.id;
-//            [self.navigationController pushViewController:mypartVC animated:YES];
-//        }else{
-//            VerifyPartViewController *verifyPartVC = [storyboard instantiateViewControllerWithIdentifier:@"VerifyPartViewController"];
-//            [self.navigationController pushViewController:verifyPartVC animated:YES];
-//        }
-//    }else
-    if (indexPath.row == 0) {//邀请码
-        InviteCodeViewController *inviteVC = [storyboard instantiateViewControllerWithIdentifier:@"InviteCodeViewController"];
-        inviteVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:inviteVC animated:YES];
-    }else if (indexPath.row == 1){//配音视频列表
-//        kAlert(@"配音视频列表");
-        VideosListViewController *videosVC = [storyboard instantiateViewControllerWithIdentifier:@"VideosListViewController"];
-//        videosVC.dataArray = _dataArray;
-        videosVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:videosVC animated:YES];
-    }else if (indexPath.row == 2){
-        //设置
-        SettingViewController *settingVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
-        [self.navigationController pushViewController:settingVC animated:YES];
-//        [BGShareHelper shareWeChatByController:self imageArray:array_photo];
-        
-    }else if (indexPath.row == 4){//账户余额
-        UserAccountViewController *userAccountVC = [storyboard instantiateViewControllerWithIdentifier:@"UserAccountViewController"];
-        userAccountVC.moneyStr = _balanceModel.balance;
-        userAccountVC.withDrowMoneyStr = _balanceModel.withdrawals_balance;
-        [self.navigationController pushViewController:userAccountVC animated:YES];
+    NSString * ishiddenValue = kIsHiddenValue;
+    if (ishiddenValue.integerValue > 0) {
+        if (indexPath.row == 0) {//邀请码
+            InviteCodeViewController *inviteVC = [storyboard instantiateViewControllerWithIdentifier:@"InviteCodeViewController"];
+            inviteVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:inviteVC animated:YES];
+        }else if (indexPath.row == 1){//配音视频列表
+            VideosListViewController *videosVC = [storyboard instantiateViewControllerWithIdentifier:@"VideosListViewController"];
+            videosVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:videosVC animated:YES];
+        }else if (indexPath.row == 2){
+            //设置
+            SettingViewController *settingVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+            [self.navigationController pushViewController:settingVC animated:YES];
+        }
+    }else{
+        if (indexPath.row == 0){//配音视频列表
+            VideosListViewController *videosVC = [storyboard instantiateViewControllerWithIdentifier:@"VideosListViewController"];
+            videosVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:videosVC animated:YES];
+        }else if (indexPath.row == 1){
+            //设置
+            SettingViewController *settingVC = [storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];
+            [self.navigationController pushViewController:settingVC animated:YES];
+        }
     }
-    else{
-        kAlert(@"该功能正在开发中...");
-    }
-//    else if (indexPath.row == 4){//关于有点装
-//        MoreViewController *moreVC = [storyboard instantiateViewControllerWithIdentifier:@"MoreViewController"];
-//        moreVC.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:moreVC animated:YES];
-//    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -361,7 +361,7 @@
         }
             
         case ICPageControlPosition_BottomCenter: {
-            vFormat = @"V:[pageControl]-0-|";
+            vFormat = @"V:[pageControl]-20-|";
             hFormat = @"H:|[pageControl]|";
             break;
         }

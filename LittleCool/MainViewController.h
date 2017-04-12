@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "KYCuteView.h"
 
 @interface MainViewController : BaseViewController
 
@@ -15,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIView *tabBarView;
+
+@property (weak, nonatomic) IBOutlet KYCuteView *KYView;
+
 
 @end

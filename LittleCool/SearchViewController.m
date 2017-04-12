@@ -10,8 +10,6 @@
 #import "BGCollectionView.h"
 #import "VideosModel.h"
 
-#define kPageSize @"1000"
-
 @interface SearchViewController ()<UISearchBarDelegate>
 {
     NSInteger _pageIndex;
@@ -46,6 +44,23 @@
 
 - (void)creatCollectionView{
     _collectionView = [[BGCollectionView alloc] initWithFrame:CGRectMake(0, _searchBar.allHeight, kScreenSize.width, kScreenSize.height -_searchBar.allHeight - 64)withDataArray:_myDataArray];
+    // 下拉刷新
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    self.collectionView.collectionView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //        kAlert(@"下拉刷新");
+        _pageIndex = 0;
+        [self loadData];
+        [weakSelf.collectionView.collectionView.mj_header endRefreshing];
+    }];
+    // 上拉刷新
+    self.collectionView.collectionView.mj_footer = [MJRefreshBackFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //        kAlert(@"上拉刷新");
+        _pageIndex ++ ;
+        [self loadData];
+        [weakSelf.collectionView.collectionView.mj_footer endRefreshing];
+    }];
     [self.view addSubview:_collectionView];
 }
 
@@ -62,13 +77,21 @@
     } success:^(id responseBody) {
         if ([responseBody[@"code"] integerValue] == 200) {
             if ([responseBody[@"data"] count] == 0) {
-                kAlert(@"未搜索到符合条件的数据");
+                if (_pageIndex == 0) {
+                    kAlert(@"未搜索到符合条件的数据");
+                }else{
+                    kAlert(@"没有更多数据了");
+                }
+                
             }else{
-                [_myDataArray removeAllObjects];
+                if (_pageIndex == 0) {
+                    [_myDataArray removeAllObjects];
+                }
             }
             for (NSDictionary *dic in responseBody[@"data"]) {
                 VideosModel *model = [[VideosModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
+                model.statusNew = dic[@"new_status"];
                 [_myDataArray addObject:model];
             }
             [_collectionView reloadDataByArray:_myDataArray];
@@ -85,6 +108,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
 //    kAlert(@"点击完成");
+    _pageIndex = 0;
     [self loadData];
     [_searchBar resignFirstResponder];
 }

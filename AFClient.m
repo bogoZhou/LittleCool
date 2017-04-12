@@ -555,7 +555,73 @@
 - (void)hiddenViewProgressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
     _url = [NSString stringWithFormat:@"%@/v1/config/examine_status",kHttpHeader];
     AFHTTPSessionManager *manager = [self creatManager];
-    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"id", nil];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"3",@"id", nil];
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+#pragma mark - V2
+//9.	【首页横幅所有】
+- (void)getBunnerByUserId:(NSString *)userId udid:(NSString*)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v2/banner/page",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid", nil];
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+//10.	【图片素材标签：获取所有标签】
+- (void)getPictureLabelsByUserId:(NSString *)userId udid:(NSString*)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v2/material_label/page",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid", nil];
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+//11.	【图片素材标签 下的素材：分页】
+- (void)getPictureInfoByUserId:(NSString *)userId udid:(NSString *)udid material_label_id:(NSString *)material_label_id title:(NSString *)title page_index:(NSString *)page_index page_size:(NSString *)page_size progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v2/material_label_image/page",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    
+    if ([BGFunctionHelper isNULLOfString:material_label_id]) {
+        _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid",page_index ,@"page_index",page_size ,@"page_size", nil];
+    }else{
+        _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid",material_label_id ,@"material_label_id",page_index ,@"page_index",page_size ,@"page_size", nil];
+    }
     [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);

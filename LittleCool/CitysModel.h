@@ -21,4 +21,5 @@
 @property (nonatomic,strong) NSString *vip_grade;
 @property (nonatomic,strong) NSString *status;
 @property (nonatomic,strong) NSString *created;
+@property (nonatomic,strong) NSString *countNew;
 @end

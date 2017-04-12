@@ -6,4 +6,5 @@ target 'LittleCool' do
   pod 'FMDB', '~> 2.6.2'
   pod 'WeChatSDK-iOS', '~> 1.7.3' 
   pod 'ImagePlayerView', '~> 2.0.2'
+  pod 'TCCopyableLabel', '~> 1.0.1'
 end

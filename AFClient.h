@@ -113,4 +113,14 @@ typedef void(^FailureBlcok)(NSError *error);
 
 - (void)hiddenViewProgressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
 
+#pragma mark - V2
+//9.	【首页横幅所有】
+- (void)getBunnerByUserId:(NSString *)userId udid:(NSString*)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
+
+//10.	【图片素材标签：获取所有标签】
+- (void)getPictureLabelsByUserId:(NSString *)userId udid:(NSString*)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
+
+//11.	【图片素材标签 下的素材：分页】
+- (void)getPictureInfoByUserId:(NSString *)userId udid:(NSString *)udid material_label_id:(NSString *)material_label_id title:(NSString *)title page_index:(NSString *)page_index page_size:(NSString *)page_size progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
+
 @end

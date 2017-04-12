@@ -8,9 +8,10 @@
 
 #import "BGLeadPageVC.h"
 #import "BGControl.h"
+#import "MCPagerView.h"
 
 #define kTime 2.f
-@interface BGLeadPageVC ()<UIScrollViewDelegate>
+@interface BGLeadPageVC ()<UIScrollViewDelegate,MCPagerViewDelegate>
 {
     NSInteger timeCount;
     
@@ -21,6 +22,9 @@
 @property (nonatomic,strong) UIScrollView *mainScrollView;
 @property (nonatomic,strong) NSArray *picArray;
 @property (nonatomic,strong) NSURLSessionTask *downloadTask;
+@property (nonatomic,strong) UIPageControl *pageControl;
+@property (nonatomic,strong) MCPagerView *pagerView;
+
 @end
 
 @implementation BGLeadPageVC
@@ -93,7 +97,7 @@
  */
 - (void)creatMainScrollView{
     self.picArray = [NSArray array];
-    self.picArray = @[@"1.jpg",@"2.jpg",@"3.jpg"];
+    self.picArray = @[@"1.png",@"2.png",@"3.png"];
     
     self.mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
     self.mainScrollView.contentSize = CGSizeMake(kScreenSize.width * self.picArray.count, kScreenSize.height);
@@ -122,6 +126,22 @@
         imageView.image = [UIImage imageNamed:self.picArray[i]];
         
         if (self.picArray.count - 1 == i) {
+            
+            UIView *inView = [[UIView alloc] initWithFrame:CGRectMake(kScreenSize.width/2 - 80, kScreenSize.height - 150, 160, 50)];
+            inView.layer.masksToBounds = YES;
+            inView.layer.cornerRadius = 10;
+            inView.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
+            inView.layer.borderWidth = 1.f;
+            inView.backgroundColor = [kWhiteColor colorWithAlphaComponent:0.5];
+            
+            UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, inView.sizeWidth, inView.sizeHeight)];
+            contentLabel.font = [UIFont systemFontOfSize:20];
+            contentLabel.text = @"立即体验";
+            contentLabel.textAlignment = NSTextAlignmentCenter;
+            contentLabel.textColor = kColorFrom0x(0xd53c3e);
+            [inView addSubview:contentLabel];
+            [imageView addSubview:inView];
+            
             UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
             button.frame = CGRectMake(0, 0, kScreenSize.width, kScreenSize.height);
             [button addTarget:self action:@selector(scrollViewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -130,7 +150,90 @@
         }
         [self.mainScrollView addSubview:imageView];
     }
+//    //创建UIPageControl
+//    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenSize.height - 80, kScreenSize.width, 30)];  //创建UIPageControl，位置在屏幕最下方。
+//    _pageControl.userInteractionEnabled = YES;
+//    [_pageControl setValue:[UIImage imageNamed:@"red-p"] forKeyPath:@"_pageImage"];
+//    
+//    [_pageControl setValue:[UIImage imageNamed:@"write-p"] forKeyPath:@"_currentPageImage"];
+//    _pageControl.numberOfPages = _picArray.count;//总的图片页数
+//    _pageControl.currentPage = 0; //当前页
+//    [_pageControl addTarget:self action:@selector(pageTurn:) forControlEvents:UIControlEventValueChanged];  //用户点击UIPageControl的响应函数
     [self.view addSubview:self.mainScrollView];
+//    [self.view addSubview:_pageControl];  //将UIPageControl添加到主界面上。
+    
+    // Pager
+    _pagerView = [[MCPagerView alloc] initWithFrame:CGRectMake(kScreenSize.width/2 - 55, kScreenSize.height - 80, 100, 30)];
+    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
+       highlightedImage:[UIImage imageNamed:@"red-p"]
+                 forKey:@"a"];
+    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
+        highlightedImage:[UIImage imageNamed:@"purple-p"]
+                  forKey:@"b"];
+    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
+        highlightedImage:[UIImage imageNamed:@"orange-p"]
+                  forKey:@"c"];
+    
+    [_pagerView setPattern:@"abc"];
+    
+    _pagerView.delegate = self;
+    [self.view addSubview:_pagerView];
+}
+
+- (void)updatePager
+{
+    _pagerView.page = floorf(_mainScrollView.contentOffset.x / _mainScrollView.frame.size.width);
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self updatePager];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate) {
+        [self updatePager];
+    }
+}
+
+- (void)pageView:(MCPagerView *)pageView didUpdateToPage:(NSInteger)newPage
+{
+    CGPoint offset = CGPointMake(_mainScrollView.frame.size.width * _pagerView.page, 0);
+    [_mainScrollView setContentOffset:offset animated:YES];
+}
+
+- (void)viewDidUnload
+{
+    _pagerView = nil;
+    _mainScrollView = nil;
+    [super viewDidUnload];
+    // Release any retained subviews of the main view.
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+////其次是UIScrollViewDelegate的scrollViewDidEndDecelerating函数，用户滑动页面停下后调用该函数。
+//
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    //更新UIPageControl的当前页
+//    CGPoint offset = scrollView.contentOffset;
+//    CGRect bounds = scrollView.frame;
+//    [_pageControl setCurrentPage:offset.x / bounds.size.width];
+//    NSLog(@"%f",offset.x / bounds.size.width);
+//}
+
+//然后是点击UIPageControl时的响应函数pageTurn
+- (void)pageTurn:(UIPageControl*)sender
+{
+    //令UIScrollView做出相应的滑动显示
+    CGSize viewSize = _mainScrollView.frame.size;
+    CGRect rect = CGRectMake(sender.currentPage * viewSize.width, 0, viewSize.width, viewSize.height);
+    [_mainScrollView scrollRectToVisible:rect animated:YES];
 }
 
 /**

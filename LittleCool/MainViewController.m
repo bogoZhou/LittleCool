@@ -17,8 +17,6 @@
 #import "UIImageView+WebCache.h"
 #import "MainDetailViewController.h"
 
-#define kPageSize @"1000"
-
 @interface MainViewController ()<UISearchBarDelegate,ZLPhotoPickerViewControllerDelegate>
 {
     NSString *_labelTag;
@@ -52,6 +50,10 @@
     [self getNoti];
     [self creatCollectionView];
     [self creatGestureRight];
+    [self creatKYView];
+    [self navBarTitle:@"百变配音"];
+    [self navBarbackButton:@"        "];
+    
     if ([kIsVip integerValue] != 200) {
         [self loadCityList];
     }
@@ -61,7 +63,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = NO;
     self.tabBarController.tabBar.hidden = YES;
     [self.view bringSubviewToFront:_tabBarView];
     if ([kIsVip integerValue] == 200) {
@@ -89,6 +91,19 @@
     
 }
 
+- (void)creatKYView{
+    self.KYView = [[KYCuteView alloc] initWithPoint:CGPointMake(self.KYView.center.x - 25, self.KYView.center.y - 25) superView:self.view];
+    
+    self.KYView.viscosity= 20;
+    self.KYView.bubbleWidth = 60;
+    self.KYView.bubbleColor = kClearColor;
+    
+    [self.KYView setUp];
+    [self.KYView addGesture];
+    
+    self.KYView.bubbleImageView.image = [UIImage imageNamed:@"bt"];
+    [self.KYView.bubbleButton addTarget:self action:@selector(centerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+}
 
 #pragma mark - loadData
 - (void)loadCityList{
@@ -100,6 +115,7 @@
             for (NSDictionary *dic in responseBody[@"data"]) {
                 CitysModel *cityModel = [[CitysModel alloc] init];
                 [cityModel setValuesForKeysWithDictionary:dic];
+                cityModel.countNew = dic[@"new_count"];
                 [_cityArray addObject:cityModel];
             }
             [self creatCityListView];
@@ -129,6 +145,7 @@
             for (NSDictionary *dic in responseBody[@"data"]) {
                 VideosModel *model = [[VideosModel alloc] init];
                 [model setValuesForKeysWithDictionary:dic];
+                model.statusNew = dic[@"new_status"];
                 [_myDataArray addObject:model];
             }
             [_collectionView reloadDataByArray:_myDataArray];
@@ -166,11 +183,19 @@
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [cityView addSubview:titleLabel];
         
+        UIImageView *redImageView = [[UIImageView alloc] initWithFrame:CGRectMake(cityView.sizeWidth - 18, 7, 10, 10)];
+        redImageView.backgroundColor = kRedColor;
+        redImageView.layer.masksToBounds = YES;
+        redImageView.layer.cornerRadius = 5;
+        redImageView.hidden = model.countNew.integerValue > 0 ? NO : YES;
+        [cityView addSubview:redImageView];
+        
         UIButton *titleButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, cityView.sizeWidth, cityView.sizeHeight)];
         titleButton.tag = 2000 + i;
         [titleButton addTarget:self action:@selector(chooseCityItemsButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [cityView addSubview:titleButton];
         [_scrollView addSubview:cityView];
+
     }
     _scrollView.contentSize = CGSizeMake(allWidth, _scrollView.sizeHeight);
 //    _allCityView.frame = CGRectMake(0, 0, _scrollView.sizeWidth, _scrollView.sizeHeight);
@@ -181,6 +206,7 @@
 
 - (void)chooseCityItemsButtonClick:(UIButton *)button{
     NSLog(@"buttontag%ld",button.tag);
+    _pageIndex = 0;
     _buttonTag = [NSString stringWithFormat:@"%ld",button.tag-2000];
     for (int i = 0 ; i < _cityArray.count; i ++) {
         UILabel *label = (UILabel *)[self.view viewWithTag:1000 + i];
@@ -212,11 +238,31 @@
 }
 
 - (void)creatCollectionView{
-    _collectionView = [[BGCollectionView alloc] initWithFrame:CGRectMake(0, _scrollView.allHeight, kScreenSize.width, kScreenSize.height -_scrollView.allHeight - 49)withDataArray:_myDataArray];
+    _collectionView = [[BGCollectionView alloc] initWithFrame:CGRectMake(0, _scrollView.allHeight, kScreenSize.width, kScreenSize.height -_scrollView.allHeight - 64)withDataArray:_myDataArray];
+    
+    // 下拉刷新
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    self.collectionView.collectionView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //        kAlert(@"下拉刷新");
+        _pageIndex = 0;
+        [self loadVideosListData];
+        [weakSelf.collectionView.collectionView.mj_header endRefreshing];
+    }];
+    // 上拉刷新
+    self.collectionView.collectionView.mj_footer = [MJRefreshBackFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        //        kAlert(@"上拉刷新");
+        _pageIndex ++ ;
+        [self loadVideosListData];
+        [weakSelf.collectionView.collectionView.mj_footer endRefreshing];
+    }];
+    
     [self.view addSubview:_collectionView];
 }
 
 #pragma mark - 点击事件
+
 
 - (IBAction)rightButtonClick:(UIButton *)sender {
     self.tabBarController.selectedIndex = 1;
@@ -236,14 +282,16 @@
         [alert addAction:cancelAction];
         [self presentViewController:alert animated:YES completion:nil];
     }else{
-//        只有授权用户才可以使用哦
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"只有授权用户才可以使用哦" message:nil preferredStyle:UIAlertControllerStyleAlert];
-//        
-//        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//            
-//        }];
-//        [alert addAction:cancelAction];
-//        [self presentViewController:alert animated:YES completion:nil];
+        NSString * ishiddenValue = kIsHiddenValue;
+        if (ishiddenValue.integerValue > 0) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"只有授权用户才可以使用哦" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alert addAction:cancelAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }
 }
 

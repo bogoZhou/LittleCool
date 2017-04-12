@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BGCollectionView : UIView
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic,strong) NSMutableArray *dataArray;
 

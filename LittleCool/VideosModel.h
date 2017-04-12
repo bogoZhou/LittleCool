@@ -35,4 +35,5 @@
 @property (nonatomic,strong) NSString *created;
 @property (nonatomic,strong) NSString *url;
 @property (nonatomic,strong) NSURL *localUrl;
+@property (nonatomic,strong) NSString *statusNew;
 @end

@@ -18,7 +18,6 @@
     
 }
 
-@property (nonatomic,strong) UICollectionView *collectionView;
 @end
 
 @implementation BGCollectionView
@@ -46,6 +45,7 @@
     _collectionView.backgroundColor = kWhiteColor;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    
     [_collectionView registerNib:[UINib nibWithNibName:kCellName bundle:nil] forCellWithReuseIdentifier:kCellName];
     [self addSubview:_collectionView];
 }
@@ -70,6 +70,7 @@
     VideosModel *model = _dataArray[indexPath.row];
     [cell.imageViewImg sd_setImageWithURL:[NSURL URLWithString:model.img_url] placeholderImage:[UIImage imageNamed:@"ditu"]];
     cell.labelName.text = model.title;
+    cell.imageViewNew.hidden = model.statusNew.integerValue > 0 ? NO : YES;
     return cell;
 }
 

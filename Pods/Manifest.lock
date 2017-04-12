@@ -20,6 +20,7 @@ PODS:
   - ImagePlayerView (2.0.2)
   - MBProgressHUD (1.0.0)
   - MJRefresh (3.1.12)
+  - TCCopyableLabel (1.0.1)
   - WeChatSDK-iOS (1.7.3)
 
 DEPENDENCIES:
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - ImagePlayerView (~> 2.0.2)
   - MBProgressHUD (~> 1.0.0)
   - MJRefresh (~> 3.1.12)
+  - TCCopyableLabel (~> 1.0.1)
   - WeChatSDK-iOS (~> 1.7.3)
 
 SPEC CHECKSUMS:
@@ -36,8 +38,9 @@ SPEC CHECKSUMS:
   ImagePlayerView: e162d73d3a1d427a43dc6a52d2c0baf4c7e226f8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  TCCopyableLabel: 31958ac1969b8bf8e08ef7e711ee42e86b2f5215
   WeChatSDK-iOS: 5ab1275da6f245c41232870f8215998c59cbb539
 
-PODFILE CHECKSUM: a457bf8a39a26e0d03ed3e5d9f1dfce61208e03a
+PODFILE CHECKSUM: 082a25de85fc969c2bc7b7ff3765e2543c2c3bf2
 
 COCOAPODS: 1.1.1

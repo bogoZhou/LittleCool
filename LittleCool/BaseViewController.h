@@ -22,4 +22,7 @@
 - (void)rightButtonClick:(NSString *)string;
 
 - (void)rightNavButtonClick;
+
+- (void)backLastPage;
+
 @end

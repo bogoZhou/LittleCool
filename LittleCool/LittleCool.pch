@@ -31,7 +31,7 @@
 #import <WXApiObject.h>
 #import <QuartzCore/QuartzCore.h>
 
-#define kPageSize @"20"
+#define kPageSize @"30"
 
 #define kMainStroyboard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 #define kSignStroyboard [UIStoryboard storyboardWithName:@"Sign" bundle:nil]
@@ -86,8 +86,8 @@
 #define kDateBlackColor [UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1]
 #define kDateColor [UIColor colorWithRed:155/255.0 green:155/255.0 blue:155/255.0 alpha:1]
 #define kTextColor [UIColor colorWithRed:212.0/255 green:212.0/255 blue:212.0/255 alpha:1]
-#define kBlueColor [UIColor colorWithRed:28.0/255 green:120.0/255 blue:246.0/255 alpha:1]
-#define kRedColor [UIColor colorWithRed:205.0/255 green:55.0/255 blue:0.0/255 alpha:1]
+#define kBlueColor kColorFrom0x(0x529df4)
+#define kRedColor kColorFrom0x(0xd63c3e)
 #define kOrangeColor [UIColor colorWithRed:255.0/255 green:121.0/255 blue:0.0/255 alpha:1]//ff7900
 #define kfafafa [UIColor colorWithRed:250.0/255 green:250.0/255 blue:250.0/255 alpha:1]
 #define ke6e6e6 [UIColor colorWithRed:230.0/255 green:230.0/255 blue:230.0/255 alpha:0.5]
@@ -126,6 +126,6 @@
 #define kUserId [[NSUserDefaults standardUserDefaults] valueForKey:@"Id"]
 #define kMobile [[NSUserDefaults standardUserDefaults] valueForKey:@"mobile"]
 #define kIsVip [[NSUserDefaults standardUserDefaults] valueForKey:@"isVip"]
-
+#define kIsHiddenValue [[NSUserDefaults standardUserDefaults] valueForKey:@"isHiddenValue"]
 #define UDID [[NSUserDefaults standardUserDefaults] valueForKey:@"UDID"]
 #endif
