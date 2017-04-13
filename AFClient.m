@@ -555,7 +555,7 @@
 - (void)hiddenViewProgressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
     _url = [NSString stringWithFormat:@"%@/v1/config/examine_status",kHttpHeader];
     AFHTTPSessionManager *manager = [self creatManager];
-    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"3",@"id", nil];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"id", nil];
     [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);

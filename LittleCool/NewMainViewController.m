@@ -48,6 +48,10 @@
     _centerViewImage.layer.masksToBounds = YES;
     _centerViewImage.layer.cornerRadius = 5;
     _viewImage.backgroundColor = [kColorFrom0x(0xf0662f) colorWithAlphaComponent:alf];
+    
+    _centerViewCoolImage.layer.masksToBounds = YES;
+    _centerViewImage.layer.cornerRadius = 5;
+    _viewCoolImage.backgroundColor = [kColorFrom0x(0xf0662f) colorWithAlphaComponent:alf];
 }
 
 - (void)creatBanner{
@@ -129,6 +133,12 @@
     PicturesViewController *picVC = [storyboard instantiateViewControllerWithIdentifier:@"PicturesViewController"];
     [self.navigationController pushViewController:picVC animated:YES];
 }
+
+//逗图制作
+- (IBAction)coolPicMakeButtonClick:(UIButton *)sender {
+    kAlert(@"逗图制作");
+}
+
 
 #pragma mark - ImagePlayerViewDelegate
 - (NSInteger)numberOfItems

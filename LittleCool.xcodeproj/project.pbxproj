@@ -1428,7 +1428,7 @@
 				TargetAttributes = {
 					DFCD29E01E75361D00B23CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = VZEUP3V8Q9;
+						DevelopmentTeam = 8NWL5582K3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1799,7 +1799,7 @@
 			baseConfigurationReference = 88D92E53A56714D71A92C192 /* Pods-LittleCool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VZEUP3V8Q9;
+				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1812,7 +1812,7 @@
 					"$(PROJECT_DIR)/AudioEncode/AudioToAmr/lib",
 					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bg.myself.littleCool;
+				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1822,7 +1822,7 @@
 			baseConfigurationReference = AF638BB02AB545C316273647 /* Pods-LittleCool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VZEUP3V8Q9;
+				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1835,7 +1835,7 @@
 					"$(PROJECT_DIR)/AudioEncode/AudioToAmr/lib",
 					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bg.myself.littleCool;
+				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

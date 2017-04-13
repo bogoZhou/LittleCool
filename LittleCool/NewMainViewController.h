@@ -20,4 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIView *viewImage;
 @property (weak, nonatomic) IBOutlet UIView *centerViewImage;
 
+@property (weak, nonatomic) IBOutlet UIView *viewCoolImage;
+@property (weak, nonatomic) IBOutlet UIView *centerViewCoolImage;
+
+
 @end
