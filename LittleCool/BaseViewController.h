@@ -15,6 +15,8 @@
 
 - (void)navBarTitle:(NSString *)title;
 
+- (void)clickNavTitle:(UIButton *)button;
+
 - (void)navBarbackButton:(NSString *)title;
 
 - (void)creatTabBar;
@@ -23,6 +25,13 @@
 
 - (void)rightNavButtonClick;
 
+- (void)wechatRightButtonClick:(NSString *)string;
+
 - (void)backLastPage;
 
+- (void)navBarbackButtonNoLeft:(NSString *)title textFloat:(CGFloat)tFloat;
+
+- (NSString *)countDate:(NSString *)dateString;
+
+- (void)creatGestureOnScrollView:(UIScrollView *)scrollView;
 @end

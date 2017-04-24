@@ -97,7 +97,7 @@
  */
 - (void)creatMainScrollView{
     self.picArray = [NSArray array];
-    self.picArray = @[@"1.png",@"2.png",@"3.png"];
+    self.picArray = @[@"引导页01.jpg",@"引导页02.jpg",@"引导页03.jpg"];
     
     self.mainScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
     self.mainScrollView.contentSize = CGSizeMake(kScreenSize.width * self.picArray.count, kScreenSize.height);
@@ -163,15 +163,15 @@
 //    [self.view addSubview:_pageControl];  //将UIPageControl添加到主界面上。
     
     // Pager
-    _pagerView = [[MCPagerView alloc] initWithFrame:CGRectMake(kScreenSize.width/2 - 55, kScreenSize.height - 80, 100, 30)];
-    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
-       highlightedImage:[UIImage imageNamed:@"red-p"]
+    _pagerView = [[MCPagerView alloc] initWithFrame:CGRectMake(kScreenSize.width/2 - 70, kScreenSize.height - 80, 140, 30)];
+    [_pagerView setImage:[UIImage imageNamed:@"blue_bt"]
+       highlightedImage:[UIImage imageNamed:@"white_bt"]
                  forKey:@"a"];
-    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
-        highlightedImage:[UIImage imageNamed:@"purple-p"]
+    [_pagerView setImage:[UIImage imageNamed:@"blue_bt"]
+        highlightedImage:[UIImage imageNamed:@"white_bt"]
                   forKey:@"b"];
-    [_pagerView setImage:[UIImage imageNamed:@"white-p"]
-        highlightedImage:[UIImage imageNamed:@"orange-p"]
+    [_pagerView setImage:[UIImage imageNamed:@"blue_bt"]
+        highlightedImage:[UIImage imageNamed:@"white_bt"]
                   forKey:@"c"];
     
     [_pagerView setPattern:@"abc"];
@@ -245,8 +245,9 @@
         [self creatMainScrollView];
     }else{
         if ([kUserId integerValue] > 0) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
             [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+            
         }else{
             if (isHidden < 0) {
 //                [DLUDID value];
@@ -268,21 +269,35 @@
  */
 - (void)scrollViewButtonClick:(UIButton *)button{
     [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"FIRST"];
-    if ([kUserId integerValue] > 0) {
-        [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
-    }else{
-        if (_hiddenValue < 0) {
-            [[NSUserDefaults standardUserDefaults] setValue:@"D9FD7F9AE7DE4B35A40982DC9315095A" forKey:@"UDID"];
-            [[NSUserDefaults standardUserDefaults] setValue:@"490" forKey:@"Id"];
-            [[NSUserDefaults standardUserDefaults] setValue:@"18937853839" forKey:@"mobile"];
-            [[NSUserDefaults standardUserDefaults] setValue:@"200" forKey:@"isVip"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+//    if ([kUserId integerValue] > 0) {
+    [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
+    
+    [[AFClient shareInstance] hiddenViewProgressBlock:nil success:^(id responseBody) {
+        if ([responseBody[@"code"] integerValue] ==200) {
+            [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"] forKey:@"isHiddenValue"];
+            [self verifyCodeFun];
         }else{
-            [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"sign" object:nil];
+            kAlert(responseBody[@"message"]);
         }
-    }
+    } failure:^(NSError *error) {
+        
+    }];
+    
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+//    }else{
+//        if (_hiddenValue < 0) {
+//            [[NSUserDefaults standardUserDefaults] setValue:@"D9FD7F9AE7DE4B35A40982DC9315095A" forKey:@"UDID"];
+//            [[NSUserDefaults standardUserDefaults] setValue:@"490" forKey:@"Id"];
+//            [[NSUserDefaults standardUserDefaults] setValue:@"18937853839" forKey:@"mobile"];
+//            [[NSUserDefaults standardUserDefaults] setValue:@"200" forKey:@"isVip"];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+//        }else{
+//            [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"sign" object:nil];
+//        }
+//    }
+    
+    
 }
 
 #pragma mark 自动登录
@@ -360,6 +375,33 @@
 //    return userId;
 //}
 
+- (void)verifyCodeFun{
+    // Set the label text.
+    [[AFClient shareInstance] chackCodeByMobile:@"18912345678" code:@"1234" progressBlock:^(NSProgress *progress) {
+        
+    } success:^(id responseBody) {
+        if ([responseBody[@"code"] integerValue] == 200) {
+            [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"][@"id"] forKey:@"Id"];
+            [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"][@"mobile"] forKey:@"mobile"];
+            
+            //判断是否是VIP
+            [[AFClient shareInstance] empowerByUserId:kUserId udid:UDID progressBlock:^(NSProgress *progress) {
+                
+            } success:^(id responseBody) {
+                [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"code"] forKey:@"isVip"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+                
+            } failure:^(NSError *error) {
+                
+            }];
+            
+        }else{
+            kAlert(responseBody[@"message"]);
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 
 - (void)didReceiveMemoryWarning {

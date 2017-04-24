@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - ELCImagePickerController (0.2.0)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -25,6 +26,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - ELCImagePickerController (~> 0.2.0)
   - FMDB (~> 2.6.2)
   - ImagePlayerView (~> 2.0.2)
   - MBProgressHUD (~> 1.0.0)
@@ -34,6 +36,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  ELCImagePickerController: b1b7084434a7d49f2cfc916bde1f3ba353d38de9
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   ImagePlayerView: e162d73d3a1d427a43dc6a52d2c0baf4c7e226f8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -41,6 +44,6 @@ SPEC CHECKSUMS:
   TCCopyableLabel: 31958ac1969b8bf8e08ef7e711ee42e86b2f5215
   WeChatSDK-iOS: 5ab1275da6f245c41232870f8215998c59cbb539
 
-PODFILE CHECKSUM: 082a25de85fc969c2bc7b7ff3765e2543c2c3bf2
+PODFILE CHECKSUM: cd729ea8a8b7e5a039954f76e65e15b74b3159a2
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

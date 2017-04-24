@@ -555,7 +555,7 @@
 - (void)hiddenViewProgressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
     _url = [NSString stringWithFormat:@"%@/v1/config/examine_status",kHttpHeader];
     AFHTTPSessionManager *manager = [self creatManager];
-    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"2",@"id", nil];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:@"4",@"id", nil];
     [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);
@@ -622,6 +622,25 @@
     }else{
         _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid",material_label_id ,@"material_label_id",page_index ,@"page_index",page_size ,@"page_size", nil];
     }
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+- (void)getRandomUserByCounts:(NSString *)counts progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v1/user/random",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:counts,@"counts", nil];
     [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
         if (progress) {
             progress(uploadProgress);

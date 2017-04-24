@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *viewContent;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewContent;
+
+
 @property (nonatomic,strong) NSMutableArray *dataArray;
 
 @property (nonatomic,strong) NSString *buttonTag;

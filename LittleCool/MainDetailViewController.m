@@ -206,12 +206,38 @@
     [_playerController loadVideoWithStreamURL:path];
 }
 
+
+- (BOOL)canRecord
+{
+    __block BOOL bCanRecord = YES;
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
+        [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+            if (granted) {
+                bCanRecord = YES;
+            } else {
+                bCanRecord = NO;
+            }
+        }];
+    }
+    return bCanRecord;
+}
 #pragma mark - delegate
 
 - (void)videoPlayerController:(TYVideoPlayerController *)videoPlayerController readyToPlayURL:(NSURL *)streamURL
 {
     if (_beginRecording) {
-        [self startRecordNotice];
+        if ([self canRecord]) {
+            [self startRecordNotice];
+        }else{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"有点逗需要访问您的麦克风。\n请启用麦克风-设置/隐私/麦克风" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"这就去" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alert addAction:yesAction];
+            [self presentViewController:alert animated:yesAction completion:nil];
+        }
+        
     }
 }
 
@@ -478,10 +504,21 @@
     NSURL *url = [NSURL URLWithString:outPutFilePath];
     
     [library saveVideo:url toAlbum:@"有点逗" completion:^(NSURL *assetURL, NSError *error) {
-        kAlert(@"保存成功");
-        [self.navigationController popViewControllerAnimated:YES];
+//        kAlert(@"保存成功");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存成功" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"好" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alert addAction:yesAction];
+        [self presentViewController:alert animated:yesAction completion:nil];
+        
     } failure:^(NSError *error) {
-        kAlert(@"保存失败");
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"有点逗需要访问您的麦克风。\n请启用照片-设置/隐私/照片" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"这就去" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:yesAction];
+        [self presentViewController:alert animated:yesAction completion:nil];
     }];
 }
 #pragma mark - 开始录音
@@ -692,9 +729,23 @@
     // 声音来源
     //_changeSoundsValue != 0 ? @"wav" : 
     NSString *soundsStr = [BGFunctionHelper filePath:[NSString stringWithFormat:@"%@_%@.%@",_model.id,@"audio",@"caf"]];
+    
+    BOOL soundHave=[[NSFileManager defaultManager] fileExistsAtPath:soundsStr];
+    if (!soundHave) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"有点逗需要访问您的麦克风。\n请启用麦克风-设置/隐私/麦克风" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"这就去" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:yesAction];
+        [self presentViewController:alert animated:yesAction completion:nil];
+        return ;
+    }
+    
     NSURL *audioInputUrl = [NSURL fileURLWithPath:soundsStr];
     // 视频来源
     NSString *videoString = [BGFunctionHelper filePath:[NSString stringWithFormat:@"%@.mp4",_model.id]];
+    
+    
     
 //    NSURL *videoInputUrl = [NSURL fileURLWithPath:videoString];
     NSURL *videoInputUrl;

@@ -191,7 +191,12 @@
     longDate = [NSDate dateWithTimeIntervalSince1970:t];
     NSString *locationString6 = [dateformatter stringFromDate:longDate];
     
-    NSArray *dayArray = @[locationString1,locationString2,locationString3,locationString4,locationString5,locationString6];
+    [dateformatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+    t = [timeString doubleValue]/1000;
+    longDate = [NSDate dateWithTimeIntervalSince1970:t];
+    NSString *locationString7 = [dateformatter stringFromDate:longDate];
+    
+    NSArray *dayArray = @[locationString1,locationString2,locationString3,locationString4,locationString5,locationString6,locationString7];
     //    NSLog(@"%@",dayArray);
     return dayArray;
 }

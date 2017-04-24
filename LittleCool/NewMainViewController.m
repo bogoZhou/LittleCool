@@ -11,11 +11,14 @@
 #import "PicturesViewController.h"
 #import "BannerModel.h"
 #import "WebViewController.h"
+#import "WechatTabBarViewController.h"
 
 @interface NewMainViewController ()<ImagePlayerViewDelegate>
 {
     
 }
+@property (nonatomic,strong) UIView *shuiyinView;
+
 @property (nonatomic, strong) NSMutableArray *imageURLs;
 @property (nonatomic, strong) NSCache *imageCache;
 @property (nonatomic,strong) NSMutableArray *bannerArray;
@@ -29,7 +32,7 @@
     [self UISetting];
     _bannerArray = [NSMutableArray array];
     [self loadBannerFun];
-    [self hiddenView];
+//    [self hiddenView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -37,6 +40,11 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     self.tabBarController.tabBar.hidden = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self shuiyin:YES];
 }
 
 - (void)UISetting{
@@ -49,9 +57,12 @@
     _centerViewImage.layer.cornerRadius = 5;
     _viewImage.backgroundColor = [kColorFrom0x(0xf0662f) colorWithAlphaComponent:alf];
     
+//    if ([kIsHiddenValue integerValue] < 0) {
+//        _viewCoolImage.hidden = YES;
+//    }
     _centerViewCoolImage.layer.masksToBounds = YES;
-    _centerViewImage.layer.cornerRadius = 5;
-    _viewCoolImage.backgroundColor = [kColorFrom0x(0xf0662f) colorWithAlphaComponent:alf];
+    _centerViewCoolImage.layer.cornerRadius = 5;
+    _viewCoolImage.backgroundColor = [kColorFrom0x(0xfb111df) colorWithAlphaComponent:alf];
 }
 
 - (void)creatBanner{
@@ -136,7 +147,12 @@
 
 //逗图制作
 - (IBAction)coolPicMakeButtonClick:(UIButton *)sender {
-    kAlert(@"逗图制作");
+    UIStoryboard *storyboard = kWechatStroyboard;
+    WechatTabBarViewController *wechatTBB = [storyboard instantiateViewControllerWithIdentifier:@"WechatTabBarViewController"];
+    NSString *isVIP = kIsVip;
+    if (isVIP.integerValue == 200) [self shuiyin:YES];
+    else[self shuiyin:NO];
+    [self.navigationController pushViewController:wechatTBB animated:YES];
 }
 
 
@@ -162,6 +178,24 @@
         WebViewController *webVC = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
         webVC.jumpUrl =model.redirect_link;
         [self.navigationController pushViewController:webVC animated:YES];
+    }
+    
+}
+
+#pragma mark - 水印
+
+- (void)shuiyin:(BOOL)isHidden{
+    if (isHidden) {
+        [_shuiyinView removeFromSuperview];
+        _shuiyinView = nil;
+    }else{
+        _shuiyinView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenSize.width, kScreenSize.height)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+        imageView.image = [UIImage imageNamed:@"有点逗水印"];
+        imageView.center = _shuiyinView.center;
+        [_shuiyinView addSubview:imageView];
+        _shuiyinView.userInteractionEnabled = NO;
+        [[[UIApplication sharedApplication] keyWindow] addSubview:_shuiyinView];
     }
     
 }

@@ -22,8 +22,8 @@
     //    self.navigationBar.backgroundColor = kColorFrom0x(0x2d2c33);
     //    self.navigationBar.alpha = 0.8;
     self.navigationBar.barStyle = UIBarStyleBlackOpaque;
-}
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

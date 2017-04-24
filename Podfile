@@ -7,4 +7,6 @@ target 'LittleCool' do
   pod 'WeChatSDK-iOS', '~> 1.7.3' 
   pod 'ImagePlayerView', '~> 2.0.2'
   pod 'TCCopyableLabel', '~> 1.0.1'
+  pod 'ELCImagePickerController', '~> 0.2.0'
+
 end

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/SignViewController.m"
-            timestampString = "511672694.082962"
+            timestampString = "514366808.41628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -42,7 +42,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AFClient.m"
-                  timestampString = "513686867.434437"
+                  timestampString = "514459231.198813"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "122"
@@ -57,7 +57,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AFClient.m"
-                  timestampString = "513686867.436026"
+                  timestampString = "514459231.200514"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "122"
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "961"
-            endingLineNumber = "961"
+            startingLineNumber = "1012"
+            endingLineNumber = "1012"
             landmarkName = "-creatVidioFromPhotos"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "763"
-            endingLineNumber = "763"
+            startingLineNumber = "814"
+            endingLineNumber = "814"
             landmarkName = "-merge"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "709"
-            endingLineNumber = "709"
+            startingLineNumber = "760"
+            endingLineNumber = "760"
             landmarkName = "-merge"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,7 +196,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/LittleCool/AppDelegate.m"
-                  timestampString = "513686867.445233"
+                  timestampString = "514459231.210165"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "138"
@@ -211,7 +211,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/LittleCool/AppDelegate.m"
-                  timestampString = "513686867.446562"
+                  timestampString = "514459231.211824"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "138"
@@ -228,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/SignViewController.m"
-            timestampString = "511672694.082962"
+            timestampString = "514366808.41628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -292,7 +292,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/ZLPhotoLib/Classes/ZLPhotoPicker/ViewControllers/ZLPhotoPickerAssetsViewController.m"
-                  timestampString = "513686867.449843"
+                  timestampString = "514459231.214912"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "255"
@@ -307,7 +307,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/ZLPhotoLib/Classes/ZLPhotoPicker/ViewControllers/ZLPhotoPickerAssetsViewController.m"
-                  timestampString = "513686867.451175"
+                  timestampString = "514459231.216283"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "255"
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "824"
-            endingLineNumber = "824"
+            startingLineNumber = "875"
+            endingLineNumber = "875"
             landmarkName = "-setUpAndAddAudioBySoundAsset:toComposition:sourceAudioTrack:timeRange:volumeNum:"
             landmarkType = "7">
          </BreakpointContent>
@@ -500,7 +500,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AudioDecode/AudioDecodeOperation.mm"
-                  timestampString = "513686867.475997"
+                  timestampString = "514459231.240268"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -515,7 +515,7 @@
                   moduleName = "LittleCool"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AudioDecode/AudioDecodeOperation.mm"
-                  timestampString = "513686867.477321"
+                  timestampString = "514459231.24153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1124"
-            endingLineNumber = "1124"
+            startingLineNumber = "1175"
+            endingLineNumber = "1175"
             landmarkName = "-testMark:"
             landmarkType = "7">
          </BreakpointContent>
@@ -548,27 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
+            timestampString = "514194357.890614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "663"
-            endingLineNumber = "663"
-            landmarkName = "-loadAudioIntoLocal"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LittleCool/MainDetailViewController.m"
-            timestampString = "513497934.593961"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "702"
-            endingLineNumber = "702"
+            startingLineNumber = "753"
+            endingLineNumber = "753"
             landmarkName = "-merge"
             landmarkType = "7">
          </BreakpointContent>
@@ -637,14 +621,174 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LittleCool/MineViewController.m"
-            timestampString = "513686833.691314"
+            filePath = "LittleCool/ChatDetailViewController.m"
+            timestampString = "514360094.906981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-firstStept"
+            startingLineNumber = "707"
+            endingLineNumber = "707"
+            landmarkName = "-whoChooseRed:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LittleCool/ChatDetailViewController.m"
+            timestampString = "514360094.906981"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
+            landmarkName = "-openRedPacketFunBySurplusNum:surplusMoney:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LittleCool/WolletViewController.m"
+            timestampString = "514455531.91699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-UISetting"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LittleCool/WolletViewController.m"
+            timestampString = "514455531.91699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-UISetting"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LittleCool/MainViewController.m"
+            timestampString = "514459218.656754"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-loadVideosListData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewController loadVideosListData]"
+                  moduleName = "LittleCool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/LittleCool/MainViewController.m"
+                  timestampString = "514459231.260963"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[MainViewController loadVideosListData]_block_invoke"
+                  moduleName = "LittleCool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/LittleCool/MainViewController.m"
+                  timestampString = "514459231.262299"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LittleCool/MainViewController.m"
+            timestampString = "514459219.750618"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-loadVideosListData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AFClient.m"
+            timestampString = "514459259.427275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-getVideosByUserId:udid:label_id:title:page_index:page_size:progressBlock:success:failure:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AFClient getVideosByUserId:udid:label_id:title:page_index:page_size:progressBlock:success:failure:]"
+                  moduleName = "LittleCool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AFClient.m"
+                  timestampString = "514459259.436416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "752">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__101-[AFClient getVideosByUserId:udid:label_id:title:page_index:page_size:progressBlock:success:failure:]_block_invoke"
+                  moduleName = "LittleCool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bogo/Desktop/MYGIT/LittleCool/AFClient.m"
+                  timestampString = "514459259.438823"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "202"
+                  endingLineNumber = "202"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

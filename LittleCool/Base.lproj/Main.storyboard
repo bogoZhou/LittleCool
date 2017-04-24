@@ -386,11 +386,10 @@
                                 <rect key="frame" x="353" y="59" width="12" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-9h-Zbh">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHh-sO-R1v">
                                 <rect key="frame" x="0.0" y="105" width="375" height="562"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecn-S7-f3q">
                                 <rect key="frame" x="313" y="50" width="62" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
@@ -402,7 +401,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="viewContent" destination="ekH-9h-Zbh" id="iLD-8K-NAT"/>
+                        <outlet property="scrollViewContent" destination="gHh-sO-R1v" id="2w6-0L-bG9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="45V-Ix-ci1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -987,7 +986,7 @@
                                         <rect key="frame" x="27.5" y="10" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="picture-material" translatesAutoresizingMaskIntoConstraints="NO" id="jcX-qB-GJY">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="make-drawing" translatesAutoresizingMaskIntoConstraints="NO" id="jcX-qB-GJY">
                                                 <rect key="frame" x="26.5" y="23" width="33" height="33"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -999,7 +998,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.90196078430000004" green="0.42352941179999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.69411764705882351" green="0.066666666666666666" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ad4-vL-1MH">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -1009,7 +1008,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90196078430000004" green="0.42352941179999998" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.69411764705882351" green="0.066666666666666666" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dcd-YW-Ylv" secondAttribute="height" multiplier="15:4" id="4pS-R3-59W"/>
                                 </constraints>
@@ -1054,7 +1053,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aEE-lN-B5r">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="aEE-lN-B5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1129,6 +1128,33 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="labelSize" destination="2vX-pI-08j" id="O0I-FV-iLO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HelperTableViewCell" rowHeight="50" id="ORh-R0-d0j" customClass="HelperTableViewCell">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ORh-R0-d0j" id="D0P-lU-iWm">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="逗图制作提示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stl-5p-ARy">
+                                                    <rect key="frame" x="15" y="15" width="123" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wv6-Yu-mMM">
+                                                    <rect key="frame" x="309" y="9" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="switchButtonClick:" destination="ORh-R0-d0j" eventType="valueChanged" id="Wx6-8O-qvc"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="switchButton" destination="wv6-Yu-mMM" id="5mU-zm-eXe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1661,6 +1687,7 @@
         <image name="headset" width="84" height="84"/>
         <image name="home-page" width="42" height="36"/>
         <image name="home-page02" width="42" height="36"/>
+        <image name="make-drawing" width="72" height="70"/>
         <image name="more" width="19" height="34"/>
         <image name="my" width="36" height="36"/>
         <image name="my02" width="36" height="36"/>

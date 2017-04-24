@@ -493,4 +493,19 @@
     UIGraphicsEndImageContext();
     return tImage;
 }
+
+
++ (NSString *)saveImageToSandBoxByImage:(UIImage *)image{
+    NSString *path_document = NSHomeDirectory();
+    //设置一个图片的存储路径
+    NSString *imagePath = [path_document stringByAppendingString:@"/Documents/pic.png"];
+    //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
+    [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
+    return imagePath;
+}
+
++(UIImage *)getImageFromSandBoxByImagePath:(NSString *)imagePath{
+    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    return image;
+}
 @end

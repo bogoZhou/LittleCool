@@ -8,8 +8,10 @@
 
 #import "SettingViewController.h"
 #import "SettingTableViewCell.h"
+#import "HelperTableViewCell.h"
 
 #define kCellName @"SettingTableViewCell"
+#define kHelperCell @"HelperTableViewCell"
 
 @interface SettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -97,7 +99,7 @@
 #pragma mark - tableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -111,6 +113,9 @@
         NSString *sizeStr = [NSString stringWithFormat:@"%.2fMb",[self fileSize]];
         cell.labelSize.text = sizeStr;
         return cell;
+    }else if (indexPath.section == 1){
+        HelperTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHelperCell];
+        return cell;
     }else{
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell1"];
         cell.textLabel.text = @"退出登录";
@@ -123,7 +128,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {//清理缓存
         [self clear];
-    }else{
+    }else if(indexPath.section == 2){
         [self exit];
     }
 }
@@ -133,7 +138,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return 10;
     }else{
         return 200;
@@ -141,7 +146,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return 1;
     }else{
         return 0;

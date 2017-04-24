@@ -29,18 +29,35 @@
 #import <WechatAuthSDK.h>
 #import <WXApi.h>
 #import <WXApiObject.h>
+#import "FMDBHelper.h"
+#import <ELCImagePickerController.h>
+#import <ELCAssetTablePicker.h>
 #import <QuartzCore/QuartzCore.h>
+#import "BGNotiView.h"
 
 #define kPageSize @"30"
 
 #define kMainStroyboard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 #define kSignStroyboard [UIStoryboard storyboardWithName:@"Sign" bundle:nil]
+#define kWechatStroyboard [UIStoryboard storyboardWithName:@"Wechat" bundle:nil]
 
 
 #define kInWindow [UIApplication sharedApplication].windows.lastObject
 
 #define kButtonCornerRadius 3.f
 #define kFontName @"PingFangTC-Light"
+#define kWechatNumFont @"WeChatNum-150916test"
+//#define kChatFont @"MicrosoftYaHei"
+//#define kChatFont @"ArialMT"   //now
+//#define kChatFont @"ZapfDingbatslTC"
+//#define kChatFont @"TamilSangamMN"
+//#define kChatFont @"HelveticaNeue"
+//#define kChatFont @"SinhalaSangamMN"
+#define kChatFont @"PingFangTC-Regular" // 非常像
+
+
+
+
 
 #define kCreatSQL @"userInfo.sqlite"
 
@@ -67,6 +84,10 @@
 
 #define kUnselect [UIImage imageNamed:@""]
 #define kSelect [UIImage imageNamed:@"selecte.png"]
+
+#define kUnselect1 [UIImage imageNamed:@"01.png"]
+#define kSelect1 [UIImage imageNamed:@"02.png"]
+
 #define kDefaultHeadImage [UIImage imageNamed:@"180.png"]
 #define kAddImage [UIImage imageNamed:@"actionbar_add_icon.png"]
 
@@ -95,7 +116,7 @@
 #define kTextFieldUnSelected [UIColor colorWithRed:183.0/255 green:183.0/255 blue:183.0/255 alpha:1]
 
 #define kf2f2f2 [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]//f2f2f2
-
+#define kd2d2d2 kColorFrom0x(0xd2d2d2)
 #define kShadowColor [UIColor colorWithRed:87.0/255 green:87.0/255 blue:87.0/255 alpha:1]
 
 //#define kc0c0c0 [UIColor colorWithRed:192.0/255 green:192.0/255 blue:192.0/255 alpha:1]
@@ -128,4 +149,6 @@
 #define kIsVip [[NSUserDefaults standardUserDefaults] valueForKey:@"isVip"]
 #define kIsHiddenValue [[NSUserDefaults standardUserDefaults] valueForKey:@"isHiddenValue"]
 #define UDID [[NSUserDefaults standardUserDefaults] valueForKey:@"UDID"]
+
+#define kShowHelper [[NSUserDefaults standardUserDefaults] valueForKey:@"helper"]
 #endif

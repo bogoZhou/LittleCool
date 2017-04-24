@@ -49,22 +49,23 @@
         button.tag = 12000+i;
         [button addTarget:self action:@selector(chooseAnyLabel:) forControlEvents:UIControlEventTouchUpInside];
         [labelView addSubview:button];
-        [_viewContent addSubview:labelView];
+        [_scrollViewContent addSubview:labelView];
         
         CGSize titleSize = [name.text boundingRectWithSize:CGSizeMake(kScreenSize.width - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil].size;
         
         UILabel *redLabel = [[UILabel alloc] initWithFrame:CGRectMake((labelView.sizeWidth - titleSize.width)/2 + titleSize.width - 4, 4, 10, 10)];
         redLabel.text = model.countNew;
         redLabel.textColor = kWhiteColor;
-        redLabel.font = [UIFont systemFontOfSize:8];
+        redLabel.font = [UIFont systemFontOfSize:7];
         redLabel.backgroundColor = kRedColor;
         redLabel.textAlignment = NSTextAlignmentCenter;
         redLabel.layer.masksToBounds = YES;
         redLabel.layer.cornerRadius = 5;
         redLabel.hidden = model.countNew.integerValue > 0 ? NO :YES;
         [labelView addSubview:redLabel];
-        
     }
+    NSInteger lines = _dataArray.count%4 > 0 ? _dataArray.count/4+1:_dataArray.count/4;
+    _scrollViewContent.contentSize = CGSizeMake(kScreenSize.width, 40*lines > _scrollViewContent.sizeHeight ? 40 *lines : _scrollViewContent.sizeHeight);
 }
 
 - (void)changeItems:(UIView *)view{

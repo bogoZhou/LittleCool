@@ -112,6 +112,7 @@
             [_timer setFireDate:[NSDate distantPast]];
             kAlert(@"验证码已发送");
             [_textFieldCode becomeFirstResponder];
+//            [self hiddenView];
         }else{
             kAlert(responseBody[@"message"]);
         }
@@ -152,22 +153,33 @@
             [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"][@"mobile"] forKey:@"mobile"];
 
             //判断是否是VIP
-            _hud = [MBProgressHUD showHUDAddedTo:kWindowLastPage animated:YES];
-            // Set the label text.
-            _hud.label.text = NSLocalizedString(@"正在登录...", @"HUD loading title");
-            [[AFClient shareInstance] empowerByUserId:kUserId udid:UDID progressBlock:^(NSProgress *progress) {
-                
-            } success:^(id responseBody) {
-                [_hud hideAnimated:YES];
-                [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"code"] forKey:@"isVip"];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
 
-            } failure:^(NSError *error) {
-                
-            }];
+            [self hiddenView];
             
         }else{
             kAlert(responseBody[@"message"]);
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+
+
+- (void)hiddenView{
+    [[AFClient shareInstance] hiddenViewProgressBlock:nil success:^(id responseBody) {
+        if ([responseBody[@"code"] integerValue] ==200) {
+            [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"] forKey:@"isHiddenValue"];
+            
+            [[AFClient shareInstance] empowerByUserId:kUserId udid:UDID progressBlock:^(NSProgress *progress) {
+                
+            } success:^(id responseBody) {
+                //                [_hud hideAnimated:YES];
+                [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"code"] forKey:@"isVip"];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"login" object:nil];
+                
+            } failure:^(NSError *error) {
+                
+            }];
         }
     } failure:^(NSError *error) {
         

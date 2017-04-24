@@ -226,4 +226,22 @@
 +(UIImage *) loadImage:(NSString *)fileName ofType:(NSString *)extension inDirectory:(NSString *)directoryPath;
 
 + (UIImage*) imageWithUIView:(UIView*) view;
+
+
+/**
+ 将image存入本地沙盒
+
+ @param image 要保存的image
+ @return image在沙盒的路径
+ */
++ (NSString *)saveImageToSandBoxByImage:(UIImage *)image;
+
+
+/**
+ 从沙盒读取image
+
+ @param imagePath 沙盒中image的路径
+ @return 从沙盒中获取的image对象
+ */
++(UIImage *)getImageFromSandBoxByImagePath:(NSString *)imagePath;
 @end

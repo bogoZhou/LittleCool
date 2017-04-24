@@ -123,4 +123,7 @@ typedef void(^FailureBlcok)(NSError *error);
 //11.	【图片素材标签 下的素材：分页】
 - (void)getPictureInfoByUserId:(NSString *)userId udid:(NSString *)udid material_label_id:(NSString *)material_label_id title:(NSString *)title page_index:(NSString *)page_index page_size:(NSString *)page_size progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
 
+//12.	【仿微信：获取指定数量的用户】
+- (void)getRandomUserByCounts:(NSString *)counts progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
+
 @end
