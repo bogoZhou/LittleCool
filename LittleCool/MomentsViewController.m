@@ -618,8 +618,8 @@ const CGFloat kRefreshBoundary = 20.0f;
 }
 
 - (void)changeBGImage:(NSNotification *)noti{
-    [[NSUserDefaults standardUserDefaults] setObject:noti.object forKey:@"bgImage"];
-    [self.tableViewHeader setBGImage:[UIImage imageWithData:(NSData *)noti.object]];
+    [[NSUserDefaults standardUserDefaults] setObject:[BGFunctionHelper saveImageToSandBoxByImage:noti.object] forKey:@"bgImage"];
+    [self.tableViewHeader setBGImage:[BGFunctionHelper getImageFromSandBoxByImagePath:noti.object]];
 }
 
 - (NSMutableArray *)dataSource {
@@ -760,7 +760,8 @@ const CGFloat kRefreshBoundary = 20.0f;
 - (void)choosePerson:(NSNotification *)noti{
     _chooseUser = [noti.object lastObject];
     
-    [self.commentView.emojiButton setImage:[UIImage imageWithData:_chooseUser.headImage] forState:UIControlStateNormal];
+//    [self.commentView.emojiButton setImage:[UIImage imageWithData:_chooseUser.headImage] forState:UIControlStateNormal];
+    [self.commentView.emojiButton setImage:[BGFunctionHelper getImageFromSandBoxByImagePath:_chooseUser.headImage] forState:UIControlStateNormal];
 }
 //    _fakeDatasource =
 //    @[@{@"type":@"image",

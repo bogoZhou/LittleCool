@@ -50,7 +50,7 @@ static FMDBHelper *fmManager = nil;
 {
     //sql 语句
     if ([db open]) {
-        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' BLOB, '%@' TEXT, '%@' TEXT)",tableName,ID,NAME,HEADIMAGE,WECHATNUM,MONEY];
+        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' TEXT, '%@' TEXT, '%@' TEXT)",tableName,ID,NAME,HEADIMAGE,WECHATNUM,MONEY];
         BOOL res = [db executeUpdate:sqlCreateTable];
         if (!res) {
             NSLog(@"error when creating db table");
@@ -67,7 +67,7 @@ static FMDBHelper *fmManager = nil;
 -(void)insertMyUserInfoDataByTableName:(NSString *)tableName
                           Id:(NSString *)Id
                         name:(NSString *)name
-                   headImage:(NSData *)headImage
+                   headImage:(NSString *)headImage
                    wechatNum:(NSString *)wechatNum
                        money:(NSString *)money
 {
@@ -88,7 +88,7 @@ static FMDBHelper *fmManager = nil;
 -(void)insertOtherUserInfoDataByTableName:(NSString *)tableName
                           Id:(NSString *)Id
                         name:(NSString *)name
-                   headImage:(NSData *)headImage
+                   headImage:(NSString *)headImage
                    wechatNum:(NSString *)wechatNum
                        money:(NSString *)money
 {
@@ -187,7 +187,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs dataForColumn:HEADIMAGE];
+            model.headImage = [rs stringForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
                         
@@ -211,7 +211,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs dataForColumn:HEADIMAGE];
+            model.headImage = [rs stringForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
             
@@ -302,7 +302,7 @@ static FMDBHelper *fmManager = nil;
                        lastTime:(NSString *)lastTime
                         chatDetailId:(NSString *)chatDetailId
                     isNoti:(NSString *)isNoti
-                       userImage:(NSData *)userImage
+                       userImage:(NSString *)userImage
                     userName:(NSString *)userName
                        lastContent:(NSString *)lastContent
                           userId:(NSString *)userId
@@ -347,7 +347,7 @@ static FMDBHelper *fmManager = nil;
             model.chatDetailId = [rs stringForColumn:@"chatDetailId"];
             model.lastTime = [rs stringForColumn:@"lastTime"];
             model.isNoti = [rs stringForColumn:@"isNoti"];
-            model.userImage = [rs dataForColumn:@"userImage"];
+            model.userImage = [rs stringForColumn:@"userImage"];
             model.userName = [rs stringForColumn:@"userName"];
             model.lastContent = [rs stringForColumn:@"lastContent"];
             model.userId = [rs stringForColumn:@"userId"];
@@ -378,11 +378,11 @@ static FMDBHelper *fmManager = nil;
 -(void)insertChatDetailByTableName:(NSString *)tableName
                     chatRoomId:(NSString *)chatRoomId
                         lastTime:(NSString *)lastTime
-                       userImage:(NSData *)userImage
+                       userImage:(NSString *)userImage
                         userName:(NSString *)userName
                         content:(NSString *)content
                      type:(NSString *)type
-                      contentImage:(NSData *)contentImage
+                      contentImage:(NSString *)contentImage
 {
     if ([db open]) {
 //        NSString *insertSql1= [NSString stringWithFormat:
@@ -415,11 +415,11 @@ static FMDBHelper *fmManager = nil;
             ChatModel *model = [[ChatModel alloc] init];
             model.chatRoomId = [rs stringForColumn:@"chatRoomId"];
             model.lastTime = [rs stringForColumn:@"lastTime"];
-            model.userImage = [rs dataForColumn:@"userImage"];
+            model.userImage = [rs stringForColumn:@"userImage"];
             model.userName = [rs stringForColumn:@"userName"];
             model.content = [rs stringForColumn:@"content"];
             model.type = [rs stringForColumn:@"type"];
-            model.contentImage = [rs dataForColumn:@"contentImage"];
+            model.contentImage = [rs stringForColumn:@"contentImage"];
             model.chatDetailId = [rs stringForColumn:@"chatDetailId"];
             [array addObject:model];
         }
@@ -657,7 +657,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs dataForColumn:HEADIMAGE];
+            model.headImage = [rs stringForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
             
@@ -773,7 +773,7 @@ static FMDBHelper *fmManager = nil;
     }
 }
 
--(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSData *)image
+-(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSString *)image
 {
     if ([db open]) {
 //        NSString *insertSql1= [NSString stringWithFormat:
@@ -809,8 +809,8 @@ static FMDBHelper *fmManager = nil;
         
         FMResultSet * rs = [db executeQuery:sql];
         while ([rs next]) {
-            NSData *image = [rs dataForColumn:@"image"];
-            [array addObject:image];
+            NSString *imageUrl = [rs stringForColumn:@"image"];
+            [array addObject:imageUrl];
         }
         //[db close];
     }

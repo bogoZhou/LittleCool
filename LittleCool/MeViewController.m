@@ -44,7 +44,8 @@
     UserInfoModel *model = [[UserInfoModel alloc] init];
     
     model = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] firstObject];
-    _imageViewHeader.image = [UIImage imageWithData:model.headImage];
+//    _imageViewHeader.image = [UIImage imageWithData:model.headImage];
+    _imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
     _imageViewHeader.layer.masksToBounds = YES;
     _imageViewHeader.layer.cornerRadius = 5;
     _imageViewHeader.layer.borderColor = [kd2d2d2 CGColor];

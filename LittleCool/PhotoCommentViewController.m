@@ -73,8 +73,8 @@
 }
 
 - (void)takePicFun:(NSNotification *)noti{
-    UIImage *image = [UIImage imageWithData:noti.object];
-    [self.chosenImages addObject:image];
+//    UIImage *image = [UIImage imageWithData:noti.object];
+    [self.chosenImages addObject:noti.object];
     [self creatImgScr];
 }
 
@@ -108,9 +108,9 @@
     FriendsModel *model = [[[FMDBHelper fmManger] selectFriendsWhereValue1:@"" value2:@"" isNeed:NO] lastObject];
     
     for (UIImage *image in self.chosenImages) {
-        NSData *imageData = [[NSData alloc] init];
-        imageData = UIImagePNGRepresentation(image);
-        [[FMDBHelper fmManger] insertFriendsImagesDataByFriendsId:model.Id image:imageData];
+//        NSData *imageData = [[NSData alloc] init];
+//        imageData = UIImagePNGRepresentation(image);
+        [[FMDBHelper fmManger] insertFriendsImagesDataByFriendsId:model.Id image:[BGFunctionHelper saveImageToSandBoxByImage:image]];
     }
     NSArray *array = [[FMDBHelper fmManger] selectFriendsImageWhereValue1:@"friendsId" value2:model.Id isNeed:YES];
 

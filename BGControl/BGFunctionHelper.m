@@ -497,8 +497,10 @@
 
 + (NSString *)saveImageToSandBoxByImage:(UIImage *)image{
     NSString *path_document = NSHomeDirectory();
+    NSString *dateString = [BGDateHelper getTimeStempByString:[BGDateHelper seeDay][5] havehh:YES];
     //设置一个图片的存储路径
-    NSString *imagePath = [path_document stringByAppendingString:@"/Documents/pic.png"];
+    NSString *imagePath = [path_document stringByAppendingString:[NSString stringWithFormat:@"/Documents/%@.png",dateString]];
+    NSLog(@"!!!!! imagePath -> %@ !!!!!",imagePath);
     //把图片直接保存到指定的路径（同时应该把图片的路径imagePath存起来，下次就可以直接用来取）
     [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
     return imagePath;
@@ -507,5 +509,64 @@
 +(UIImage *)getImageFromSandBoxByImagePath:(NSString *)imagePath{
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     return image;
+}
+
++ (UIImage *)compressImage:(UIImage *)image toByte:(NSUInteger)maxLength {
+    // Compress by quality
+    CGFloat compression = 1;
+    NSData *data = UIImageJPEGRepresentation(image, compression);
+    if (data.length < maxLength) return image;
+    
+    CGFloat max = 1;
+    CGFloat min = 0;
+    for (int i = 0; i < 6; ++i) {
+        compression = (max + min) / 2;
+        data = UIImageJPEGRepresentation(image, compression);
+        if (data.length < maxLength * 0.9) {
+            min = compression;
+        } else if (data.length > maxLength) {
+            max = compression;
+        } else {
+            break;
+        }
+    }
+    UIImage *resultImage = [UIImage imageWithData:data];
+    if (data.length < maxLength) return resultImage;
+    
+    // Compress by size
+    NSUInteger lastDataLength = 0;
+    while (data.length > maxLength && data.length != lastDataLength) {
+        lastDataLength = data.length;
+        CGFloat ratio = (CGFloat)maxLength / data.length;
+        CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)),
+                                 (NSUInteger)(resultImage.size.height * sqrtf(ratio))); // Use NSUInteger to prevent white blank
+        UIGraphicsBeginImageContext(size);
+        [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        resultImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        data = UIImageJPEGRepresentation(resultImage, compression);
+    }
+    
+    return resultImage;
+}
+
++ (UIImage *)compressImageSize:(UIImage *)image toByte:(NSUInteger)maxLength {
+    UIImage *resultImage = image;
+    NSData *data = UIImageJPEGRepresentation(resultImage, 1);
+    NSUInteger lastDataLength = 0;
+    while (data.length > maxLength && data.length != lastDataLength) {
+        lastDataLength = data.length;
+        CGFloat ratio = (CGFloat)maxLength / data.length;
+        CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)),
+                                 (NSUInteger)(resultImage.size.height * sqrtf(ratio))); // Use NSUInteger to prevent white blank
+        UIGraphicsBeginImageContext(size);
+        // Use image to draw (drawInRect:), image is larger but more compression time
+        // Use result image to draw, image is smaller but less compression time
+        [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        resultImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        data = UIImageJPEGRepresentation(resultImage, 1);
+    }
+    return resultImage;
 }
 @end

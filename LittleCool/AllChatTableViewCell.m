@@ -195,7 +195,8 @@
         //设置头像
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenSize.width - 60, 10, 40, 40)];
                 imageView.backgroundColor = kWhiteColor;
-        imageView.image = [UIImage imageWithData:model.userImage];
+//        imageView.image = [UIImage imageWithData:model.userImage];
+        imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
         [_myContentView addSubview:imageView];
         
         //设置内容View
@@ -243,7 +244,8 @@
     }else if (model.type.integerValue == 10){//对方发文字
         //设置头像
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
-        imageView.image = [UIImage imageWithData:model.userImage];
+//        imageView.image = [UIImage imageWithData:model.userImage];
+        imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
         imageView.backgroundColor = kWhiteColor;
         [_myContentView addSubview:imageView];
         
@@ -298,7 +300,7 @@
 //显示图片
 - (void)showImageCells:(ChatModel *)model{
     
-    UIImage *img = [UIImage imageWithData:model.contentImage];
+    UIImage *img = [BGFunctionHelper getImageFromSandBoxByImagePath:model.contentImage];
     CGSize imgSize = img.size;
     CGSize ruleSize = CGSizeMake(145, 145);
     if (img.size.width >= img.size.height) {//宽图
@@ -338,11 +340,13 @@
     
     image.layer.mask = layer;
     image.layer.frame = image.frame;
-    image.image = [UIImage imageWithData:model.contentImage];
+//    image.image = [UIImage imageWithData:model.contentImage];
+    image.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.contentImage];
     
     _myContentView.frame = CGRectMake(_myContentView.frame.origin.x, _myContentView.frame.origin.y, _myContentView.frame.size.width, imgSize.height + kSpace);
     
-    imageView.image = [UIImage imageWithData:model.userImage];
+//    imageView.image = [UIImage imageWithData:model.userImage];
+    image.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
     imageView.userInteractionEnabled = YES;
     imageView.backgroundColor = kWhiteColor;
     [_myContentView addSubview:imageView];
@@ -493,7 +497,8 @@
     
     //设置头像
     imageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenSize.width - 60, 10, 40, 40)];
-    imageView.image = [UIImage imageWithData:model.userImage];
+//    imageView.image = [UIImage imageWithData:model.userImage];
+    imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
     imageView.userInteractionEnabled = YES;
     imageView.backgroundColor = kWhiteColor;
     [_myContentView addSubview:imageView];
@@ -581,7 +586,8 @@
     
     //设置头像
     imageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenSize.width - 60, 10, 40, 40)];
-    imageView.image = [UIImage imageWithData:model.userImage];
+//    imageView.image = [UIImage imageWithData:model.userImage];
+    imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
     imageView.backgroundColor = kWhiteColor;
     [_myContentView addSubview:imageView];
     
@@ -682,7 +688,8 @@
         //设置头像
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake(kScreenSize.width - 60, 10, 40, 40)];
         imageView.backgroundColor = kWhiteColor;
-        imageView.image = [UIImage imageWithData:model.userImage];
+//        imageView.image = [UIImage imageWithData:model.userImage];
+        imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
         [_myContentView addSubview:imageView];
         
         //设置内容View
@@ -713,7 +720,8 @@
     }else if (model.type.integerValue == 2){//对方发文字
         //设置头像
         imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 40, 40)];
-        imageView.image = [UIImage imageWithData:model.userImage];
+//        imageView.image = [UIImage imageWithData:model.userImage];
+        imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
         imageView.backgroundColor = kWhiteColor;
         [_myContentView addSubview:imageView];
         

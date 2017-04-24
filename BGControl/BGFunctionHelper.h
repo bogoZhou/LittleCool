@@ -244,4 +244,16 @@
  @return 从沙盒中获取的image对象
  */
 +(UIImage *)getImageFromSandBoxByImagePath:(NSString *)imagePath;
+
+
+/**
+ 压缩图片
+
+ @param image 要压缩的图片
+ @param maxLength 最大长度
+ @return 压缩完成的图片
+ */
++ (UIImage *)compressImage:(UIImage *)image toByte:(NSUInteger)maxLength;
+
++ (UIImage *)compressImageSize:(UIImage *)image toByte:(NSUInteger)maxLength;
 @end

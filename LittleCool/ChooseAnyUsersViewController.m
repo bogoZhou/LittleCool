@@ -134,7 +134,8 @@
     
    
     
-    cell.imageViewheader.image = [UIImage imageWithData:model.headImage];
+//    cell.imageViewheader.image = [UIImage imageWithData:model.headImage];
+    cell.imageViewheader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
     cell.labelName.text = [NSString stringWithFormat:@"%@",model.name];
 //    [cell showImageSelect:kSelect];
     if ([self.dataArray[indexPath.section] count] -1== indexPath.row) {

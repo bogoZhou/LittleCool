@@ -75,7 +75,8 @@
             cell.imageViewNews.hidden = YES;
             cell.imageViewRed.hidden = YES;
         }else{
-            cell.imageViewNews.image = [UIImage imageWithData:_userHeaderWork.headImage];
+//            cell.imageViewNews.image = [UIImage imageWithData:_userHeaderWork.headImage];
+            cell.imageViewNews.image = [BGFunctionHelper getImageFromSandBoxByImagePath:_userHeaderWork.headImage];
         }
     }
     

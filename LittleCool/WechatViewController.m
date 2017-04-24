@@ -112,17 +112,19 @@
     model = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] lastObject];
     UIImage *image;
     
-    image = [UIImage imageWithData:model.headImage];
+//    image = [UIImage imageWithData:model.headImage];
+    image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
     if (!image) {
         [[FMDBHelper fmManger] getFMDBBySQLName:kCreatSQL];
         [[FMDBHelper fmManger] createTableByTableName:kOthreUserTable];
         
         UIImage *image = [UIImage imageNamed:@"pengyouquan_head.jpg"];
-        NSData *imageData = UIImagePNGRepresentation(image);
+//        NSData *imageData = UIImagePNGRepresentation(image);
 
 //        [[FMDBHelper fmManger] insertMyUserInfoDataByTableName:kUserTable Id:@"1" name:@"有点逗" headImage:imageData wechatNum:@"cool" money:@"666"];
 //        [[FMDBHelper fmManger] insertMyUserInfoDataByTableName:kOthreUserTable Id:@"1" name:@"有点逗" headImage:imageData wechatNum:@"cool" money:@"666"];
-        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:@"有点逗" headImage:imageData wechatNum:@"cool" money:@"666"];
+        
+        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:@"有点逗" headImage:[BGFunctionHelper saveImageToSandBoxByImage:image] wechatNum:@"cool" money:@"666"];
     }
 }
 
@@ -219,7 +221,8 @@
         cell = [[ChatTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellName];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.imageViewHeader.image = [UIImage imageWithData:model.userImage];
+//    cell.imageViewHeader.image = [UIImage imageWithData:model.userImage];
+    cell.imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.userImage];
     cell.labelName.text = model.userName;
     cell.labelTime.text = [BGDateHelper getTimeStringFromNumberTimer:model.lastTime isMinuteLater:YES];
     cell.labelContent.text = model.lastContent;
@@ -328,8 +331,8 @@
         [[FMDBHelper fmManger] creatImageTable];
         for (int i = 1; i <= nameArray.count ;i ++) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"jpg%d.jpg",i]];
-            NSData *imageData = UIImagePNGRepresentation(image);
-            [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:nameArray[i-1] headImage:imageData wechatNum:@"1" money:@"1"];
+//            NSData *imageData = UIImagePNGRepresentation(image);
+            [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:nameArray[i-1] headImage:[BGFunctionHelper saveImageToSandBoxByImage:image] wechatNum:@"1" money:@"1"];
         }
         NSMutableArray *array = [[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable];
         NSLog(@"imageArray -> %@",array);

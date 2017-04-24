@@ -46,10 +46,10 @@
     
 //    UIImage *image = [UIImage imageWithData:model.headImage];
     UIImage *image = [UIImage imageNamed:@"pengyouquan_bg.jpg"];
-    NSData *bgImageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"bgImage"];
+    NSString *bgImageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"bgImage"];
     
     if (bgImageData) {
-        image = [UIImage imageWithData:bgImageData];
+        image = [BGFunctionHelper getImageFromSandBoxByImagePath:bgImageData];
     }
     
     LWLayout* layout = [[LWLayout alloc] init];
@@ -60,7 +60,8 @@
     [layout addStorage:_bgImage];
     
     LWImageStorage* avtar = [[LWImageStorage alloc] init];
-    avtar.contents = [UIImage imageWithData:model.headImage];
+//    avtar.contents = [UIImage imageWithData:model.headImage];
+    avtar.contents = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
     avtar.frame = CGRectMake(SCREEN_WIDTH - 90.0f, displayView.bounds.size.height - 95.0f, 80.0f, 80.0f);
     //        avtar.cornerRadius = 0.01f;
     avtar.backgroundColor = kWhiteColor;

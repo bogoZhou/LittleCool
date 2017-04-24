@@ -13,6 +13,7 @@ static TakePicDelegate *defaultManager = nil;
 @interface TakePicDelegate ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     NSData *_str;
+    UIImage *_imageSelect;
     NSString *_notiName;
 }
 @end
@@ -119,13 +120,15 @@ static TakePicDelegate *defaultManager = nil;
 {
     UIImage *image = [BGControlHelper fixOrientation:currentImage];
     
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.3);
+    NSData *imageData = UIImagePNGRepresentation(image);
     // 获取沙盒目录
     
     NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
     _str=imageData;
     //    NSLog(@"图pian:%@",self.str);
     // 将图片写入文件
+    
+    _imageSelect = image;
     
     [imageData writeToFile:fullPath atomically:NO];
     
@@ -143,12 +146,19 @@ static TakePicDelegate *defaultManager = nil;
     [picker dismissViewControllerAnimated:YES completion:^{}];
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    UIImage *image2 = [BGFunctionHelper compressImage:image toByte:800*1024];
+    UIImage *image2  =[BGFunctionHelper compressImageSize:image toByte:800*1024];
     
-    [self saveImage:image withName:@"headPic.png"];
+    UIImage *image3 = [BGControlHelper fixOrientation:image2];
     
-    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"headPic.png"];
+//    [self saveImage:image2 withName:@"headPic.png"];
+//    [BGFunctionHelper saveImageToSandBoxByImage:image3];
+    _imageSelect = image3;
+    [self uploadPicture];
     
-    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+//    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"headPic.png"];
+//    
+//    UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
     
     
 //    [self.headImageView setImage:savedImage];
@@ -178,7 +188,7 @@ static TakePicDelegate *defaultManager = nil;
 //    } failure:^(NSError *error) {
 //        
 //    }] ;
-    [[NSNotificationCenter defaultCenter] postNotificationName:_notiName object:_str];
+    [[NSNotificationCenter defaultCenter] postNotificationName:_notiName object:_imageSelect];
 }
 
 

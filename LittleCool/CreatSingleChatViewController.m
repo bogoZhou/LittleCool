@@ -112,12 +112,12 @@
     //如果昵称和头像都存在，则 先添加到user表中 再创建聊天list表
     [[FMDBHelper fmManger] creatChatListTable];
     //创建user
-    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:UIImagePNGRepresentation(_imageViewHeader.image) wechatNum:@"singleDog" money:@"666"];
+    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] wechatNum:@"bogo000" money:@"666"];
     
     UserInfoModel *model = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] lastObject];
     
     //创建chatList
-    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[self countDate:_textFieldDate.text] chatDetailId:@"1" isNoti:@"1" userImage:UIImagePNGRepresentation(_imageViewHeader.image) userName:_textFieldNickName.text lastContent:_switchButton.isOn ? [NSString stringWithFormat:@"我是%@",_textFieldNickName.text] : @" "  userId:model.Id];
+    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[self countDate:_textFieldDate.text] chatDetailId:@"1" isNoti:@"1" userImage:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] userName:_textFieldNickName.text lastContent:_switchButton.isOn ? [NSString stringWithFormat:@"我是%@",_textFieldNickName.text] : @" "  userId:model.Id];
     
     if (_switchButton.isOn) {//如果是新好友
         NSString *message1 = _textFieldContent1.text;

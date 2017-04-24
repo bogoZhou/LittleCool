@@ -165,7 +165,9 @@
     
     UserInfoModel *user = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] firstObject];
     
-    [_emojiButton setImage:[UIImage imageWithData:user.headImage] forState:UIControlStateNormal];
+//    [_emojiButton setImage:[UIImage imageWithData:user.headImage] forState:UIControlStateNormal];
+    [_emojiButton setImage:[BGFunctionHelper getImageFromSandBoxByImagePath:user.headImage] forState:UIControlStateNormal];
+
     return _emojiButton;
 }
 

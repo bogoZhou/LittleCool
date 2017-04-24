@@ -97,7 +97,8 @@
             
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10 +(10 + imageWidth) * j,10 + (10 + imageWidth) * i, imageWidth, imageWidth)];
             
-            imageView.image = [UIImage imageWithData:user.headImage];
+//            imageView.image = [UIImage imageWithData:user.headImage];
+            imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:user.headImage];
             imageView.userInteractionEnabled = YES;
             [_addressBookView addSubview:imageView];
         }
@@ -143,7 +144,8 @@
             
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10 +(10 + imageWidth) * j,10 + (10 + imageWidth) * i, imageWidth, imageWidth)];
             
-            imageView.image = [UIImage imageWithData:user.headImage];
+//            imageView.image = [UIImage imageWithData:user.headImage];
+            imageView.image = [BGFunctionHelper getImageFromSandBoxByImagePath:user.headImage];
             imageView.userInteractionEnabled = YES;
             [_autoView addSubview:imageView];
         }
@@ -270,7 +272,7 @@
     for (loadUserModel *model in _autoArray) {
         UIImageView *imageView = [[UIImageView alloc] init];
         [imageView sd_setImageWithURL:[NSURL URLWithString:model.img_url]];
-        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:model.name headImage:UIImagePNGRepresentation(imageView.image) wechatNum:@"1" money:@"1"];
+        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:model.name headImage:[BGFunctionHelper saveImageToSandBoxByImage:imageView.image] wechatNum:@"1" money:@"1"];
         UserInfoModel *user = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] lastObject];
         [_allUserArray addObject:user];
     }
@@ -286,7 +288,7 @@
         }else{
             usersId = [NSString stringWithFormat:@"%@,%@",usersId,user.Id];
         }
-        UIImage *image = [UIImage imageWithData:user.headImage];
+        UIImage *image = [BGFunctionHelper getImageFromSandBoxByImagePath:user.headImage];
         [imgArr addObject:image];
     }
     
@@ -296,7 +298,7 @@
     
     [[FMDBHelper fmManger] creatChatListTable];
     
-    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[BGDateHelper getTimeStempByString:[BGDateHelper seeDay][5] havehh:YES] chatDetailId:_textFieldGroupNum.text isNoti:@"1" userImage:UIImagePNGRepresentation(headImage) userName:_textFieldGroupName.text lastContent:@""  userId:usersId];
+    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[BGDateHelper getTimeStempByString:[BGDateHelper seeDay][5] havehh:YES] chatDetailId:_textFieldGroupNum.text isNoti:@"1" userImage:[BGFunctionHelper saveImageToSandBoxByImage:headImage] userName:_textFieldGroupName.text lastContent:@""  userId:usersId];
 
     [self.navigationController popToViewController:[self.navigationController.viewControllers firstObject] animated:YES];
 }

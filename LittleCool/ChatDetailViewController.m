@@ -29,7 +29,7 @@
 {
     NSString *_userType;
     BOOL _isClicklAddButton;
-    NSData *_imageData;
+    NSString *_imageData;
     NSString *_myRedId;
 }
 @property (nonatomic,strong) UIButton *rightBTN;
@@ -323,8 +323,8 @@
 }
 
 //发送图片
-- (void)changeHeadImage:(NSNotification *)noti{
-    _imageData = noti.object;
+- (void)changeImage:(NSNotification *)noti{
+    _imageData = [BGFunctionHelper saveImageToSandBoxByImage:noti.object];
     
     [[FMDBHelper fmManger] getFMDBBySQLName:kCreatSQL];
     [[FMDBHelper fmManger] creatChatListTable];
@@ -337,8 +337,8 @@
         [[FMDBHelper fmManger] updateDataByTableName:kChatListTable TypeName:@"lastTime" typeValue0:[self countDate:[BGDateHelper seeDay][5]]  typeValue1:@"chatRoomId" typeValue2:_roomId];
 //        [[FMDBHelper fmManger] updateDataByTableName:kChatListTable TypeName:@"headImage" typeValue0:_userModel.headImage  typeValue1:@"chatRoomId" typeValue2:_roomId];
         
-        NSMutableArray *aaaaa  =[[FMDBHelper fmManger] selectChatListWhereValue1:nil value2:nil isNeed:NO];
-        NSLog(@"%@",aaaaa);
+//        NSMutableArray *aaaaa  =[[FMDBHelper fmManger] selectChatListWhereValue1:nil value2:nil isNeed:NO];
+//        NSLog(@"%@",aaaaa);
     }else{
         //如果不存在 添加数据
         [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[self countDate:[BGDateHelper seeDay][5]] chatDetailId:@"1" isNoti:@"1" userImage:_userModel.headImage userName:_userModel.name lastContent:_textFieldPut.text userId:_userId];
@@ -677,7 +677,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteCells:) name:@"longPress" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendMoney:) name:@"clickZhuanZhang" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getRedPacket:) name:@"clickRedPacket" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeHeadImage:) name:@"chatImage" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeImage:) name:@"chatImage" object:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendRedPacket:) name:@"redPacket" object:nil];
     
@@ -780,7 +780,7 @@
     _userModel = [noti.object lastObject];
     
     _userType = @"2";
-    [_buttonSound setImage:[UIImage imageWithData:_userModel.headImage] forState:UIControlStateNormal];
+    [_buttonSound setImage:[BGFunctionHelper getImageFromSandBoxByImagePath:_userModel.headImage] forState:UIControlStateNormal];
 }
 
 - (void)getRedPacket:(NSNotification *)noti{
@@ -906,7 +906,8 @@
                 if (!_userModel) {
                     _userModel = [[[FMDBHelper fmManger] selectUserInfoDataByValueName:@"Id" value:groupIds.firstObject] firstObject];
                 }
-                [_buttonSound setImage:[UIImage imageWithData:_userModel.headImage] forState:UIControlStateNormal];
+//                [_buttonSound setImage:[UIImage imageWithData:_userModel.headImage] forState:UIControlStateNormal];
+                [_buttonSound setImage:[BGFunctionHelper getImageFromSandBoxByImagePath:_userModel.headImage] forState:UIControlStateNormal];
 
             }
             
