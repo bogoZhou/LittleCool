@@ -118,8 +118,7 @@
 //    NSMutableArray *array = [[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable];
     UserInfoModel *model = self.dataArray[indexPath.section][indexPath.row];
 
-//    cell.imageViewheader.image = [UIImage imageWithData:model.headImage];
-    cell.imageViewheader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
+    cell.imageViewheader.image = [UIImage imageWithData:model.headImage];
     cell.labelName.text = [NSString stringWithFormat:@"%@",model.name];
 
     if ([self.dataArray[indexPath.section] count]-1== indexPath.row) {

@@ -127,7 +127,7 @@
         
         if (self.picArray.count - 1 == i) {
             
-            UIView *inView = [[UIView alloc] initWithFrame:CGRectMake(kScreenSize.width/2 - 80, kScreenSize.height - 150, 160, 50)];
+            UIView *inView = [[UIView alloc] initWithFrame:CGRectMake(kScreenSize.width/3 - (kScreenSize.width/3/2) -20, kScreenSize.height - 150, kScreenSize.width/3, 40)];
             inView.layer.masksToBounds = YES;
             inView.layer.cornerRadius = 10;
             inView.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
@@ -139,13 +139,36 @@
             contentLabel.text = @"立即体验";
             contentLabel.textAlignment = NSTextAlignmentCenter;
             contentLabel.textColor = kColorFrom0x(0xd53c3e);
+            
             [inView addSubview:contentLabel];
             [imageView addSubview:inView];
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-            button.frame = CGRectMake(0, 0, kScreenSize.width, kScreenSize.height);
+            button.frame = contentLabel.frame;
             [button addTarget:self action:@selector(scrollViewButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-            [imageView addSubview:button];
+            [inView addSubview:button];
+            imageView.userInteractionEnabled = YES;
+            
+            UIView *inView2 = [[UIView alloc] initWithFrame:CGRectMake(kScreenSize.width - kScreenSize.width/3 - kScreenSize.width/3/2 +20, kScreenSize.height - 150, kScreenSize.width/3, 40)];
+            inView2.layer.masksToBounds = YES;
+            inView2.layer.cornerRadius = 10;
+            inView2.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
+            inView2.layer.borderWidth = 1.f;
+            inView2.backgroundColor = [kWhiteColor colorWithAlphaComponent:0.5];
+            
+            UILabel *contentLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, inView2.sizeWidth, inView2.sizeHeight)];
+            contentLabel2.font = [UIFont systemFontOfSize:20];
+            contentLabel2.text = @"手机登录";
+            contentLabel2.textAlignment = NSTextAlignmentCenter;
+            contentLabel2.textColor = kColorFrom0x(0xd53c3e);
+            
+            [inView2 addSubview:contentLabel2];
+            [imageView addSubview:inView2];
+            
+            UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
+            button2.frame = contentLabel2.frame;
+            [button2 addTarget:self action:@selector(scrollViewButtonClick2:) forControlEvents:UIControlEventTouchUpInside];
+            [inView2 addSubview:button2];
             imageView.userInteractionEnabled = YES;
         }
         [self.mainScrollView addSubview:imageView];
@@ -262,6 +285,22 @@
             }
         }
     }
+}
+
+- (void)scrollViewButtonClick2:(UIButton *)button{
+    [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"FIRST"];
+    [[NSUserDefaults standardUserDefaults] setValue:[DLUDID value] forKey:@"UDID"];
+    [[AFClient shareInstance] hiddenViewProgressBlock:nil success:^(id responseBody) {
+        if ([responseBody[@"code"] integerValue] ==200) {
+            [[NSUserDefaults standardUserDefaults] setValue:responseBody[@"data"] forKey:@"isHiddenValue"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"sign" object:nil];
+
+        }else{
+            kAlert(responseBody[@"message"]);
+        }
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 /**

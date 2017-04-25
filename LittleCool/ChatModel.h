@@ -20,9 +20,9 @@
 //11->我撤回;12->对方撤回;13->我领取红包;14->对方领取红包
 @property (nonatomic,strong) NSString *type;
 
-@property (nonatomic,strong) NSString *userImage;       //头像
+//@property (nonatomic,strong) NSData *userImage;       //头像
 @property (nonatomic,strong) NSString *content;            //聊天文字内容
 @property (nonatomic,strong) NSString *lastTime;           //最后聊天时间
-@property (nonatomic,strong) NSString *userName;        //用户名称
-@property (nonatomic,strong) NSString *contentImage;
+@property (nonatomic,strong) NSString *userId;        //用户名称
+@property (nonatomic,strong) NSData *contentImage;
 @end

@@ -40,8 +40,7 @@
     
     _userInfoModel = [[[FMDBHelper fmManger] selectUserInfoDataByValueName:@"Id" value:_userId] lastObject];
     
-//    _imageViewHeader.image = [UIImage imageWithData:_userInfoModel.headImage];
-    _imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:_userInfoModel.headImage];
+    _imageViewHeader.image = [UIImage imageWithData:_userInfoModel.headImage];
     _textFieldUserName.text = _userInfoModel.name;
 }
 
@@ -102,9 +101,7 @@
 
 //选择改变头像图片
 - (void)changeHeadImage:(NSNotification *)noti{
-//    _imageViewHeader.image = [UIImage imageWithData:noti.object];
-    _imageViewHeader.image = noti.object;
-    [BGFunctionHelper saveImageToSandBoxByImage:noti.object];
+    _imageViewHeader.image = [UIImage imageWithData:noti.object];
 }
 
 - (void)didReceiveMemoryWarning {

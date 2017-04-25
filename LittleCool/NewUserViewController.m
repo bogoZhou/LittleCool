@@ -13,7 +13,7 @@
 {
     
 }
-@property (nonatomic,strong) NSString *imageStr;
+@property (nonatomic,strong) NSData *imageStr;
 
 @property (nonatomic,strong) NSMutableDictionary *dictionary;
 @end
@@ -46,8 +46,7 @@
     UserInfoModel *model = [[UserInfoModel alloc] init];
     
     model = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] firstObject];
-//    _imageViewHeader.image = [UIImage imageWithData:model.headImage];
-    _imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:model.headImage];
+    _imageViewHeader.image = [UIImage imageWithData:model.headImage];
     _textFieldNickName.text = model.name;
     _textFieldWechatNum.text = model.wechatNum;
 }
@@ -55,9 +54,8 @@
 #pragma mark - 点击选择图片按钮
 
 - (void)changeHeadImage:(NSNotification *)noti{
-//    _imageStr = noti.object;
-    _imageStr = [BGFunctionHelper saveImageToSandBoxByImage:noti.object];
-    _imageViewHeader.image = noti.object;
+    _imageStr = noti.object;
+    _imageViewHeader.image = [UIImage imageWithData:_imageStr];
 }
 
 - (IBAction)changeHeadImageButtonClick:(UIButton *)sender {
@@ -91,14 +89,14 @@
         
         [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"wechatNum" typeValue0:_textFieldWechatNum.text typeValue1:@"Id" typeValue2:@"1"];
         
-        [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"headImage" typeValue0:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] typeValue1:@"Id" typeValue2:@"1"];
+        [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"headImage" typeValue0:UIImagePNGRepresentation(_imageViewHeader.image) typeValue1:@"Id" typeValue2:@"1"];
         
         
         [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"name" typeValue0:_textFieldNickName.text typeValue1:@"Id" typeValue2:@"1"];
         
         [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"wechatNum" typeValue0:_textFieldWechatNum.text typeValue1:@"Id" typeValue2:@"1"];
         
-        [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"headImage" typeValue0:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] typeValue1:@"Id" typeValue2:@"1"];
+        [[FMDBHelper fmManger] updateDataByTableName:kOthreUserTable TypeName:@"headImage" typeValue0:UIImagePNGRepresentation(_imageViewHeader.image) typeValue1:@"Id" typeValue2:@"1"];
         
 //        UserInfoModel *user = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] firstObject];
 //        NSLog(@"%@",user.name);
@@ -106,7 +104,7 @@
 //        NSLog(@"%@",array);
         [self.navigationController popViewControllerAnimated:YES];
     }else{//创建新用户 -> 添加到所有用户表
-        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] wechatNum:_textFieldWechatNum.text money:@"0"];
+        [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:UIImagePNGRepresentation(_imageViewHeader.image) wechatNum:_textFieldWechatNum.text money:@"0"];
         NSMutableArray *array = [[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable];
         NSLog(@"%@",array);
         kAlert(@"新用户已添加");

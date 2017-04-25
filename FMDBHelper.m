@@ -50,7 +50,7 @@ static FMDBHelper *fmManager = nil;
 {
     //sql 语句
     if ([db open]) {
-        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' TEXT, '%@' TEXT, '%@' TEXT)",tableName,ID,NAME,HEADIMAGE,WECHATNUM,MONEY];
+        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' BLOB, '%@' TEXT, '%@' TEXT)",tableName,ID,NAME,HEADIMAGE,WECHATNUM,MONEY];
         BOOL res = [db executeUpdate:sqlCreateTable];
         if (!res) {
             NSLog(@"error when creating db table");
@@ -67,7 +67,7 @@ static FMDBHelper *fmManager = nil;
 -(void)insertMyUserInfoDataByTableName:(NSString *)tableName
                           Id:(NSString *)Id
                         name:(NSString *)name
-                   headImage:(NSString *)headImage
+                   headImage:(NSData *)headImage
                    wechatNum:(NSString *)wechatNum
                        money:(NSString *)money
 {
@@ -88,7 +88,7 @@ static FMDBHelper *fmManager = nil;
 -(void)insertOtherUserInfoDataByTableName:(NSString *)tableName
                           Id:(NSString *)Id
                         name:(NSString *)name
-                   headImage:(NSString *)headImage
+                   headImage:(NSData *)headImage
                    wechatNum:(NSString *)wechatNum
                        money:(NSString *)money
 {
@@ -187,7 +187,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs stringForColumn:HEADIMAGE];
+            model.headImage = [rs dataForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
                         
@@ -211,7 +211,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs stringForColumn:HEADIMAGE];
+            model.headImage = [rs dataForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
             
@@ -302,7 +302,7 @@ static FMDBHelper *fmManager = nil;
                        lastTime:(NSString *)lastTime
                         chatDetailId:(NSString *)chatDetailId
                     isNoti:(NSString *)isNoti
-                       userImage:(NSString *)userImage
+                       userImage:(NSData *)userImage
                     userName:(NSString *)userName
                        lastContent:(NSString *)lastContent
                           userId:(NSString *)userId
@@ -347,7 +347,7 @@ static FMDBHelper *fmManager = nil;
             model.chatDetailId = [rs stringForColumn:@"chatDetailId"];
             model.lastTime = [rs stringForColumn:@"lastTime"];
             model.isNoti = [rs stringForColumn:@"isNoti"];
-            model.userImage = [rs stringForColumn:@"userImage"];
+            model.userImage = [rs dataForColumn:@"userImage"];
             model.userName = [rs stringForColumn:@"userName"];
             model.lastContent = [rs stringForColumn:@"lastContent"];
             model.userId = [rs stringForColumn:@"userId"];
@@ -364,7 +364,7 @@ static FMDBHelper *fmManager = nil;
 - (void)creatChatDetailTable{
     //sql 语句
     if ([db open]) {
-        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' TEXT,'%@' TEXT, '%@' blob, '%@' TEXT, '%@' TEXT,'%@',blob)",kChatDetailTable,@"chatDetailId",@"chatRoomId",@"lastTime",@"type",@"userImage",@"userName",@"content",@"contentImage"];
+        NSString *sqlCreateTable =  [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS '%@' ('%@' INTEGER PRIMARY KEY AUTOINCREMENT, '%@' TEXT, '%@' TEXT,'%@' TEXT,'%@' TEXT, '%@' TEXT,'%@',blob)",kChatDetailTable,@"chatDetailId",@"chatRoomId",@"lastTime",@"type",@"userId",@"content",@"contentImage"];
         BOOL res = [db executeUpdate:sqlCreateTable];
         if (!res) {
             NSLog(@"error when creating db table");
@@ -378,18 +378,17 @@ static FMDBHelper *fmManager = nil;
 -(void)insertChatDetailByTableName:(NSString *)tableName
                     chatRoomId:(NSString *)chatRoomId
                         lastTime:(NSString *)lastTime
-                       userImage:(NSString *)userImage
-                        userName:(NSString *)userName
+                            userId:(NSString *)userId
                         content:(NSString *)content
                      type:(NSString *)type
-                      contentImage:(NSString *)contentImage
+                      contentImage:(NSData *)contentImage
 {
     if ([db open]) {
 //        NSString *insertSql1= [NSString stringWithFormat:
 //                               @"INSERT INTO '%@' ('%@','%@','%@','%@','%@','%@') VALUES ('%@','%@','%@','%@','%@','%@')",
 //                               tableName,@"chatRoomId",@"lastTime",@"userImage",@"userName",@"type",@"content",chatRoomId,lastTime,userImage,userName,type,content];
         
-        BOOL flag = [db executeUpdate:@"insert into chatDetail (chatRoomId,lastTime,userImage,userName,type,content,contentImage) values(?,?,?,?,?,?,?)",chatRoomId,lastTime,userImage,userName,type,content,contentImage];
+        BOOL flag = [db executeUpdate:@"insert into chatDetail (chatRoomId,lastTime,userId,type,content,contentImage) values(?,?,?,?,?,?)",chatRoomId,lastTime,userId,type,content,contentImage];
         
 //        BOOL res = [db executeUpdate:insertSql1];
         
@@ -415,11 +414,10 @@ static FMDBHelper *fmManager = nil;
             ChatModel *model = [[ChatModel alloc] init];
             model.chatRoomId = [rs stringForColumn:@"chatRoomId"];
             model.lastTime = [rs stringForColumn:@"lastTime"];
-            model.userImage = [rs stringForColumn:@"userImage"];
-            model.userName = [rs stringForColumn:@"userName"];
+            model.userId = [rs stringForColumn:@"userId"];
             model.content = [rs stringForColumn:@"content"];
             model.type = [rs stringForColumn:@"type"];
-            model.contentImage = [rs stringForColumn:@"contentImage"];
+            model.contentImage = [rs dataForColumn:@"contentImage"];
             model.chatDetailId = [rs stringForColumn:@"chatDetailId"];
             [array addObject:model];
         }
@@ -657,7 +655,7 @@ static FMDBHelper *fmManager = nil;
             UserInfoModel *model = [[UserInfoModel alloc] init];
             model.Id = [rs stringForColumn:ID];
             model.name = [rs stringForColumn:NAME];
-            model.headImage = [rs stringForColumn:HEADIMAGE];
+            model.headImage = [rs dataForColumn:HEADIMAGE];
             model.wechatNum = [rs stringForColumn:WECHATNUM];
             model.money = [rs stringForColumn:MONEY];
             
@@ -773,7 +771,7 @@ static FMDBHelper *fmManager = nil;
     }
 }
 
--(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSString *)image
+-(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSData *)image
 {
     if ([db open]) {
 //        NSString *insertSql1= [NSString stringWithFormat:
@@ -809,8 +807,8 @@ static FMDBHelper *fmManager = nil;
         
         FMResultSet * rs = [db executeQuery:sql];
         while ([rs next]) {
-            NSString *imageUrl = [rs stringForColumn:@"image"];
-            [array addObject:imageUrl];
+            NSData *image = [rs dataForColumn:@"image"];
+            [array addObject:image];
         }
         //[db close];
     }

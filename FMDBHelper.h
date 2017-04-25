@@ -39,14 +39,14 @@
 -(void)insertMyUserInfoDataByTableName:(NSString *)tableName
                                     Id:(NSString *)Id
                                   name:(NSString *)name
-                             headImage:(NSString *)headImage
+                             headImage:(NSData *)headImage
                              wechatNum:(NSString *)wechatNum
                                  money:(NSString *)money;
 
 -(void)insertOtherUserInfoDataByTableName:(NSString *)tableName
                                        Id:(NSString *)Id
                                      name:(NSString *)name
-                                headImage:(NSString *)headImage
+                                headImage:(NSData *)headImage
                                 wechatNum:(NSString *)wechatNum
                                     money:(NSString *)money;
 
@@ -84,7 +84,7 @@
                         lastTime:(NSString *)lastTime
                     chatDetailId:(NSString *)chatDetailId
                           isNoti:(NSString *)isNoti
-                       userImage:(NSString *)userImage
+                       userImage:(NSData *)userImage
                         userName:(NSString *)userName
                      lastContent:(NSString *)lastContent
                           userId:(NSString *)userId;
@@ -97,11 +97,10 @@
 -(void)insertChatDetailByTableName:(NSString *)tableName
                         chatRoomId:(NSString *)chatRoomId
                           lastTime:(NSString *)lastTime
-                         userImage:(NSString *)userImage
-                          userName:(NSString *)userName
+                            userId:(NSString *)userId
                            content:(NSString *)content
                               type:(NSString *)type
-                      contentImage:(NSString *)contentImage;
+                      contentImage:(NSData *)contentImage;
 
 -(NSMutableArray *)selectChatDetailWhereValue1:(NSString *)value1 value2:(NSString *)value2;
 
@@ -150,7 +149,7 @@
 
 - (void)createImagesTable;
 
--(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSString *)image;
+-(void)insertFriendsImagesDataByFriendsId:(NSString *)friendsId image:(NSData *)image;
 
 -(NSMutableArray *)selectFriendsImageWhereValue1:(NSString *)value1 value2:(NSString *)value2 isNeed:(BOOL)isNeed;
 

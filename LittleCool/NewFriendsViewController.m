@@ -247,8 +247,8 @@
     
     [[FMDBHelper fmManger] createTableByTableName:kOthreUserTable];
 
-//    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:user.name headImage:UIImagePNGRepresentation(imageV.image) wechatNum:@"1" money:@"1"];
-    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:user.name headImage:[BGFunctionHelper saveImageToSandBoxByImage:imageV.image] wechatNum:@"1" money:@"1"];
+    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:user.name headImage:UIImagePNGRepresentation(imageV.image) wechatNum:@"1" money:@"1"];
+
     user.type = @"-1";
     
     [_tableView reloadData];

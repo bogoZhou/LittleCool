@@ -105,7 +105,13 @@
 //            [alert addAction:newZanList];
 //            [self presentViewController:alert animated:YES completion:nil];
         }else{
-            kAlert(responseBody[@"message"]);
+//            kAlert(responseBody[@"message"]);
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:responseBody[@"message"] message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *newZanList = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+
+            }];
+            [alert addAction:newZanList];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     } failure:^(NSError *error) {
         

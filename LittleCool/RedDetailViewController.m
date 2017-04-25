@@ -76,8 +76,7 @@
 - (void)updateView{
     UserInfoModel *myModel = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] firstObject];
     
-//    _imageViewHeader.image = [UIImage imageWithData:myModel.headImage];
-    _imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:myModel.headImage];
+    _imageViewHeader.image = [UIImage imageWithData:myModel.headImage];
     _imageViewHeader.layer.masksToBounds = YES;
     _imageViewHeader.layer.cornerRadius = kButtonCornerRadius;
     _imageViewHeader.layer.borderWidth = 1;
@@ -183,8 +182,7 @@
     
     UserInfoModel *user = [[[FMDBHelper fmManger] selectUserInfoDataByValueName:@"Id" value:getRedUser.userId] lastObject];
     
-//    cell.imageViewHeader.image = [UIImage imageWithData:user.headImage];
-    cell.imageViewHeader.image = [BGFunctionHelper getImageFromSandBoxByImagePath:user.headImage];
+    cell.imageViewHeader.image = [UIImage imageWithData:user.headImage];
     
     cell.labelName.text = user.name;
     

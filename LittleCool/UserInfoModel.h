@@ -14,6 +14,6 @@
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSString *wechatNum;
 @property (nonatomic,strong) NSString *money;
-@property (nonatomic,strong) NSString *headImage;
+@property (nonatomic,strong) NSData *headImage;
 
 @end

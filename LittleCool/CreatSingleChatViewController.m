@@ -112,12 +112,12 @@
     //如果昵称和头像都存在，则 先添加到user表中 再创建聊天list表
     [[FMDBHelper fmManger] creatChatListTable];
     //创建user
-    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] wechatNum:@"bogo000" money:@"666"];
+    [[FMDBHelper fmManger] insertOtherUserInfoDataByTableName:kOthreUserTable Id:@"1" name:_textFieldNickName.text headImage:UIImagePNGRepresentation(_imageViewHeader.image) wechatNum:@"singleDog" money:@"666"];
     
     UserInfoModel *model = [[[FMDBHelper fmManger] selectDataByTableName:kOthreUserTable] lastObject];
     
     //创建chatList
-    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[self countDate:_textFieldDate.text] chatDetailId:@"1" isNoti:@"1" userImage:[BGFunctionHelper saveImageToSandBoxByImage:_imageViewHeader.image] userName:_textFieldNickName.text lastContent:_switchButton.isOn ? [NSString stringWithFormat:@"我是%@",_textFieldNickName.text] : @" "  userId:model.Id];
+    [[FMDBHelper fmManger] insertChatListByTableName:kChatListTable lastTime:[self countDate:_textFieldDate.text] chatDetailId:@"1" isNoti:@"1" userImage:UIImagePNGRepresentation(_imageViewHeader.image) userName:_textFieldNickName.text lastContent:_switchButton.isOn ? [NSString stringWithFormat:@"我是%@",_textFieldNickName.text] : @" "  userId:model.Id];
     
     if (_switchButton.isOn) {//如果是新好友
         NSString *message1 = _textFieldContent1.text;
@@ -138,19 +138,19 @@
         [[FMDBHelper fmManger] creatChatDetailTable];
         
         //date
-        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userImage:chatListModel.userImage userName:chatListModel.userName content:[self countDate:_textFieldDate.text]  type:@"11" contentImage:nil];
+        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userId:chatListModel.userId content:[self countDate:_textFieldDate.text]  type:@"11" contentImage:nil];
         
         //打招呼内容
-        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userImage:chatListModel.userImage userName:chatListModel.userName content:[NSString stringWithFormat:@"我是%@",_textFieldNickName.text] type:@"2" contentImage:nil];
+        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userId:chatListModel.userId content:[NSString stringWithFormat:@"我是%@",_textFieldNickName.text] type:@"2" contentImage:nil];
         
         //message1
-        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userImage:chatListModel.userImage userName:chatListModel.userName content:message1 type:@"17" contentImage:nil];
+        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userId:chatListModel.userId content:message1 type:@"17" contentImage:nil];
         
         //message2
-        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userImage:chatListModel.userImage userName:chatListModel.userName content:message2 type:@"18" contentImage:nil];
+        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userId:chatListModel.userId content:message2 type:@"18" contentImage:nil];
         
         //message3
-        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userImage:chatListModel.userImage userName:chatListModel.userName content:message3 type:@"19" contentImage:nil];
+        [[FMDBHelper fmManger] insertChatDetailByTableName:kChatDetailTable chatRoomId:chatListModel.chatRoomId lastTime:[self countDate:_textFieldDate.text]  userId:chatListModel.userId content:message3 type:@"19" contentImage:nil];
     }
     
     
