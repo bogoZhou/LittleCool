@@ -126,4 +126,11 @@ typedef void(^FailureBlcok)(NSError *error);
 //12.	【仿微信：获取指定数量的用户】
 - (void)getRandomUserByCounts:(NSString *)counts progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
 
+
+#pragma mark - 海报制作
+//13.	【海报模板：获取标签和海报（不含详情）】
+- (void)posterGetLabelsMubanById:(NSString *)userId udid:(NSString *)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
+
+//14.	【海报模板：获取详细制作数据】
+- (void)getPosterDetailByUserId:(NSString *)userId udid:(NSString *)udid material_id:(NSString *)material_id progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure;
 @end

@@ -366,4 +366,11 @@ static CGRect oldframe;
     
 }
 
+//PX转化为UIFont字号
++(CGFloat)pxSizeConvert:(CGFloat)pxSize{
+    NSNumber *iosFontSize = [NSNumber numberWithFloat:pxSize/96*72];
+    CGFloat size = [iosFontSize floatValue];
+    return size;
+}
+
 @end

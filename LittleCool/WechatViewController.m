@@ -85,6 +85,9 @@
     textField.layer.borderColor = [kColorFrom0x(0xdedee0) CGColor];
     textField.layer.cornerRadius = kButtonCornerRadius ;
     [BorderHelper setOnlyUnderLineColor:kColorFrom0x(0xd9d9d9) view:_searchBar];
+    
+    
+    
 }
 
 - (void)navBarRButton{

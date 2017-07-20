@@ -27,6 +27,9 @@
 		DF4DD4E61E8516FF00C4343C /* VideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4DD4E51E8516FF00C4343C /* VideoService.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DF5830071EA0711400060B61 /* WeChatNum.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5830061EA0711400060B61 /* WeChatNum.ttf */; };
 		DF58300A1EA072AF00060B61 /* BGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5830091EA072AF00060B61 /* BGTextView.m */; };
+		DF6451E91ECAB65C00D84D8A /* PosterListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6451E81ECAB65C00D84D8A /* PosterListModel.m */; };
+		DF6451EC1ECAB6DF00D84D8A /* MubanModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6451EB1ECAB6DF00D84D8A /* MubanModel.m */; };
+		DF6451F01ECAF37F00D84D8A /* PosterJumpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6451EF1ECAF37F00D84D8A /* PosterJumpViewController.m */; };
 		DF6B8D931E9B5FE4009FC956 /* NewMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6B8D921E9B5FE4009FC956 /* NewMainViewController.m */; };
 		DF6B8D981E9B7B4A009FC956 /* PicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6B8D971E9B7B4A009FC956 /* PicturesViewController.m */; };
 		DF6B8DA01E9B7C35009FC956 /* WSCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6B8D9B1E9B7C35009FC956 /* WSCollectionCell.m */; };
@@ -58,6 +61,13 @@
 		DF7510251E769382009AB14A /* MainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7510241E769382009AB14A /* MainDetailViewController.m */; };
 		DF7510271E7699BA009AB14A /* Sign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF7510261E7699BA009AB14A /* Sign.storyboard */; };
 		DF75102A1E769CBD009AB14A /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7510291E769CBD009AB14A /* SignViewController.m */; };
+		DF78FEF41ECD9B3900AAD64F /* PosterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78FEF31ECD9B3900AAD64F /* PosterDetailViewController.m */; };
+		DF85610C1EAF3A0E00FA13EB /* Poster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF85610B1EAF3A0E00FA13EB /* Poster.storyboard */; };
+		DF85610F1EAF4A1100FA13EB /* PosterBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85610E1EAF4A1100FA13EB /* PosterBaseViewController.m */; };
+		DF8561121EAF4A2E00FA13EB /* PosterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8561111EAF4A2E00FA13EB /* PosterMainViewController.m */; };
+		DF8561161EAF4AA100FA13EB /* PosterRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8561151EAF4AA100FA13EB /* PosterRecommendViewController.m */; };
+		DF8561191EAF4AB700FA13EB /* PosterAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8561181EAF4AB700FA13EB /* PosterAllViewController.m */; };
+		DF85611C1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF85611B1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.m */; };
 		DF8D1A071E78F8D800E1E289 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1A061E78F8D800E1E289 /* SearchViewController.m */; };
 		DF8D1A0A1E79035C00E1E289 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8D1A081E79035C00E1E289 /* AVFoundation.framework */; };
 		DF8D1A0B1E79035C00E1E289 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8D1A091E79035C00E1E289 /* AVKit.framework */; };
@@ -116,6 +126,8 @@
 		DF8D1AC91E7E449F00E1E289 /* AssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1AC81E7E449F00E1E289 /* AssetModel.m */; };
 		DF8D1ACC1E7E692500E1E289 /* WechatLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1ACB1E7E692500E1E289 /* WechatLoginViewController.m */; };
 		DF8D1AD01E7EA5A000E1E289 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D1ACE1E7EA5A000E1E289 /* UncaughtExceptionHandler.m */; };
+		DF8D210E1EAF24A900F57C26 /* PosterRecourses.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8D210D1EAF24A900F57C26 /* PosterRecourses.xcassets */; };
+		DF8D21111EAF277200F57C26 /* NewMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D21101EAF277200F57C26 /* NewMainTableViewCell.m */; };
 		DF9190291EA7619C008066AF /* BGNotiView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9190281EA7619C008066AF /* BGNotiView.m */; };
 		DF91902C1EA88998008066AF /* HelperTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DF91902B1EA88998008066AF /* HelperTableViewCell.m */; };
 		DFAF01111E9F64DB008221E5 /* Wechat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFAF01101E9F64DB008221E5 /* Wechat.storyboard */; };
@@ -285,6 +297,12 @@
 		DFAF11C31E9F82FE008221E5 /* WechatRecourses.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAF11C21E9F82FE008221E5 /* WechatRecourses.xcassets */; };
 		DFC0678F1E8DFF06003065B0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0678E1E8DFF06003065B0 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DFC067921E8E0F41003065B0 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC067911E8E0F41003065B0 /* PlayViewController.m */; };
+		DFC1D3201ECEB3670030BEDF /* PosterDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D31F1ECEB3670030BEDF /* PosterDetailModel.m */; };
+		DFC1D3231ECEB3840030BEDF /* GlobalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D3221ECEB3840030BEDF /* GlobalModel.m */; };
+		DFC1D3261ECEB3950030BEDF /* LayoutModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D3251ECEB3950030BEDF /* LayoutModel.m */; };
+		DFC1D3291ECEB3AC0030BEDF /* FixedelementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D3281ECEB3AC0030BEDF /* FixedelementModel.m */; };
+		DFC1D32C1ECEB3C30030BEDF /* ImageelementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D32B1ECEB3C30030BEDF /* ImageelementModel.m */; };
+		DFC1D32F1ECEB3D60030BEDF /* TextelementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC1D32E1ECEB3D60030BEDF /* TextelementModel.m */; };
 		DFCD29E61E75361D00B23CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD29E51E75361D00B23CA6 /* main.m */; };
 		DFCD29E91E75361D00B23CA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD29E81E75361D00B23CA6 /* AppDelegate.m */; };
 		DFCD29EF1E75361D00B23CA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFCD29ED1E75361D00B23CA6 /* Main.storyboard */; };
@@ -327,6 +345,9 @@
 		DFCD2A841E75489700B23CA6 /* BorderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A7F1E75489700B23CA6 /* BorderHelper.m */; };
 		DFCD2A851E75489700B23CA6 /* TakePicDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A811E75489700B23CA6 /* TakePicDelegate.m */; };
 		DFCD2A891E75490D00B23CA6 /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCD2A881E75490D00B23CA6 /* BaseNavigationViewController.m */; };
+		DFE84A6D1EC9992D00467879 /* PosterMainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE84A6C1EC9992D00467879 /* PosterMainCollectionViewCell.m */; };
+		DFE84A701EC9994900467879 /* PosterMainTableViewCellTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE84A6F1EC9994900467879 /* PosterMainTableViewCellTitle.m */; };
+		DFE84A731EC9995900467879 /* PosterMainTableViewCellItems.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE84A721EC9995900467879 /* PosterMainTableViewCellItems.m */; };
 		DFEEF7971E8BE0FF00AA6913 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEEF7961E8BE0FF00AA6913 /* AssetsLibrary.framework */; };
 		DFFCFB5A1E9E1F8F004CAE4F /* BGPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFCFB591E9E1F8F004CAE4F /* BGPageControl.m */; };
 		DFFCFB5D1E9E29DF004CAE4F /* MCPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFFCFB5C1E9E29DF004CAE4F /* MCPagerView.m */; };
@@ -371,6 +392,12 @@
 		DF5830061EA0711400060B61 /* WeChatNum.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WeChatNum.ttf; sourceTree = "<group>"; };
 		DF5830081EA072AF00060B61 /* BGTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGTextView.h; sourceTree = "<group>"; };
 		DF5830091EA072AF00060B61 /* BGTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGTextView.m; sourceTree = "<group>"; };
+		DF6451E71ECAB65C00D84D8A /* PosterListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterListModel.h; sourceTree = "<group>"; };
+		DF6451E81ECAB65C00D84D8A /* PosterListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterListModel.m; sourceTree = "<group>"; };
+		DF6451EA1ECAB6DF00D84D8A /* MubanModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MubanModel.h; sourceTree = "<group>"; };
+		DF6451EB1ECAB6DF00D84D8A /* MubanModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MubanModel.m; sourceTree = "<group>"; };
+		DF6451EE1ECAF37F00D84D8A /* PosterJumpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterJumpViewController.h; sourceTree = "<group>"; };
+		DF6451EF1ECAF37F00D84D8A /* PosterJumpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterJumpViewController.m; sourceTree = "<group>"; };
 		DF6B8D911E9B5FE4009FC956 /* NewMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMainViewController.h; sourceTree = "<group>"; };
 		DF6B8D921E9B5FE4009FC956 /* NewMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMainViewController.m; sourceTree = "<group>"; };
 		DF6B8D961E9B7B4A009FC956 /* PicturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesViewController.h; sourceTree = "<group>"; };
@@ -431,6 +458,19 @@
 		DF7510261E7699BA009AB14A /* Sign.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sign.storyboard; sourceTree = "<group>"; };
 		DF7510281E769CBD009AB14A /* SignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
 		DF7510291E769CBD009AB14A /* SignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
+		DF78FEF21ECD9B3900AAD64F /* PosterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterDetailViewController.h; sourceTree = "<group>"; };
+		DF78FEF31ECD9B3900AAD64F /* PosterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterDetailViewController.m; sourceTree = "<group>"; };
+		DF85610B1EAF3A0E00FA13EB /* Poster.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Poster.storyboard; sourceTree = "<group>"; };
+		DF85610D1EAF4A1100FA13EB /* PosterBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterBaseViewController.h; sourceTree = "<group>"; };
+		DF85610E1EAF4A1100FA13EB /* PosterBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterBaseViewController.m; sourceTree = "<group>"; };
+		DF8561101EAF4A2E00FA13EB /* PosterMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterMainViewController.h; sourceTree = "<group>"; };
+		DF8561111EAF4A2E00FA13EB /* PosterMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterMainViewController.m; sourceTree = "<group>"; };
+		DF8561141EAF4AA100FA13EB /* PosterRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterRecommendViewController.h; sourceTree = "<group>"; };
+		DF8561151EAF4AA100FA13EB /* PosterRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterRecommendViewController.m; sourceTree = "<group>"; };
+		DF8561171EAF4AB700FA13EB /* PosterAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterAllViewController.h; sourceTree = "<group>"; };
+		DF8561181EAF4AB700FA13EB /* PosterAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterAllViewController.m; sourceTree = "<group>"; };
+		DF85611A1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterRecommendTableViewCell.h; sourceTree = "<group>"; };
+		DF85611B1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterRecommendTableViewCell.m; sourceTree = "<group>"; };
 		DF8D1A051E78F8D800E1E289 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		DF8D1A061E78F8D800E1E289 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		DF8D1A081E79035C00E1E289 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -544,6 +584,9 @@
 		DF8D1ACB1E7E692500E1E289 /* WechatLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WechatLoginViewController.m; sourceTree = "<group>"; };
 		DF8D1ACD1E7EA5A000E1E289 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		DF8D1ACE1E7EA5A000E1E289 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		DF8D210D1EAF24A900F57C26 /* PosterRecourses.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PosterRecourses.xcassets; sourceTree = "<group>"; };
+		DF8D210F1EAF277200F57C26 /* NewMainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewMainTableViewCell.h; sourceTree = "<group>"; };
+		DF8D21101EAF277200F57C26 /* NewMainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewMainTableViewCell.m; sourceTree = "<group>"; };
 		DF9190271EA7619C008066AF /* BGNotiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGNotiView.h; sourceTree = "<group>"; };
 		DF9190281EA7619C008066AF /* BGNotiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGNotiView.m; sourceTree = "<group>"; };
 		DF91902A1EA88998008066AF /* HelperTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperTableViewCell.h; sourceTree = "<group>"; };
@@ -880,6 +923,18 @@
 		DFC0678E1E8DFF06003065B0 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		DFC067901E8E0F41003065B0 /* PlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
 		DFC067911E8E0F41003065B0 /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
+		DFC1D31E1ECEB3670030BEDF /* PosterDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterDetailModel.h; sourceTree = "<group>"; };
+		DFC1D31F1ECEB3670030BEDF /* PosterDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterDetailModel.m; sourceTree = "<group>"; };
+		DFC1D3211ECEB3840030BEDF /* GlobalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalModel.h; sourceTree = "<group>"; };
+		DFC1D3221ECEB3840030BEDF /* GlobalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalModel.m; sourceTree = "<group>"; };
+		DFC1D3241ECEB3950030BEDF /* LayoutModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutModel.h; sourceTree = "<group>"; };
+		DFC1D3251ECEB3950030BEDF /* LayoutModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutModel.m; sourceTree = "<group>"; };
+		DFC1D3271ECEB3AC0030BEDF /* FixedelementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedelementModel.h; sourceTree = "<group>"; };
+		DFC1D3281ECEB3AC0030BEDF /* FixedelementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FixedelementModel.m; sourceTree = "<group>"; };
+		DFC1D32A1ECEB3C30030BEDF /* ImageelementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageelementModel.h; sourceTree = "<group>"; };
+		DFC1D32B1ECEB3C30030BEDF /* ImageelementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageelementModel.m; sourceTree = "<group>"; };
+		DFC1D32D1ECEB3D60030BEDF /* TextelementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextelementModel.h; sourceTree = "<group>"; };
+		DFC1D32E1ECEB3D60030BEDF /* TextelementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextelementModel.m; sourceTree = "<group>"; };
 		DFCD29E11E75361D00B23CA6 /* LittleCool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleCool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCD29E51E75361D00B23CA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DFCD29E71E75361D00B23CA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -969,6 +1024,12 @@
 		DFCD2A811E75489700B23CA6 /* TakePicDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePicDelegate.m; sourceTree = "<group>"; };
 		DFCD2A871E75490D00B23CA6 /* BaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationViewController.h; sourceTree = "<group>"; };
 		DFCD2A881E75490D00B23CA6 /* BaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationViewController.m; sourceTree = "<group>"; };
+		DFE84A6B1EC9992D00467879 /* PosterMainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterMainCollectionViewCell.h; sourceTree = "<group>"; };
+		DFE84A6C1EC9992D00467879 /* PosterMainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterMainCollectionViewCell.m; sourceTree = "<group>"; };
+		DFE84A6E1EC9994900467879 /* PosterMainTableViewCellTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterMainTableViewCellTitle.h; sourceTree = "<group>"; };
+		DFE84A6F1EC9994900467879 /* PosterMainTableViewCellTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterMainTableViewCellTitle.m; sourceTree = "<group>"; };
+		DFE84A711EC9995900467879 /* PosterMainTableViewCellItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PosterMainTableViewCellItems.h; sourceTree = "<group>"; };
+		DFE84A721EC9995900467879 /* PosterMainTableViewCellItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PosterMainTableViewCellItems.m; sourceTree = "<group>"; };
 		DFEEF7961E8BE0FF00AA6913 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DFFCFB581E9E1F8F004CAE4F /* BGPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGPageControl.h; sourceTree = "<group>"; };
 		DFFCFB591E9E1F8F004CAE4F /* BGPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGPageControl.m; sourceTree = "<group>"; };
@@ -1075,8 +1136,21 @@
 				DF6B8DA71E9B8D44009FC956 /* LabelsModel.m */,
 				DF6B8DA91E9CA407009FC956 /* BannerModel.h */,
 				DF6B8DAA1E9CA407009FC956 /* BannerModel.m */,
+				DF6451ED1ECAB76500D84D8A /* PosterModels */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DF6451ED1ECAB76500D84D8A /* PosterModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF6451E71ECAB65C00D84D8A /* PosterListModel.h */,
+				DF6451E81ECAB65C00D84D8A /* PosterListModel.m */,
+				DF6451EA1ECAB6DF00D84D8A /* MubanModel.h */,
+				DF6451EB1ECAB6DF00D84D8A /* MubanModel.m */,
+				DFC1D31D1ECEB2D10030BEDF /* DetailModel */,
+			);
+			name = PosterModels;
 			sourceTree = "<group>";
 		};
 		DF6B8D951E9B7B21009FC956 /* 百变配音 */ = {
@@ -1175,6 +1249,44 @@
 				DF7510291E769CBD009AB14A /* SignViewController.m */,
 			);
 			name = "登录页面";
+			sourceTree = "<group>";
+		};
+		DF78FEF11ECD9B2500AAD64F /* 详情页 */ = {
+			isa = PBXGroup;
+			children = (
+				DF78FEF21ECD9B3900AAD64F /* PosterDetailViewController.h */,
+				DF78FEF31ECD9B3900AAD64F /* PosterDetailViewController.m */,
+			);
+			name = "详情页";
+			sourceTree = "<group>";
+		};
+		DF8561131EAF4A7100FA13EB /* 首页详情子控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				DF85611D1EAF4B5600FA13EB /* 推荐 */,
+				DF85611E1EAF4B6400FA13EB /* 全部 */,
+			);
+			name = "首页详情子控制器";
+			sourceTree = "<group>";
+		};
+		DF85611D1EAF4B5600FA13EB /* 推荐 */ = {
+			isa = PBXGroup;
+			children = (
+				DF8561141EAF4AA100FA13EB /* PosterRecommendViewController.h */,
+				DF8561151EAF4AA100FA13EB /* PosterRecommendViewController.m */,
+				DF85611A1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.h */,
+				DF85611B1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.m */,
+			);
+			name = "推荐";
+			sourceTree = "<group>";
+		};
+		DF85611E1EAF4B6400FA13EB /* 全部 */ = {
+			isa = PBXGroup;
+			children = (
+				DF8561171EAF4AB700FA13EB /* PosterAllViewController.h */,
+				DF8561181EAF4AB700FA13EB /* PosterAllViewController.m */,
+			);
+			name = "全部";
 			sourceTree = "<group>";
 		};
 		DF8D1A0C1E790B1300E1E289 /* TYVideoPlayer */ = {
@@ -1451,6 +1563,18 @@
 				DF8D1ABA1E7A568400E1E289 /* DALabeledCircularProgressView.m */,
 			);
 			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		DF8D210C1EAF1BE300F57C26 /* 海报制作 */ = {
+			isa = PBXGroup;
+			children = (
+				DF85610B1EAF3A0E00FA13EB /* Poster.storyboard */,
+				DF85610D1EAF4A1100FA13EB /* PosterBaseViewController.h */,
+				DF85610E1EAF4A1100FA13EB /* PosterBaseViewController.m */,
+				DFE84A741EC9A57100467879 /* 首页 */,
+				DF8561131EAF4A7100FA13EB /* 首页详情子控制器 */,
+			);
+			name = "海报制作";
 			sourceTree = "<group>";
 		};
 		DFAF010F1E9F649D008221E5 /* 逗图制作 */ = {
@@ -1975,6 +2099,25 @@
 			name = "聊天内容";
 			sourceTree = "<group>";
 		};
+		DFC1D31D1ECEB2D10030BEDF /* DetailModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFC1D31E1ECEB3670030BEDF /* PosterDetailModel.h */,
+				DFC1D31F1ECEB3670030BEDF /* PosterDetailModel.m */,
+				DFC1D3211ECEB3840030BEDF /* GlobalModel.h */,
+				DFC1D3221ECEB3840030BEDF /* GlobalModel.m */,
+				DFC1D3241ECEB3950030BEDF /* LayoutModel.h */,
+				DFC1D3251ECEB3950030BEDF /* LayoutModel.m */,
+				DFC1D3271ECEB3AC0030BEDF /* FixedelementModel.h */,
+				DFC1D3281ECEB3AC0030BEDF /* FixedelementModel.m */,
+				DFC1D32A1ECEB3C30030BEDF /* ImageelementModel.h */,
+				DFC1D32B1ECEB3C30030BEDF /* ImageelementModel.m */,
+				DFC1D32D1ECEB3D60030BEDF /* TextelementModel.h */,
+				DFC1D32E1ECEB3D60030BEDF /* TextelementModel.m */,
+			);
+			name = DetailModel;
+			sourceTree = "<group>";
+		};
 		DFCD29D81E75361D00B23CA6 = {
 			isa = PBXGroup;
 			children = (
@@ -2012,6 +2155,7 @@
 				DFCD29F31E75361D00B23CA6 /* Assets.xcassets */,
 				DF4BE38F1E76451700661D58 /* Recourses.xcassets */,
 				DFAF11C21E9F82FE008221E5 /* WechatRecourses.xcassets */,
+				DF8D210D1EAF24A900F57C26 /* PosterRecourses.xcassets */,
 				DFCD29F51E75361D00B23CA6 /* LaunchScreen.storyboard */,
 				DFCD29F81E75361D00B23CA6 /* Info.plist */,
 				DFCD2A1B1E75468200B23CA6 /* LittleCool.pch */,
@@ -2052,11 +2196,14 @@
 			children = (
 				DF6B8D911E9B5FE4009FC956 /* NewMainViewController.h */,
 				DF6B8D921E9B5FE4009FC956 /* NewMainViewController.m */,
+				DF8D210F1EAF277200F57C26 /* NewMainTableViewCell.h */,
+				DF8D21101EAF277200F57C26 /* NewMainTableViewCell.m */,
 				DF6B8DAC1E9CB055009FC956 /* WebViewController.h */,
 				DF6B8DAD1E9CB055009FC956 /* WebViewController.m */,
-				DF6B8DA31E9B7D0D009FC956 /* 图片素材 */,
 				DF6B8D951E9B7B21009FC956 /* 百变配音 */,
+				DF6B8DA31E9B7D0D009FC956 /* 图片素材 */,
 				DFAF010F1E9F649D008221E5 /* 逗图制作 */,
+				DF8D210C1EAF1BE300F57C26 /* 海报制作 */,
 			);
 			name = "首页";
 			sourceTree = "<group>";
@@ -2244,6 +2391,24 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		DFE84A741EC9A57100467879 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				DF8561101EAF4A2E00FA13EB /* PosterMainViewController.h */,
+				DF8561111EAF4A2E00FA13EB /* PosterMainViewController.m */,
+				DFE84A6E1EC9994900467879 /* PosterMainTableViewCellTitle.h */,
+				DFE84A6F1EC9994900467879 /* PosterMainTableViewCellTitle.m */,
+				DFE84A711EC9995900467879 /* PosterMainTableViewCellItems.h */,
+				DFE84A721EC9995900467879 /* PosterMainTableViewCellItems.m */,
+				DFE84A6B1EC9992D00467879 /* PosterMainCollectionViewCell.h */,
+				DFE84A6C1EC9992D00467879 /* PosterMainCollectionViewCell.m */,
+				DF6451EE1ECAF37F00D84D8A /* PosterJumpViewController.h */,
+				DF6451EF1ECAF37F00D84D8A /* PosterJumpViewController.m */,
+				DF78FEF11ECD9B2500AAD64F /* 详情页 */,
+			);
+			name = "首页";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2278,7 +2443,7 @@
 				TargetAttributes = {
 					DFCD29E01E75361D00B23CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = VZEUP3V8Q9;
+						DevelopmentTeam = 8NWL5582K3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2316,11 +2481,13 @@
 				DF4BE3BE1E76620600661D58 /* BGCollectionViewCell.xib in Resources */,
 				DFCD29F41E75361D00B23CA6 /* Assets.xcassets in Resources */,
 				DFAF11BE1E9F7904008221E5 /* ChatDetailTableViewCell.xib in Resources */,
+				DF8D210E1EAF24A900F57C26 /* PosterRecourses.xcassets in Resources */,
 				DFAF119C1E9F681B008221E5 /* AddView.xib in Resources */,
 				DF5830071EA0711400060B61 /* WeChatNum.ttf in Resources */,
 				DFAF11C31E9F82FE008221E5 /* WechatRecourses.xcassets in Resources */,
 				DF6B8DCC1E9CBDFE009FC956 /* mss_browseLoading@3x.png in Resources */,
 				DF8D1A251E790B1300E1E289 /* TYVideoPlayer.bundle in Resources */,
+				DF85610C1EAF3A0E00FA13EB /* Poster.storyboard in Resources */,
 				DFCD29EF1E75361D00B23CA6 /* Main.storyboard in Resources */,
 				DF6B8DCB1E9CBDFE009FC956 /* mss_browseLoading@2x.png in Resources */,
 			);
@@ -2387,6 +2554,7 @@
 				DFCD2A651E75485B00B23CA6 /* JumpAnimation.m in Sources */,
 				DFAF11B31E9F78F7008221E5 /* RedPacketViewController.m in Sources */,
 				DFCD29E91E75361D00B23CA6 /* AppDelegate.m in Sources */,
+				DF8561161EAF4AA100FA13EB /* PosterRecommendViewController.m in Sources */,
 				DF8D1A281E790B1300E1E289 /* TYVideoPlayerTrack.m in Sources */,
 				DFCD2A761E75485B00B23CA6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				DFAF114B1E9F674F008221E5 /* LWHTMLTextConfig.m in Sources */,
@@ -2411,6 +2579,8 @@
 				DFAF01171E9F6500008221E5 /* WechatNavViewController.m in Sources */,
 				DFAF114C1E9F674F008221E5 /* LWImageStorage.m in Sources */,
 				DFAF11421E9F674F008221E5 /* LWAsyncDisplayView.m in Sources */,
+				DFC1D32F1ECEB3D60030BEDF /* TextelementModel.m in Sources */,
+				DF6451F01ECAF37F00D84D8A /* PosterJumpViewController.m in Sources */,
 				DF0F47101E77D7A100413F3B /* VideosModel.m in Sources */,
 				DFAF119B1E9F681B008221E5 /* AddView.m in Sources */,
 				DFC0678F1E8DFF06003065B0 /* Reachability.m in Sources */,
@@ -2420,13 +2590,16 @@
 				DF7510221E769028009AB14A /* MoreViewController.m in Sources */,
 				DFAF01991E9F662D008221E5 /* TiViewController.m in Sources */,
 				DF6B8DD81E9CBDFE009FC956 /* UIView+MSSLayout.m in Sources */,
+				DFC1D3231ECEB3840030BEDF /* GlobalModel.m in Sources */,
 				DF8D1AB01E7A567600E1E289 /* ZLPhotoPickerCollectionView.m in Sources */,
 				DFAF01911E9F662D008221E5 /* UserInfoViewController.m in Sources */,
 				DFAF115C1E9F674F008221E5 /* NSString+HTML.m in Sources */,
+				DFC1D3261ECEB3950030BEDF /* LayoutModel.m in Sources */,
 				DF6B8DAB1E9CA407009FC956 /* BannerModel.m in Sources */,
 				DFAF01411E9F6542008221E5 /* NewFriendsViewController.m in Sources */,
 				DF19101F1E8279150063E018 /* SettingTableViewCell.m in Sources */,
 				DFAF01CF1E9F667A008221E5 /* UIImage+ImageEffects.m in Sources */,
+				DF8D21111EAF277200F57C26 /* NewMainTableViewCell.m in Sources */,
 				DFAF11AE1E9F78EC008221E5 /* WechatPayChangeViewController.m in Sources */,
 				DFAF01161E9F6500008221E5 /* WechatTabBarViewController.m in Sources */,
 				DFAF11841E9F67A5008221E5 /* GetRedUserModel.m in Sources */,
@@ -2437,12 +2610,14 @@
 				DFAF01491E9F6561008221E5 /* FindingTableViewCell.m in Sources */,
 				DF75102A1E769CBD009AB14A /* SignViewController.m in Sources */,
 				DFAF01591E9F6592008221E5 /* UpdateFriendsViewController.m in Sources */,
+				DF6451EC1ECAB6DF00D84D8A /* MubanModel.m in Sources */,
 				DF6B8DD51E9CBDFE009FC956 /* MSSBrowseRemindView.m in Sources */,
 				DFAF016C1E9F65E4008221E5 /* LikeButton.m in Sources */,
 				DF6B8D931E9B5FE4009FC956 /* NewMainViewController.m in Sources */,
 				DF8D1ABC1E7A568400E1E289 /* DALabeledCircularProgressView.m in Sources */,
 				DFAF11BD1E9F7904008221E5 /* ChatDetailTableViewCell.m in Sources */,
 				DFAF11501E9F674F008221E5 /* LWTextAttachment.m in Sources */,
+				DFC1D32C1ECEB3C30030BEDF /* ImageelementModel.m in Sources */,
 				DF8D1A221E790B1300E1E289 /* TYVideoBottomView.m in Sources */,
 				DFAF01C71E8D4393005B7296 /* AudioDecodeOperation.mm in Sources */,
 				DFAF012D1E9F651E008221E5 /* UnReadNumViewController.m in Sources */,
@@ -2461,6 +2636,7 @@
 				DF9190291EA7619C008066AF /* BGNotiView.m in Sources */,
 				DFAF11601E9F674F008221E5 /* UIView+DisplayAddtions.m in Sources */,
 				DF4BE3BD1E76620600661D58 /* BGCollectionViewCell.m in Sources */,
+				DF6451E91ECAB65C00D84D8A /* PosterListModel.m in Sources */,
 				DFAF114A1E9F674F008221E5 /* LWHTMLParser.m in Sources */,
 				DF58300A1EA072AF00060B61 /* BGTextView.m in Sources */,
 				DFCD2A891E75490D00B23CA6 /* BaseNavigationViewController.m in Sources */,
@@ -2469,7 +2645,9 @@
 				DFAF01921E9F662D008221E5 /* NewUserViewController.m in Sources */,
 				DFAF01941E9F662D008221E5 /* LooseChangeViewController.m in Sources */,
 				DFAF11551E9F674F008221E5 /* LWTextParser.m in Sources */,
+				DF78FEF41ECD9B3900AAD64F /* PosterDetailViewController.m in Sources */,
 				DFAF01D51E8D4393005B7296 /* FIFOSampleBuffer.cpp in Sources */,
+				DFC1D3201ECEB3670030BEDF /* PosterDetailModel.m in Sources */,
 				DF8D1AD01E7EA5A000E1E289 /* UncaughtExceptionHandler.m in Sources */,
 				DF8D1AA41E7A567600E1E289 /* ZLPhotoPickerBrowserViewController.m in Sources */,
 				DF6B8DD61E9CBDFE009FC956 /* MSSBrowseZoomScrollView.m in Sources */,
@@ -2478,6 +2656,7 @@
 				DFAF10E31E9F66F9008221E5 /* PZXVerificationTextField.m in Sources */,
 				DF0F47021E77CD6100413F3B /* SSKeychainQuery.m in Sources */,
 				DFCD2A621E75485B00B23CA6 /* AttributedLabel.m in Sources */,
+				DF85611C1EAF4B4C00FA13EB /* PosterRecommendTableViewCell.m in Sources */,
 				DFCD2A681E75485B00B23CA6 /* pinyin.c in Sources */,
 				DFAF01CE1E9F667A008221E5 /* LWProgeressHUD.m in Sources */,
 				DF8D1A501E7A342F00E1E289 /* UserBalanceModel.m in Sources */,
@@ -2622,6 +2801,7 @@
 				DF74EC881E7FAD02000EE43B /* BGLeadPageVC.m in Sources */,
 				DF8D1AA51E7A567600E1E289 /* ZLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				DFAF01D61E9F6685008221E5 /* LWActiveIncatorAnimationView.m in Sources */,
+				DFE84A6D1EC9992D00467879 /* PosterMainCollectionViewCell.m in Sources */,
 				DFCD2A691E75485B00B23CA6 /* MKAnnotationView+WebCache.m in Sources */,
 				DF0F47051E77CD6B00413F3B /* DLUDID.m in Sources */,
 				DFCD2A6F1E75485B00B23CA6 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2647,6 +2827,7 @@
 				DF8D1A231E790B1300E1E289 /* TYVideoControlView.m in Sources */,
 				DF8D1AB41E7A567600E1E289 /* ZLPhotoPickerImageView.m in Sources */,
 				DF4DD4E61E8516FF00C4343C /* VideoService.m in Sources */,
+				DF8561191EAF4AB700FA13EB /* PosterAllViewController.m in Sources */,
 				DFAF01951E9F662D008221E5 /* LooseChangeDetailViewController.m in Sources */,
 				DF8D1AAE1E7A567600E1E289 /* ZLPhotoPickerGroupViewController.m in Sources */,
 				DF8D1AAD1E7A567600E1E289 /* ZLPhotoPickerAssetsViewController.m in Sources */,
@@ -2654,8 +2835,10 @@
 				DFAF01791E9F65FC008221E5 /* CellLayout.m in Sources */,
 				DF6B8DCF1E9CBDFE009FC956 /* MSSBrowseBaseViewController.m in Sources */,
 				DFAF117D1E9F67A5008221E5 /* MoneyModel.m in Sources */,
+				DFE84A701EC9994900467879 /* PosterMainTableViewCellTitle.m in Sources */,
 				DFAF012F1E9F651E008221E5 /* ChatDetailViewController.m in Sources */,
 				DFAF01D21E8D4393005B7296 /* AAFilter.cpp in Sources */,
+				DF85610F1EAF4A1100FA13EB /* PosterBaseViewController.m in Sources */,
 				DFAF11851E9F67A5008221E5 /* WechatPayModel.m in Sources */,
 				DFAF01321E9F651E008221E5 /* CreatSingleChatViewController.m in Sources */,
 				DF8D1AA81E7A567600E1E289 /* ZLPhotoPickerCustomToolBarView.m in Sources */,
@@ -2663,12 +2846,15 @@
 				DFAF01D11E8D4393005B7296 /* WaveHeader.cpp in Sources */,
 				DFAF01901E9F662D008221E5 /* MeViewController.m in Sources */,
 				DF8D1A471E7A201800E1E289 /* IBeaconModel.m in Sources */,
+				DF8561121EAF4A2E00FA13EB /* PosterMainViewController.m in Sources */,
 				DFCD2A671E75485B00B23CA6 /* LYMessageToast.m in Sources */,
 				DFAF10EE1E9F672E008221E5 /* HcdDateTimePickerView.m in Sources */,
 				DFAF01931E9F662D008221E5 /* WolletViewController.m in Sources */,
 				DFAF11521E9F674F008221E5 /* LWTextGlyph.m in Sources */,
+				DFE84A731EC9995900467879 /* PosterMainTableViewCellItems.m in Sources */,
 				DFCD2A111E75438900B23CA6 /* MainViewController.m in Sources */,
 				DFAF01D91E8D4393005B7296 /* RateTransposer.cpp in Sources */,
+				DFC1D3291ECEB3AC0030BEDF /* FixedelementModel.m in Sources */,
 				DF8D1AB21E7A567600E1E289 /* ZLPhotoPickerFooterCollectionReusableView.m in Sources */,
 				DFAF11921E9F6802008221E5 /* BGDatePickerViewController.m in Sources */,
 			);
@@ -2789,7 +2975,7 @@
 			baseConfigurationReference = 88D92E53A56714D71A92C192 /* Pods-LittleCool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VZEUP3V8Q9;
+				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = /user/lib/libxml2.tbd;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
@@ -2817,7 +3003,7 @@
 					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 					"$(PROJECT_DIR)/Qian/Pods/JPush/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bg.myself.littleCool;
+				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2827,7 +3013,7 @@
 			baseConfigurationReference = AF638BB02AB545C316273647 /* Pods-LittleCool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VZEUP3V8Q9;
+				DEVELOPMENT_TEAM = 8NWL5582K3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = /user/lib/libxml2.tbd;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LittleCool/LittleCool.pch";
@@ -2855,7 +3041,7 @@
 					"$(PROJECT_DIR)/AudioEncode/AudioToMp3/lame",
 					"$(PROJECT_DIR)/Qian/Pods/JPush/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = bg.myself.littleCool;
+				PRODUCT_BUNDLE_IDENTIFIER = bg.chenghong.LittleCool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -125,4 +125,5 @@
 
 +(UIImage*)originImage:(UIImage*)image scaleToSize:(CGSize)size;
 
++(CGFloat)pxSizeConvert:(CGFloat)pxSize;
 @end

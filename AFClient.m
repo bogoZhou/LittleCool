@@ -656,4 +656,44 @@
     }];
 }
 
+//13.	【海报模板：获取标签和海报（不含详情）】
+- (void)posterGetLabelsMubanById:(NSString *)userId udid:(NSString *)udid progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v1/muban/all_label_muban",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid", nil];
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+//14.	【海报模板：获取详细制作数据】
+- (void)getPosterDetailByUserId:(NSString *)userId udid:(NSString *)udid material_id:(NSString *)material_id progressBlock:(ProgressBlock)progress success:(SuccessBlock)success failure:(FailureBlcok)failure{
+    _url = [NSString stringWithFormat:@"%@/v1/muban/material_desc",kHttpHeader];
+    AFHTTPSessionManager *manager = [self creatManager];
+    _dict = [NSDictionary dictionaryWithObjectsAndKeys:userId,@"id",udid ,@"udid",material_id,@"material_id", nil];
+    [manager POST:_url parameters:_dict progress:^(NSProgress * _Nonnull uploadProgress) {
+        if (progress) {
+            progress(uploadProgress);
+        }
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (success) {
+            success(responseObject);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
 @end

@@ -40,6 +40,7 @@
 #define kMainStroyboard [UIStoryboard storyboardWithName:@"Main" bundle:nil]
 #define kSignStroyboard [UIStoryboard storyboardWithName:@"Sign" bundle:nil]
 #define kWechatStroyboard [UIStoryboard storyboardWithName:@"Wechat" bundle:nil]
+#define kPosterStoryboard [UIStoryboard storyboardWithName:@"Poster" bundle:nil]
 
 
 #define kInWindow [UIApplication sharedApplication].windows.lastObject
@@ -127,9 +128,9 @@
 #define kBlackColor [UIColor colorWithRed:64.0/255 green:64.0/255 blue:64.0/255 alpha:1]//404040
 #define kd0d0d0 [UIColor colorWithRed:208.0/255 green:208.0/255 blue:208.0/255 alpha:1]//d0d0d0
 
-
-
-
+#define kSystemBlack [UIColor blackColor]
+#define kPosterRed kColorFrom0x(0xD53C3E)
+#define kPosterBlack kColorFrom0x(0x161616)
 
 
 

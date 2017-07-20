@@ -23,5 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIView *viewCoolImage;
 @property (weak, nonatomic) IBOutlet UIView *centerViewCoolImage;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
 
 @end

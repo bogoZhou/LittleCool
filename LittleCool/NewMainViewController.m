@@ -12,8 +12,12 @@
 #import "BannerModel.h"
 #import "WebViewController.h"
 #import "WechatTabBarViewController.h"
+#import "NewMainTableViewCell.h"
+#import "PosterMainViewController.h"
 
-@interface NewMainViewController ()<ImagePlayerViewDelegate>
+#define kCellName @"NewMainTableViewCell"
+
+@interface NewMainViewController ()<ImagePlayerViewDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     
 }
@@ -22,6 +26,9 @@
 @property (nonatomic, strong) NSMutableArray *imageURLs;
 @property (nonatomic, strong) NSCache *imageCache;
 @property (nonatomic,strong) NSMutableArray *bannerArray;
+
+@property (nonatomic,strong) NSArray *itemsArray;
+
 @end
 
 @implementation NewMainViewController
@@ -29,6 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _itemsArray = [NSArray array];
     [self UISetting];
     _bannerArray = [NSMutableArray array];
     [self loadBannerFun];
@@ -48,31 +56,17 @@
 }
 
 - (void)UISetting{
-    CGFloat alf = 0.7;
-    _centerViewSounds.layer.masksToBounds = YES;
-    _centerViewSounds.layer.cornerRadius = 5;
-    _viewSounds.backgroundColor = [kColorFrom0x(0xf02f93) colorWithAlphaComponent:alf];
-    
-    _centerViewImage.layer.masksToBounds = YES;
-    _centerViewImage.layer.cornerRadius = 5;
-    _viewImage.backgroundColor = [kColorFrom0x(0xf0662f) colorWithAlphaComponent:alf];
-    
-//    if ([kIsHiddenValue integerValue] < 0) {
-//        _viewCoolImage.hidden = YES;
-//    }
-    _centerViewCoolImage.layer.masksToBounds = YES;
-    _centerViewCoolImage.layer.cornerRadius = 5;
-    _viewCoolImage.backgroundColor = [kColorFrom0x(0xfb111df) colorWithAlphaComponent:alf];
+    _itemsArray = @[@[@"百变配音",[UIImage imageNamed:@"voice02.png"],kColorFrom0x(0xf02f93)]
+                    ,@[@"图片素材",[UIImage imageNamed:@"picture-material.png"],kColorFrom0x(0xf0662f)]
+                    ,@[@"逗图制作",[UIImage imageNamed:@"make-drawing.png"],kColorFrom0x(0xfb111df)]
+                    ,@[@"海报制作",[UIImage imageNamed:@"posters-produced.png"],kColorFrom0x(0x3d2ff0)]
+                    ];
+    [_tableView reloadData];
 }
 
 - (void)creatBanner{
     _imageCache = [NSCache new];
-    
-//    self.imageURLs = @[[NSURL URLWithString:@"http://sudasuta.com/wp-content/uploads/2013/10/10143181686_375e063f2c_z.jpg"],
-//                       [NSURL URLWithString:@"http://img01.taopic.com/150920/240455-1509200H31810.jpg"],
-//                       [NSURL URLWithString:@"http://img.taopic.com/uploads/allimg/110906/1382-110Z611025585.jpg"]];
-    
-//    self.imageURLs = @[@"1-1.png",@"2-1.png",@"3-1.png",@"4.png"];
+
     _imageURLs = [NSMutableArray array];
     for (BannerModel *bannerModel in _bannerArray) {
         [self.imageURLs addObject:bannerModel.img_url];
@@ -133,26 +127,17 @@
 
 //配音
 - (IBAction)soundsButtonClick:(UIButton *)sender {
-    UIStoryboard *storyboard = kMainStroyboard;
-    MainViewController *mainVC = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    [self.navigationController pushViewController:mainVC animated:YES];
+
 }
 
 //图片素材
 - (IBAction)pictureButtonClick:(UIButton *)sender {
-    UIStoryboard *storyboard = kMainStroyboard;
-    PicturesViewController *picVC = [storyboard instantiateViewControllerWithIdentifier:@"PicturesViewController"];
-    [self.navigationController pushViewController:picVC animated:YES];
+
 }
 
 //逗图制作
 - (IBAction)coolPicMakeButtonClick:(UIButton *)sender {
-    UIStoryboard *storyboard = kWechatStroyboard;
-    WechatTabBarViewController *wechatTBB = [storyboard instantiateViewControllerWithIdentifier:@"WechatTabBarViewController"];
-    NSString *isVIP = kIsVip;
-    if (isVIP.integerValue == 200) [self shuiyin:YES];
-    else[self shuiyin:NO];
-    [self.navigationController pushViewController:wechatTBB animated:YES];
+
 }
 
 
@@ -198,6 +183,48 @@
         [[[UIApplication sharedApplication] keyWindow] addSubview:_shuiyinView];
     }
     
+}
+
+#pragma mark - tableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return _itemsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NewMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellName];
+    NSArray *itemArray = _itemsArray[indexPath.row];
+    [cell UISettingByColor:itemArray[2] title:itemArray[0] image:itemArray[1]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0) {
+        UIStoryboard *storyboard = kMainStroyboard;
+        MainViewController *mainVC = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+        [self.navigationController pushViewController:mainVC animated:YES];
+    }else if (indexPath.row == 1){
+        UIStoryboard *storyboard = kMainStroyboard;
+        PicturesViewController *picVC = [storyboard instantiateViewControllerWithIdentifier:@"PicturesViewController"];
+        [self.navigationController pushViewController:picVC animated:YES];
+    }else if (indexPath.row == 2){
+        UIStoryboard *storyboard = kWechatStroyboard;
+        WechatTabBarViewController *wechatTBB = [storyboard instantiateViewControllerWithIdentifier:@"WechatTabBarViewController"];
+        NSString *isVIP = kIsVip;
+        if (isVIP.integerValue == 200) [self shuiyin:YES];
+        else[self shuiyin:NO];
+        [self.navigationController pushViewController:wechatTBB animated:YES];
+    }else{
+//        kAlert(@"海报制作");
+        UIStoryboard *storyboard = kPosterStoryboard;
+        PosterMainViewController * posterMainVC = [storyboard instantiateViewControllerWithIdentifier:@"PosterMainViewController"];
+        posterMainVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:posterMainVC animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

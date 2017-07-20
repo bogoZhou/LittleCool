@@ -36,14 +36,14 @@
     [self.window makeKeyWindow];
 }
 
-- (void)notiLoginNoti:(id)noti{
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController * ctrl = (UIViewController *)[storyBoard instantiateInitialViewController];
-    self.window.rootViewController = ctrl;
-    [self.window makeKeyWindow];
-    [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"select"];
-    ((UITabBarController *)(self.window.rootViewController)).selectedIndex = 4;
-}
+//- (void)notiLoginNoti:(id)noti{
+//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController * ctrl = (UIViewController *)[storyBoard instantiateInitialViewController];
+//    self.window.rootViewController = ctrl;
+//    [self.window makeKeyWindow];
+//    [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"select"];
+//    ((UITabBarController *)(self.window.rootViewController)).selectedIndex = 4;
+//}
 
 /**
  *  跳转到LaunchScreen页面
@@ -65,7 +65,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(signNoti:) name:@"sign" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginNoti:) name:@"login" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiLoginNoti:) name:@"notiLoginNoti" object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notiLoginNoti:) name:@"notiLoginNoti" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(launchScreenPage:) name:@"launch" object:nil];
 //    NSLog(@"%@",[DLUDID value]);
     [UncaughtExceptionHandler installUncaughtExceptionHandler:YES showAlert:YES];
